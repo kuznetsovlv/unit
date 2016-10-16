@@ -29,13 +29,13 @@ const productPlugins = [
 module.exports = {
 	context: path.resolve(__dirname, 'src'),
 
-	entry: 'index',
+	entry: DEV ? 'index_dev' : 'index',
 
 	noInfo: true,
 
 	target: 'node',
 
-	output: {filename: 'index.js', path: path.resolve(__dirname, 'dist')},
+	output: {filename: 'index.js', path: path.resolve(__dirname, DEV ? 'test' : 'dist')},
 
 	watch: DEV,
 
