@@ -43,5 +43,5 @@ testUnit4.drawResult();
 
 testUnit.drawResult(true);
 testUnit2.drawResult(true);
-testUnit3.drawResult(true).performTests().drawResult();
+testUnit3.drawResult(true).commitTests().drawResult();
 testUnit4.drawResult(true);

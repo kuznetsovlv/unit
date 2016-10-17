@@ -99,7 +99,7 @@
 
 	testUnit.drawResult(true);
 	testUnit2.drawResult(true);
-	testUnit3.drawResult(true).performTests().drawResult();
+	testUnit3.drawResult(true).commitTests().drawResult();
 	testUnit4.drawResult(true);
 
 /***/ },
@@ -297,8 +297,8 @@
 	   */
 
 		}, {
-			key: 'performTests',
-			value: function performTests() {
+			key: 'commitTests',
+			value: function commitTests() {
 				var _this = this;
 
 				var testStarted = new Date();
@@ -339,7 +339,7 @@
 		}, {
 			key: 'getResult',
 			value: function getResult() {
-				return this.result ? this.result : this.performTests().getResult();
+				return this.result ? this.result : this.commitTests().getResult();
 			}
 
 			/**

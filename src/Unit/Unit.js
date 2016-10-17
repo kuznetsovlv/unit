@@ -103,7 +103,7 @@ export default class Unit {
 	 * Method to perform tests.
 	 * @return {Unit} - this.s
 	 */
-	performTests () {
+	commitTests () {
 		const testStarted = new Date();
 
 		const results = this.tests.map(({args, expectation, method}) => {
@@ -135,7 +135,7 @@ export default class Unit {
 	 * @return {object} - result.
 	 */
 	getResult () {
-		return this.result ? this.result : this.performTests().getResult();
+		return this.result ? this.result : this.commitTests().getResult();
 	}
 
 	/**
