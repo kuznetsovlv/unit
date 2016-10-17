@@ -22,4 +22,4 @@ function setColors (colors = [], shift = 0) {
 
 export const common = toFormat(_common);
 export const fontColors = toFormat(setColors(colors, 30));
-export const bgColors = toFormat(setColors(colors, 40))
+export const bgColors = toFormat(setColors(colors, 40));
