@@ -141,9 +141,10 @@ export default class Unit {
 
 	/**
 	 * Method to draw result.
+	 * @param {boolean} [failsOnly = false] - if argument is true success tests would not be drawn.
 	 * @return {Unit} - this.s
 	 */
-	drawResult () {
+	drawResult (failsOnly = false) {
 		const {testStarted, results = [], testFinished, description} = this.getResult();
 
 		console.log(bgColors.Black);
@@ -159,21 +160,24 @@ export default class Unit {
 
 			const sum = results.length;
 
-			results.forEach((result = {}) => {
+			results.forEach((result = {}, i) => {
 
 				const {args, expectation, method, res = {}} = result;
 
-				const str1 = `${fontColors.Yellow}Function called with ${argsToStr(args)}${fontColors.Yellow}.`;
+				if (res.error) {
+					++exeptions;
+				} else if (res.success) {
+					++successes;
+					if (failsOnly)
+						return;
+				} else {
+					++fails;
+				}
+
+				const str1 = `${fontColors.Blue}${i}. ${fontColors.Yellow}Function called with ${argsToStr(args)}${fontColors.Yellow}.`;
 				const str2 = `${fontColors.Yellow}Function checked by method ${fontColors.Magenta}${method}${fontColors.Yellow}.`;
 				const str3 = 'expectation' in result ? `Expected value is ${fontColors.Magenta}${argToStr(expectation)}${fontColors.Yellow}.` : '';
 				const str4 = parseRes(res);
-
-				if (res.error)
-					++exeptions;
-				else if (res.success)
-					++successes;
-				else
-					++fails;
 
 				console.log(`${str1} ${str2} ${str3 ? str3 : ''} ${str4}`.replace(/\s+/g, ' '));
 			});

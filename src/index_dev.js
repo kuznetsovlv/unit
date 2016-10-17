@@ -36,3 +36,8 @@ testUnit3.addTest({
 }).drawResult();
 
 testUnit4.drawResult();
+
+testUnit.drawResult(true);
+testUnit2.drawResult(true);
+testUnit3.drawResult(true);
+testUnit4.drawResult(true);

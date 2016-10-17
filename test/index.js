@@ -97,6 +97,11 @@
 
 	testUnit4.drawResult();
 
+	testUnit.drawResult(true);
+	testUnit2.drawResult(true);
+	testUnit3.drawResult(true);
+	testUnit4.drawResult(true);
+
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
@@ -288,12 +293,15 @@
 
 			/**
 	   * Method to draw result.
+	   * @param {boolean} [failsOnly = false] - if argument is true success tests would not be drawn.
 	   * @return {Unit} - this.s
 	   */
 
 		}, {
 			key: 'drawResult',
 			value: function drawResult() {
+				var failsOnly = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
 				var _getResult = this.getResult();
 
 				var testStarted = _getResult.testStarted;
@@ -321,6 +329,7 @@
 
 						results.forEach(function () {
 							var result = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+							var i = arguments[1];
 							var args = result.args;
 							var expectation = result.expectation;
 							var method = result.method;
@@ -328,12 +337,19 @@
 							var res = _result$res === undefined ? {} : _result$res;
 
 
-							var str1 = _styles.fontColors.Yellow + 'Function called with ' + argsToStr(args) + _styles.fontColors.Yellow + '.';
+							if (res.error) {
+								++exeptions;
+							} else if (res.success) {
+								++successes;
+								if (failsOnly) return;
+							} else {
+								++fails;
+							}
+
+							var str1 = '' + _styles.fontColors.Blue + i + '. ' + _styles.fontColors.Yellow + 'Function called with ' + argsToStr(args) + _styles.fontColors.Yellow + '.';
 							var str2 = _styles.fontColors.Yellow + 'Function checked by method ' + _styles.fontColors.Magenta + method + _styles.fontColors.Yellow + '.';
 							var str3 = 'expectation' in result ? 'Expected value is ' + _styles.fontColors.Magenta + argToStr(expectation) + _styles.fontColors.Yellow + '.' : '';
 							var str4 = parseRes(res);
-
-							if (res.error) ++exeptions;else if (res.success) ++successes;else ++fails;
 
 							console.log((str1 + ' ' + str2 + ' ' + (str3 ? str3 : '') + ' ' + str4).replace(/\s+/g, ' '));
 						});
