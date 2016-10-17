@@ -64,5 +64,6 @@ unit.addTest(new Test({
 	method: 'isEqual'
 })).commitTests().drawResult(true);
 ```
+
 _Note:_ if you are adding new test into a sequence after the sequence has been commited to get or display the test's result you need call `commitTests` method before `getResult` and  `drawResult` methods.
 ---
