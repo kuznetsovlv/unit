@@ -1,6 +1,7 @@
 # Unit Test Library
 
 Library for simple creating unit tests.
+
 ---
 
 ## Install.
@@ -30,6 +31,7 @@ mkdir -p pathToYourPogectDirrectory/node_modules/unit
 cp -r * pathToYourPogectDirrectory/node_modules/unit
 ```
 ---
+---
 
 ## How to use
 The library exports two class `Unit` and `Test`.
@@ -43,7 +45,6 @@ Class `Unit` creates an object wich perform a set of unit tests for a function. 
 ```javascript
 const unit = new Unit(x => x, 'Simple test of the simple function');
 ```
----
 
 #### Methods
 Class `Unit` has some methods:
