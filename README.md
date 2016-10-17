@@ -51,6 +51,7 @@ Class `Unit` has some methods:
 * `commitTests` commits current test sequence.
 * `getResult` returns object with result of the last commit of the test sequence. If test sequence has not commited it calls `addTest` method first.
 * `drawResult` gets unrequirable `boolean` argumet `failsOnly` and displays the result of the last commit of the test sequence. The result `drawResult` gets by calling `getResult` first. By default `failsOnly = false`, if it is `true` `drawResult` would show only fallen tests.
+
 _Note:_ all methods exept `getResult` returns current context of `Unit`, so you can use these methods in chains.
 ```javascript
 unit.addTest(new Test({
