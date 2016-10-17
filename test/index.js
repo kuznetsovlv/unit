@@ -48,62 +48,111 @@
 
 	var _index = __webpack_require__(1);
 
-	var _index2 = _interopRequireDefault(_index);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var testUnit = new _index2.default(function (x) {
+	var testUnit = new _index.Unit(function (x) {
 		return x;
 	}, 'Library test 1');
-	var testUnit2 = new _index2.default(function (x) {
+	var testUnit2 = new _index.Unit(function (x) {
 		return x;
 	}, 'Library test 2');
-	var testUnit3 = new _index2.default(function (x) {
+	var testUnit3 = new _index.Unit(function (x) {
 		throw new Error('Test Error.');
 	}, 'Library test 3');
-	var testUnit4 = new _index2.default(function (x) {
+	var testUnit4 = new _index.Unit(function (x) {
 		return x;
 	}, 'Library test 4');
 
-	testUnit.addTest({
+	testUnit.addTest(new _index.Test({
 		arg: 5,
 		expectation: 5,
 		method: 'isEqual'
-	}).addTest({
+	})).addTest(new _index.Test({
 		arg: 5,
 		expectation: 6,
 		method: 'isEqual'
-	}).drawResult();
+	})).drawResult();
 
-	testUnit2.addTest({
+	testUnit2.addTest(new _index.Test({
 		arg: 5,
 		expectation: 5,
 		method: 'isEqual'
-	}).addTest({
+	})).addTest(new _index.Test({
 		arg: 6,
 		expectation: 6,
 		method: 'isEqual'
-	}).drawResult();
+	})).drawResult();
 
-	testUnit3.addTest({
+	testUnit3.addTest(new _index.Test({
 		args: [4, 8],
 		expectation: 10,
 		method: 'isEqual'
-	}).addTest({
+	})).addTest(new _index.Test({
 		arg: [4, 8],
 		expectation: 10,
 		method: 'isEqual'
-	}).drawResult();
+	})).drawResult().addTest(new _index.Test({
+		arg: 14,
+		expectation: 12,
+		method: 'isEqual'
+	}));
 
 	testUnit4.drawResult();
 
 	testUnit.drawResult(true);
 	testUnit2.drawResult(true);
-	testUnit3.drawResult(true);
+	testUnit3.drawResult(true).performTests().drawResult();
 	testUnit4.drawResult(true);
 
 /***/ },
 /* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _Unit = __webpack_require__(2);
+
+	Object.defineProperty(exports, 'Unit', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Unit).default;
+	  }
+	});
+
+	var _Test = __webpack_require__(6);
+
+	Object.defineProperty(exports, 'Test', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Test).default;
+	  }
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _Unit = __webpack_require__(3);
+
+	var _Unit2 = _interopRequireDefault(_Unit);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _Unit2.default;
+
+/***/ },
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -117,13 +166,19 @@
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-	var _methods = __webpack_require__(14);
+	var _methods = __webpack_require__(4);
 
 	var methods = _interopRequireWildcard(_methods);
 
-	var _styles = __webpack_require__(6);
+	var _Test = __webpack_require__(6);
 
-	var _date = __webpack_require__(9);
+	var _Test2 = _interopRequireDefault(_Test);
+
+	var _styles = __webpack_require__(8);
+
+	var _date = __webpack_require__(11);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -214,11 +269,7 @@
 
 		/**
 	  * Method to add test into series.
-	  * @param {object} test - test`s object.
-	  * @param {*} [test#arg] - argument that function get.
-	  * @param {array} [test#args] - array of arguments that function get.
-	  * @param {*} test#expectation - expected result value.
-	  * @param {string} test#method - method name.
+	  * @param {Test} test - test`s object.
 	 	 * @return {Unit} - this.
 	  */
 
@@ -226,6 +277,8 @@
 		_createClass(Unit, [{
 			key: 'addTest',
 			value: function addTest(test) {
+				if (!(test instanceof _Test2.default)) throw new Error("Test object must be a type of Test class");
+
 				var method = test.method;
 
 
@@ -251,13 +304,11 @@
 				var testStarted = new Date();
 
 				var results = this.tests.map(function (_ref) {
-					var arg = _ref.arg;
 					var args = _ref.args;
 					var expectation = _ref.expectation;
 					var method = _ref.method;
 
 					var res = void 0;
-					args = args || [arg];
 
 					try {
 						res = methods[method](_this.method, { args: args, expectation: expectation }, _this.context);
@@ -374,11 +425,121 @@
 	exports.default = Unit;
 
 /***/ },
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _isEqual = __webpack_require__(5);
+
+	Object.defineProperty(exports, 'isEqual', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_isEqual).default;
+	  }
+	});
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = isEqual;
+	/**
+	 * Test method that checks if test method's result is equal to expected value.
+	 * @param {function} method - testing method.
+	 * @param {object} test - test`s object.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {*} test#expectation - expected result value.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {boolean}
+	 */
+	function isEqual(method) {
+	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	  var args = test.args;
+	  var expectation = test.expectation;
+
+
+	  var result = method.apply(context, args);
+
+	  return { result: result, success: result === expectation };
+	}
+
+/***/ },
 /* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _Test = __webpack_require__(7);
+
+	var _Test2 = _interopRequireDefault(_Test);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _Test2.default;
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	/**
+	 * Class to create test.
+	 * @param {object} test - test`s object.
+	 * @param {*} [test#arg] - argument that function get.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {*} test#expectation - expected result value.
+	 * @param {string} test#method - method name.
+	 */
+	var Test = function Test() {
+		var test = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+		_classCallCheck(this, Test);
+
+		var arg = test.arg;
+		var args = test.args;
+		var expectation = test.expectation;
+		var _test$method = test.method;
+		var method = _test$method === undefined ? '' : _test$method;
+
+
+		if (args && !(args instanceof Array)) throw new Error("args must be an Array or not defined");
+
+		this.args = args || [arg];
+
+		this.expectation = expectation;
+
+		this.method = method;
+	};
+
+	exports.default = Test;
+
+/***/ },
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -388,11 +549,11 @@
 	});
 	exports.bgColors = exports.fontColors = exports.common = undefined;
 
-	var _common2 = __webpack_require__(7);
+	var _common2 = __webpack_require__(9);
 
 	var _common = _interopRequireWildcard(_common2);
 
-	var _colors = __webpack_require__(8);
+	var _colors = __webpack_require__(10);
 
 	var _colors2 = _interopRequireDefault(_colors);
 
@@ -428,7 +589,7 @@
 	var bgColors = exports.bgColors = toFormat(setColors(_colors2.default, 40));
 
 /***/ },
-/* 7 */
+/* 9 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -445,7 +606,7 @@
 	var Hidden = exports.Hidden = 8;
 
 /***/ },
-/* 8 */
+/* 10 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -456,7 +617,7 @@
 	exports.default = 'Black,Red,Green,Yellow,Blue,Magenta,Cyan,White'.split(',');
 
 /***/ },
-/* 9 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -467,11 +628,11 @@
 	exports.dateDiff = undefined;
 	exports.msToHR = msToHR;
 
-	var _dd = __webpack_require__(10);
+	var _dd = __webpack_require__(12);
 
 	var _dd2 = _interopRequireDefault(_dd);
 
-	var _n = __webpack_require__(11);
+	var _n = __webpack_require__(13);
 
 	var _n2 = _interopRequireDefault(_n);
 
@@ -519,7 +680,7 @@
 	}
 
 /***/ },
-/* 10 */
+/* 12 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -539,7 +700,7 @@
 	}
 
 /***/ },
-/* 11 */
+/* 13 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -565,60 +726,6 @@
 		for (var i = 0; i < len; ++i) {
 			zeros.push(0);
 		}return ('' + zeros.join('') + num).substr(-len);
-	}
-
-/***/ },
-/* 12 */,
-/* 13 */,
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _isEqual = __webpack_require__(15);
-
-	Object.defineProperty(exports, 'isEqual', {
-	  enumerable: true,
-	  get: function get() {
-	    return _interopRequireDefault(_isEqual).default;
-	  }
-	});
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ },
-/* 15 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = isEqual;
-	/**
-	 * Test method that checks if test method's result is equal to expected value.
-	 * @param {function} method - testing method.
-	 * @param {object} test - test`s object.
-	 * @param {array} [test#args] - array of arguments that function get.
-	 * @param {*} test#expectation - expected result value.
-	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {boolean}
-	 */
-	function isEqual(method) {
-	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-	  var args = test.args;
-	  var expectation = test.expectation;
-
-
-	  var result = method.apply(context, args);
-
-	  return { result: result, success: result === expectation };
 	}
 
 /***/ }
