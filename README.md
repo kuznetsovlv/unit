@@ -45,7 +45,7 @@ const unit = new Unit(x => x, 'Simple test of the simple function');
 ```
 ---
 
-### Methods
+#### Methods
 Class `Unit` has some methods:
 * `addTest` gets one argument the object of class `Test` which describes single test. `addTest` adds test description into test sequence.
 * `commitTests` commits current test sequence.
