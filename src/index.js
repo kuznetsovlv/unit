@@ -31,7 +31,7 @@ function argsToStr (args = []) {
 	if (args.length < 2)
 		return `${fontColors.Magenta}${args[0] === undefined ? 'no arguments' : argToStr(args[0])}`;
 	
-	return ['arguments:`${fontColors.Magenta}`', args.map(arg => argToStr(arg)).join(', ')].join(' ');
+	return [`arguments:${fontColors.Magenta}`, args.map(arg => argToStr(arg)).join(', ')].join(' ');
 }
 
 /**
@@ -150,36 +150,40 @@ export default class Unit {
 
 		console.log(`${fontColors.White}${description}`);
 
-		console.log(`${fontColors.Blue}Test started at ${fontColors.Magenta}${testStarted}${fontColors.Blue} finished at ${fontColors.Magenta}${testFinished}${fontColors.Blue}, test took ${fontColors.Cyan}${msToHR(dateDiff(testFinished, testStarted))}.`)
+		if (!results.length) {
+			console.log(`${fontColors.White}${common.Underscore}${'No tests set!'.toUpperCase()}`);
+		} else {
+			console.log(`${fontColors.Blue}Test started at ${fontColors.Magenta}${testStarted}${fontColors.Blue} finished at ${fontColors.Magenta}${testFinished}${fontColors.Blue}, test took ${fontColors.Cyan}${msToHR(dateDiff(testFinished, testStarted))}.`)
 
-		let successes = 0, fails = 0, exeptions = 0;
+			let successes = 0, fails = 0, exeptions = 0;
 
-		const sum = results.length;
+			const sum = results.length;
 
-		results.forEach((result = {}) => {
+			results.forEach((result = {}) => {
 
-			const {args, expectation, method, res = {}} = result;
+				const {args, expectation, method, res = {}} = result;
 
-			const str1 = `${fontColors.Yellow}Function called with ${argsToStr(args)}${fontColors.Yellow}.`;
-			const str2 = `${fontColors.Yellow}Function checked by method ${fontColors.Magenta}${method}${fontColors.Yellow}.`;
-			const str3 = 'expectation' in result ? `Expected value is ${fontColors.Magenta}${argToStr(expectation)}${fontColors.Yellow}.` : '';
-			const str4 = parseRes(res);
+				const str1 = `${fontColors.Yellow}Function called with ${argsToStr(args)}${fontColors.Yellow}.`;
+				const str2 = `${fontColors.Yellow}Function checked by method ${fontColors.Magenta}${method}${fontColors.Yellow}.`;
+				const str3 = 'expectation' in result ? `Expected value is ${fontColors.Magenta}${argToStr(expectation)}${fontColors.Yellow}.` : '';
+				const str4 = parseRes(res);
 
-			if (res.error)
-				++exeptions;
-			else if (res.success)
-				++successes;
-			else
-				++fails;
+				if (res.error)
+					++exeptions;
+				else if (res.success)
+					++successes;
+				else
+					++fails;
 
-			console.log(`${str1} ${str2} ${str3 ? str3 : ''} ${str4}`.replace(/\s+/g, ' '));
-		});
+				console.log(`${str1} ${str2} ${str3 ? str3 : ''} ${str4}`.replace(/\s+/g, ' '));
+			});
 
-		console.log(`${fontColors.Blue}Statistic:`);
+			console.log(`${fontColors.Blue}Statistic:`);
 
-		console.log(`${fontColors.Green}Successes: ${successes}${fontColors.Blue}, ${fontColors.Red}Fails: ${fails}${fontColors.Blue}, ${fontColors.Red}Exeptions: ${exeptions}${fontColors.Blue}. From ${fontColors.Cyan}${sum}${fontColors.Blue} tests.`);
+			console.log(`${fontColors.Green}Successes: ${successes}${fontColors.Blue}, ${fontColors.Red}Fails: ${fails}${fontColors.Blue}, ${fontColors.Red}Exeptions: ${exeptions}${fontColors.Blue}. From ${fontColors.Cyan}${sum}${fontColors.Blue} test${sum !== 1 ? 's' : ''}.`);
 
-		console.log(`${fontColors.Blue}Result: ${successes === sum ? fontColors.Green + 'SUCCESS' : fontColors.Red + 'FAIL'}!`);
+			console.log(`${fontColors.Blue}Result: ${successes === sum ? fontColors.Green + 'SUCCESS' : fontColors.Red + 'FAIL'}!`);
+		}
 		
 		console.log(common.Reset);
 
