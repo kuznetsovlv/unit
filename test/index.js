@@ -58,6 +58,12 @@
 	var testUnit2 = new _index2.default(function (x) {
 		return x;
 	}, 'Library test 2');
+	var testUnit3 = new _index2.default(function (x) {
+		throw new Error('Test Error.');
+	}, 'Library test 3');
+	var testUnit4 = new _index2.default(function (x) {
+		return x;
+	}, 'Library test 4');
 
 	testUnit.addTest({
 		arg: 5,
@@ -78,6 +84,18 @@
 		expectation: 6,
 		method: 'isEqual'
 	}).drawResult();
+
+	testUnit3.addTest({
+		args: [4, 8],
+		expectation: 10,
+		method: 'isEqual'
+	}).addTest({
+		arg: [4, 8],
+		expectation: 10,
+		method: 'isEqual'
+	}).drawResult();
+
+	testUnit4.drawResult();
 
 /***/ },
 /* 1 */
@@ -135,7 +153,7 @@
 
 		if (args.length < 2) return '' + _styles.fontColors.Magenta + (args[0] === undefined ? 'no arguments' : argToStr(args[0]));
 
-		return ['arguments:`${fontColors.Magenta}`', args.map(function (arg) {
+		return ['arguments:' + _styles.fontColors.Magenta, args.map(function (arg) {
 			return argToStr(arg);
 		}).join(', ')].join(' ');
 	}
@@ -289,38 +307,44 @@
 
 				console.log('' + _styles.fontColors.White + description);
 
-				console.log(_styles.fontColors.Blue + 'Test started at ' + _styles.fontColors.Magenta + testStarted + _styles.fontColors.Blue + ' finished at ' + _styles.fontColors.Magenta + testFinished + _styles.fontColors.Blue + ', test took ' + _styles.fontColors.Cyan + (0, _date.msToHR)((0, _date.dateDiff)(testFinished, testStarted)) + '.');
+				if (!results.length) {
+					console.log('' + _styles.fontColors.White + _styles.common.Underscore + 'No tests set!'.toUpperCase());
+				} else {
+					(function () {
+						console.log(_styles.fontColors.Blue + 'Test started at ' + _styles.fontColors.Magenta + testStarted + _styles.fontColors.Blue + ' finished at ' + _styles.fontColors.Magenta + testFinished + _styles.fontColors.Blue + ', test took ' + _styles.fontColors.Cyan + (0, _date.msToHR)((0, _date.dateDiff)(testFinished, testStarted)) + '.');
 
-				var successes = 0,
-				    fails = 0,
-				    exeptions = 0;
+						var successes = 0,
+						    fails = 0,
+						    exeptions = 0;
 
-				var sum = results.length;
+						var sum = results.length;
 
-				results.forEach(function () {
-					var result = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-					var args = result.args;
-					var expectation = result.expectation;
-					var method = result.method;
-					var _result$res = result.res;
-					var res = _result$res === undefined ? {} : _result$res;
+						results.forEach(function () {
+							var result = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+							var args = result.args;
+							var expectation = result.expectation;
+							var method = result.method;
+							var _result$res = result.res;
+							var res = _result$res === undefined ? {} : _result$res;
 
 
-					var str1 = _styles.fontColors.Yellow + 'Function called with ' + argsToStr(args) + _styles.fontColors.Yellow + '.';
-					var str2 = _styles.fontColors.Yellow + 'Function checked by method ' + _styles.fontColors.Magenta + method + _styles.fontColors.Yellow + '.';
-					var str3 = 'expectation' in result ? 'Expected value is ' + _styles.fontColors.Magenta + argToStr(expectation) + _styles.fontColors.Yellow + '.' : '';
-					var str4 = parseRes(res);
+							var str1 = _styles.fontColors.Yellow + 'Function called with ' + argsToStr(args) + _styles.fontColors.Yellow + '.';
+							var str2 = _styles.fontColors.Yellow + 'Function checked by method ' + _styles.fontColors.Magenta + method + _styles.fontColors.Yellow + '.';
+							var str3 = 'expectation' in result ? 'Expected value is ' + _styles.fontColors.Magenta + argToStr(expectation) + _styles.fontColors.Yellow + '.' : '';
+							var str4 = parseRes(res);
 
-					if (res.error) ++exeptions;else if (res.success) ++successes;else ++fails;
+							if (res.error) ++exeptions;else if (res.success) ++successes;else ++fails;
 
-					console.log((str1 + ' ' + str2 + ' ' + (str3 ? str3 : '') + ' ' + str4).replace(/\s+/g, ' '));
-				});
+							console.log((str1 + ' ' + str2 + ' ' + (str3 ? str3 : '') + ' ' + str4).replace(/\s+/g, ' '));
+						});
 
-				console.log(_styles.fontColors.Blue + 'Statistic:');
+						console.log(_styles.fontColors.Blue + 'Statistic:');
 
-				console.log(_styles.fontColors.Green + 'Successes: ' + successes + _styles.fontColors.Blue + ', ' + _styles.fontColors.Red + 'Fails: ' + fails + _styles.fontColors.Blue + ', ' + _styles.fontColors.Red + 'Exeptions: ' + exeptions + _styles.fontColors.Blue + '. From ' + _styles.fontColors.Cyan + sum + _styles.fontColors.Blue + ' tests.');
+						console.log(_styles.fontColors.Green + 'Successes: ' + successes + _styles.fontColors.Blue + ', ' + _styles.fontColors.Red + 'Fails: ' + fails + _styles.fontColors.Blue + ', ' + _styles.fontColors.Red + 'Exeptions: ' + exeptions + _styles.fontColors.Blue + '. From ' + _styles.fontColors.Cyan + sum + _styles.fontColors.Blue + ' test' + (sum !== 1 ? 's' : '') + '.');
 
-				console.log(_styles.fontColors.Blue + 'Result: ' + (successes === sum ? _styles.fontColors.Green + 'SUCCESS' : _styles.fontColors.Red + 'FAIL') + '!');
+						console.log(_styles.fontColors.Blue + 'Result: ' + (successes === sum ? _styles.fontColors.Green + 'SUCCESS' : _styles.fontColors.Red + 'FAIL') + '!');
+					})();
+				}
 
 				console.log(_styles.common.Reset);
 
