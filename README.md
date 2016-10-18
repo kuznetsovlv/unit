@@ -25,7 +25,7 @@ Library for simple creating unit tests.
 	- [Verification Methods](#verification)
 		* [isEqual](#verification_isequal)
 
-## [Instalation](#installation)
+## Instalation
 The product is not published yet. The only way to use it is to copy from repository
 ```bash
 git clone https://github.com/kuznetsovlv/unit.git
