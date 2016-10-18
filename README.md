@@ -25,7 +25,7 @@ Library for simple creating unit tests.
 	- [Verification Methods](#verification)
 		* [isEqual](#verification_isequal)
 
-## [Instalation.](#installation)
+## [Instalation](#installation)
 The product is not published yet. The only way to use it is to copy from repository
 ```bash
 git clone https://github.com/kuznetsovlv/unit.git
@@ -57,7 +57,7 @@ cp -r * pathToYourPogectDirrectory/node_modules/unit
 ## [How to use.](#using)
 The library exports two class `Unit` and `Test`.
 
-### [Class `Unit`.](#unit_class)
+### [Class `Unit`](#unit_class)
 #### [Constructor.](#unit_class_constructor)
 Class `Unit` creates an object which perform a set of unit tests for a function. It's constructor gets three arguments:
 * [`func: function`](#unit_class_constructor_func) - Function you want to test
