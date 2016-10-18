@@ -99,4 +99,5 @@ const test = new Test({
 ```
 
 ### Verification Methods.
-* isEqual. Available for simple data types. Checks if returned value is equal to expeted value. Method uses a strict equality check.
+* _isEqual_. Available for simple data types. Checks if returned value is equal to expeted value. Method uses a strict comparison.
+* _isEqualnonStrict_. Available for simple data types. Checks if returned value is equal to expeted value. Method uses a nonstrict comparison.

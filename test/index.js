@@ -50,7 +50,7 @@
 
 	var testUnit = new _index.Unit(function (x) {
 		return x;
-	}, 'Library test 1');
+	}, 'Compare isEqual and isEqualNonStrict');
 	var testUnit2 = new _index.Unit(function (x) {
 		return x;
 	}, 'Library test 2');
@@ -67,40 +67,17 @@
 		method: 'isEqual'
 	})).addTest(new _index.Test({
 		arg: 5,
-		expectation: 6,
+		expectation: '5',
 		method: 'isEqual'
-	})).drawResult();
-
-	testUnit2.addTest(new _index.Test({
+	})).addTest(new _index.Test({
 		arg: 5,
 		expectation: 5,
-		method: 'isEqual'
+		method: 'isEqualNonStrict'
 	})).addTest(new _index.Test({
-		arg: 6,
-		expectation: 6,
-		method: 'isEqual'
+		arg: 5,
+		expectation: '5',
+		method: 'isEqualNonStrict'
 	})).drawResult();
-
-	testUnit3.addTest(new _index.Test({
-		args: [4, 8],
-		expectation: 10,
-		method: 'isEqual'
-	})).addTest(new _index.Test({
-		arg: [4, 8],
-		expectation: 10,
-		method: 'isEqual'
-	})).drawResult().addTest(new _index.Test({
-		arg: 14,
-		expectation: 12,
-		method: 'isEqual'
-	}));
-
-	testUnit4.drawResult();
-
-	testUnit.drawResult(true);
-	testUnit2.drawResult(true);
-	testUnit3.drawResult(true).commitTests().drawResult();
-	testUnit4.drawResult(true);
 
 /***/ },
 /* 1 */
@@ -121,7 +98,7 @@
 	  }
 	});
 
-	var _Test = __webpack_require__(6);
+	var _Test = __webpack_require__(7);
 
 	Object.defineProperty(exports, 'Test', {
 	  enumerable: true,
@@ -170,13 +147,13 @@
 
 	var methods = _interopRequireWildcard(_methods);
 
-	var _Test = __webpack_require__(6);
+	var _Test = __webpack_require__(7);
 
 	var _Test2 = _interopRequireDefault(_Test);
 
-	var _styles = __webpack_require__(8);
+	var _styles = __webpack_require__(9);
 
-	var _date = __webpack_require__(11);
+	var _date = __webpack_require__(12);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -443,6 +420,15 @@
 	  }
 	});
 
+	var _isEqualNonStrict = __webpack_require__(6);
+
+	Object.defineProperty(exports, 'isEqualNonStrict', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_isEqualNonStrict).default;
+	  }
+	});
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
@@ -478,6 +464,38 @@
 
 /***/ },
 /* 6 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = isEqualNonStrict;
+	/**
+	 * Test method that checks if test method's result is equal to expected value.
+	 * Method uses nonstrict comparison.
+	 * @param {function} method - testing method.
+	 * @param {object} test - test`s object.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {*} test#expectation - expected result value.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {boolean}
+	 */
+	function isEqualNonStrict(method) {
+	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	  var args = test.args;
+	  var expectation = test.expectation;
+
+
+	  var result = method.apply(context, args);
+
+	  return { result: result, success: result == expectation };
+	}
+
+/***/ },
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -487,7 +505,7 @@
 	});
 	exports.default = undefined;
 
-	var _Test = __webpack_require__(7);
+	var _Test = __webpack_require__(8);
 
 	var _Test2 = _interopRequireDefault(_Test);
 
@@ -496,7 +514,7 @@
 	exports.default = _Test2.default;
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -540,7 +558,7 @@
 	exports.default = Test;
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -550,11 +568,11 @@
 	});
 	exports.bgColors = exports.fontColors = exports.common = undefined;
 
-	var _common2 = __webpack_require__(9);
+	var _common2 = __webpack_require__(10);
 
 	var _common = _interopRequireWildcard(_common2);
 
-	var _colors = __webpack_require__(10);
+	var _colors = __webpack_require__(11);
 
 	var _colors2 = _interopRequireDefault(_colors);
 
@@ -590,7 +608,7 @@
 	var bgColors = exports.bgColors = toFormat(setColors(_colors2.default, 40));
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -607,7 +625,7 @@
 	var Hidden = exports.Hidden = 8;
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -618,7 +636,7 @@
 	exports.default = 'Black,Red,Green,Yellow,Blue,Magenta,Cyan,White'.split(',');
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -629,11 +647,11 @@
 	exports.dateDiff = undefined;
 	exports.msToHR = msToHR;
 
-	var _dd = __webpack_require__(12);
+	var _dd = __webpack_require__(13);
 
 	var _dd2 = _interopRequireDefault(_dd);
 
-	var _n = __webpack_require__(13);
+	var _n = __webpack_require__(14);
 
 	var _n2 = _interopRequireDefault(_n);
 
@@ -681,7 +699,7 @@
 	}
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -701,7 +719,7 @@
 	}
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 	'use strict';
