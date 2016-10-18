@@ -22,6 +22,7 @@ Library for simple creating unit tests.
 		* `expectation`
 	- Verification Methods
 		* isEqual
+		* isEqualNonStrict
 
 ## Instalation
 The product is not published yet. The only way to use it is to copy from repository
