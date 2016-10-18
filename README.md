@@ -21,8 +21,18 @@ Library for simple creating unit tests.
 		* `args`
 		* `expectation`
 	- Verification Methods
-		* isEqual
-		* isEqualNonStrict
+		* _isEqual_
+		* _isEqualNonStrict_
+		* _exist_
+		* _notExist_
+		* _isNull_
+		* _isNotNull_
+		* _isNill_
+		* _isNotNill_
+		* _isNaN_
+		* _isNotNaN_
+		* _isTrue_
+		* _isFalse_
 
 ## Instalation
 The product is not published yet. The only way to use it is to copy from repository
@@ -102,3 +112,13 @@ const test = new Test({
 ### Verification Methods.
 * _isEqual_. Usable with simple data types. Checks if returned value is equal to expeted value. Method uses a strict comparison.
 * _isEqualnonStrict_. Usable with simple data types. Checks if returned value is equal to expeted value. Method uses a nonstrict comparison.
+* _exist_. Checks if returned value is not `undefined`.
+* _notExist_. Checks if returned value is `undefined`.
+* _isNull_. Checks if returned value is `null`.
+* _isNotNull_. Checks if returned value is not `null`.
+* _isNill_. Checks if returned value is `null` or `undefined`.
+* _isNotNill_. Checks if returned value is not `null` or `undefined`.
+* _isNaN_. Checks if returned value is `NaN`.
+* _isNotNaN_. Checks if returned value is not `NaN`.
+* _isTrue_. Checks if returned value can be interpreted as `true`.
+* isFalse. Checks if returned value can be interpreted as `false`.

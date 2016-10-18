@@ -1,2 +1,12 @@
 export {default as isEqual}				from './isEqual';
 export {default as isEqualNonStrict}	from './isEqualNonStrict';
+export {default as exist}				from './exist';
+export {default as notExist}			from './notExist';
+export {default as isNull}				from './isNull';
+export {default as isNotNull}			from './isNotNull';
+export {default as isNill}				from './isNill';
+export {default as isNotNill}			from './isNotNill';
+export {default as isNaN}				from './isNaN';
+export {default as isNotNaN}			from './isNotNaN';
+export {default as isTrue}				from './isTrue';
+export {default as isFalse}				from './isFalse';

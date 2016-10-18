@@ -48,36 +48,52 @@
 
 	var _index = __webpack_require__(1);
 
-	var testUnit = new _index.Unit(function (x) {
-		return x;
-	}, 'Compare isEqual and isEqualNonStrict');
-	var testUnit2 = new _index.Unit(function (x) {
-		return x;
-	}, 'Library test 2');
-	var testUnit3 = new _index.Unit(function (x) {
-		throw new Error('Test Error.');
-	}, 'Library test 3');
-	var testUnit4 = new _index.Unit(function (x) {
-		return x;
-	}, 'Library test 4');
+	var testUnit_1 = new _index.Unit(function (x) {
+	          return x;
+	}, 'Compare "isEqual" and "isEqualNonStrict"');
+	var testUnit_2 = new _index.Unit(function (x) {
+	          return x;
+	}, 'Check methods "exist" and "notExist"');
+	var testUnit_3 = new _index.Unit(function (x) {
+	          return x;
+	}, 'Check methods "isNull" and "isNotNull"');
+	var testUnit_4 = new _index.Unit(function (x) {
+	          return x;
+	}, 'Check methods "isNill" and "isNotNill"');
+	var testUnit_5 = new _index.Unit(function (x) {
+	          return x;
+	}, 'Check methods "isNaN" and "isNotNaN"');
+	var testUnit_6 = new _index.Unit(function (x) {
+	          return x;
+	}, 'Check methods "isTrue" and "isFalse"');
 
-	testUnit.addTest(new _index.Test({
-		arg: 5,
-		expectation: 5,
-		method: 'isEqual'
+	testUnit_1.addTest(new _index.Test({
+	          arg: 5,
+	          expectation: 5,
+	          method: 'isEqual'
 	})).addTest(new _index.Test({
-		arg: 5,
-		expectation: '5',
-		method: 'isEqual'
+	          arg: 5,
+	          expectation: '5',
+	          method: 'isEqual'
 	})).addTest(new _index.Test({
-		arg: 5,
-		expectation: 5,
-		method: 'isEqualNonStrict'
+	          arg: 5,
+	          expectation: 5,
+	          method: 'isEqualNonStrict'
 	})).addTest(new _index.Test({
-		arg: 5,
-		expectation: '5',
-		method: 'isEqualNonStrict'
+	          arg: 5,
+	          expectation: '5',
+	          method: 'isEqualNonStrict'
 	})).drawResult();
+
+	testUnit_2.addTest(new _index.Test({ arg: 5, method: 'exist' })).addTest(new _index.Test({ arg: undefined, method: 'exist' })).addTest(new _index.Test({ arg: null, method: 'exist' })).addTest(new _index.Test({ arg: NaN, method: 'exist' })).addTest(new _index.Test({ arg: 5, method: 'notExist' })).addTest(new _index.Test({ arg: undefined, method: 'notExist' })).addTest(new _index.Test({ arg: null, method: 'notExist' })).addTest(new _index.Test({ arg: NaN, method: 'notExist' })).drawResult();
+
+	testUnit_3.addTest(new _index.Test({ arg: 5, method: 'isNull' })).addTest(new _index.Test({ arg: undefined, method: 'isNull' })).addTest(new _index.Test({ arg: null, method: 'isNull' })).addTest(new _index.Test({ arg: NaN, method: 'isNull' })).addTest(new _index.Test({ arg: 5, method: 'isNotNull' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNull' })).addTest(new _index.Test({ arg: null, method: 'isNotNull' })).addTest(new _index.Test({ arg: NaN, method: 'isNotNull' })).drawResult();
+
+	testUnit_4.addTest(new _index.Test({ arg: 5, method: 'isNill' })).addTest(new _index.Test({ arg: undefined, method: 'isNill' })).addTest(new _index.Test({ arg: null, method: 'isNill' })).addTest(new _index.Test({ arg: NaN, method: 'isNill' })).addTest(new _index.Test({ arg: 5, method: 'isNotNill' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNill' })).addTest(new _index.Test({ arg: null, method: 'isNotNill' })).addTest(new _index.Test({ arg: NaN, method: 'isNotNill' })).drawResult();
+
+	testUnit_5.addTest(new _index.Test({ arg: 5, method: 'isNaN' })).addTest(new _index.Test({ arg: undefined, method: 'isNaN' })).addTest(new _index.Test({ arg: null, method: 'isNaN' })).addTest(new _index.Test({ arg: NaN, method: 'isNaN' })).addTest(new _index.Test({ arg: 5, method: 'isNotNaN' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNaN' })).addTest(new _index.Test({ arg: null, method: 'isNotNaN' })).addTest(new _index.Test({ arg: NaN, method: 'isNotNaN' })).drawResult();
+
+	testUnit_6.addTest(new _index.Test({ arg: 5, method: 'isTrue' })).addTest(new _index.Test({ arg: undefined, method: 'isTrue' })).addTest(new _index.Test({ arg: null, method: 'isTrue' })).addTest(new _index.Test({ arg: NaN, method: 'isTrue' })).addTest(new _index.Test({ arg: 0, method: 'isTrue' })).addTest(new _index.Test({ arg: '', method: 'isTrue' })).addTest(new _index.Test({ arg: 'true', method: 'isTrue' })).addTest(new _index.Test({ arg: 'false', method: 'isTrue' })).addTest(new _index.Test({ arg: true, method: 'isTrue' })).addTest(new _index.Test({ arg: false, method: 'isTrue' })).addTest(new _index.Test({ arg: 5, method: 'isFalse' })).addTest(new _index.Test({ arg: undefined, method: 'isFalse' })).addTest(new _index.Test({ arg: null, method: 'isFalse' })).addTest(new _index.Test({ arg: NaN, method: 'isFalse' })).addTest(new _index.Test({ arg: 0, method: 'isFalse' })).addTest(new _index.Test({ arg: '', method: 'isFalse' })).addTest(new _index.Test({ arg: 'true', method: 'isFalse' })).addTest(new _index.Test({ arg: 'false', method: 'isFalse' })).addTest(new _index.Test({ arg: true, method: 'isFalse' })).addTest(new _index.Test({ arg: false, method: 'isFalse' })).drawResult();
 
 /***/ },
 /* 1 */
@@ -429,6 +445,96 @@
 	  }
 	});
 
+	var _exist = __webpack_require__(15);
+
+	Object.defineProperty(exports, 'exist', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_exist).default;
+	  }
+	});
+
+	var _notExist = __webpack_require__(16);
+
+	Object.defineProperty(exports, 'notExist', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_notExist).default;
+	  }
+	});
+
+	var _isNull = __webpack_require__(17);
+
+	Object.defineProperty(exports, 'isNull', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_isNull).default;
+	  }
+	});
+
+	var _isNotNull = __webpack_require__(18);
+
+	Object.defineProperty(exports, 'isNotNull', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_isNotNull).default;
+	  }
+	});
+
+	var _isNill = __webpack_require__(19);
+
+	Object.defineProperty(exports, 'isNill', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_isNill).default;
+	  }
+	});
+
+	var _isNotNill = __webpack_require__(20);
+
+	Object.defineProperty(exports, 'isNotNill', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_isNotNill).default;
+	  }
+	});
+
+	var _isNaN = __webpack_require__(21);
+
+	Object.defineProperty(exports, 'isNaN', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_isNaN).default;
+	  }
+	});
+
+	var _isNotNaN = __webpack_require__(22);
+
+	Object.defineProperty(exports, 'isNotNaN', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_isNotNaN).default;
+	  }
+	});
+
+	var _isTrue = __webpack_require__(23);
+
+	Object.defineProperty(exports, 'isTrue', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_isTrue).default;
+	  }
+	});
+
+	var _isFalse = __webpack_require__(24);
+
+	Object.defineProperty(exports, 'isFalse', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_isFalse).default;
+	  }
+	});
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
@@ -448,7 +554,7 @@
 	 * @param {array} [test#args] - array of arguments that function get.
 	 * @param {*} test#expectation - expected result value.
 	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {boolean}
+	 * @return {object}
 	 */
 	function isEqual(method) {
 	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -480,7 +586,7 @@
 	 * @param {array} [test#args] - array of arguments that function get.
 	 * @param {*} test#expectation - expected result value.
 	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {boolean}
+	 * @return {object}
 	 */
 	function isEqualNonStrict(method) {
 	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -745,6 +851,300 @@
 		for (var i = 0; i < len; ++i) {
 			zeros.push(0);
 		}return ('' + zeros.join('') + num).substr(-len);
+	}
+
+/***/ },
+/* 15 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = exist;
+	/**
+	 * Test method that checks if test method's result is not undefined, but may be a null, NaN, or others.
+	 * @param {function} method - testing method.
+	 * @param {object} test - test`s object.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {object}
+	 */
+	function exist(method) {
+	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	  var args = test.args;
+
+
+	  var result = method.apply(context, args);
+
+	  return { result: result, success: result !== undefined };
+	}
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = notExist;
+	/**
+	 * Test method that checks if test method's result is undefined.
+	 * @param {function} method - testing method.
+	 * @param {object} test - test`s object.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {object}
+	 */
+	function notExist(method) {
+	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	  var args = test.args;
+
+
+	  var result = method.apply(context, args);
+
+	  return { result: result, success: result === undefined };
+	}
+
+/***/ },
+/* 17 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = isNull;
+	/**
+	 * Test method that checks if test method's result is null.
+	 * @param {function} method - testing method.
+	 * @param {object} test - test`s object.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {object}
+	 */
+	function isNull(method) {
+	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	  var args = test.args;
+
+
+	  var result = method.apply(context, args);
+
+	  return { result: result, success: result === null };
+	}
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = isNotNull;
+	/**
+	 * Test method that checks if test method's result is not null.
+	 * @param {function} method - testing method.
+	 * @param {object} test - test`s object.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {object}
+	 */
+	function isNotNull(method) {
+	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	  var args = test.args;
+
+
+	  var result = method.apply(context, args);
+
+	  return { result: result, success: result !== null };
+	}
+
+/***/ },
+/* 19 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = isNill;
+	/**
+	 * Test method that checks if test method's result is null or undefined.
+	 * @param {function} method - testing method.
+	 * @param {object} test - test`s object.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {object}
+	 */
+	function isNill(method) {
+	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	  var args = test.args;
+
+
+	  var result = method.apply(context, args);
+
+	  return { result: result, success: result === null || result === undefined };
+	}
+
+/***/ },
+/* 20 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = isNotNill;
+	/**
+	 * Test method that checks if test method's result is not null nor undefined.
+	 * @param {function} method - testing method.
+	 * @param {object} test - test`s object.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {object}
+	 */
+	function isNotNill(method) {
+	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	  var args = test.args;
+
+
+	  var result = method.apply(context, args);
+
+	  return { result: result, success: result !== null && result !== undefined };
+	}
+
+/***/ },
+/* 21 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = isNaN;
+
+	/**
+	 * Test method that checks if test method's result is NaN.
+	 * @param {function} method - testing method.
+	 * @param {object} test - test`s object.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {object}
+	 */
+	function isNaN(method) {
+	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	  var args = test.args;
+
+
+	  var result = method.apply(context, args);
+
+	  return { result: result, success: result !== result };
+	}
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = isNaN;
+
+	/**
+	 * Test method that checks if test method's result is not NaN.
+	 * @param {function} method - testing method.
+	 * @param {object} test - test`s object.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {object}
+	 */
+	function isNaN(method) {
+	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	  var args = test.args;
+
+
+	  var result = method.apply(context, args);
+
+	  return { result: result, success: result === result };
+	}
+
+/***/ },
+/* 23 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = isTrue;
+
+	/**
+	 * Test method that checks if test method's result is interpreted as true.
+	 * @param {function} method - testing method.
+	 * @param {object} test - test`s object.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {object}
+	 */
+	function isTrue(method) {
+	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	  var args = test.args;
+
+
+	  var result = method.apply(context, args);
+
+	  return { result: result, success: !!result };
+	}
+
+/***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = isFalse;
+
+	/**
+	 * Test method that checks if test method's result is interpreted as false.
+	 * @param {function} method - testing method.
+	 * @param {object} test - test`s object.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {object}
+	 */
+	function isFalse(method) {
+	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	  var args = test.args;
+
+
+	  var result = method.apply(context, args);
+
+	  return { result: result, success: !result };
 	}
 
 /***/ }
