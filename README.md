@@ -26,7 +26,7 @@ Library for simple creating unit tests.
 ## Instalation
 The product is not published yet. The only way to use it is to copy from repository
 ```bash
-git clone [https://github.com/kuznetsovlv/unit.git](https://github.com/kuznetsovlv/unit.git)
+git clone https://github.com/kuznetsovlv/unit.git
 ```
 move to the products directory
 ```bash
