@@ -8,7 +8,7 @@
  * @return {object}
  */
 export default function isNaN (method, test = {}, context = {}) {
-	const {args} = test;
+	const {args = []} = test;
 
 	const result = method.apply(context, args);
 

@@ -8,7 +8,7 @@
  * @return {object}
  */
 export default function isTrue (method, test = {}, context = {}) {
-	const {args} = test;
+	const {args = []} = test;
 
 	const result = method.apply(context, args);
 

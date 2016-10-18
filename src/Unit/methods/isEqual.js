@@ -8,7 +8,7 @@
  * @return {object}
  */
 export default function isEqual (method, test = {}, context = {}) {
-	const {args, expectation} = test;
+	const {args = [], expectation} = test;
 
 	const result = method.apply(context, args);
 
