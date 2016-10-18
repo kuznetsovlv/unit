@@ -8,7 +8,10 @@
  */
 export default class Test {
 	constructor (test = {}) {
-		const {arg, args, expectation, method = ''} = test;
+		const {arg, args, expectation, method} = test;
+
+		if (!method)
+			throw new Error("Verification method is not specified");
 
 		if (args && !(args instanceof Array))
 			throw new Error("args must be an Array or not defined");

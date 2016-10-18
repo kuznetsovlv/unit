@@ -523,9 +523,10 @@
 		var arg = test.arg;
 		var args = test.args;
 		var expectation = test.expectation;
-		var _test$method = test.method;
-		var method = _test$method === undefined ? '' : _test$method;
+		var method = test.method;
 
+
+		if (!method) throw new Error("Verification method is not specified");
 
 		if (args && !(args instanceof Array)) throw new Error("args must be an Array or not defined");
 
