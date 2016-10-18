@@ -106,5 +106,6 @@ const test = new Test({
 
 ### [Verification Methods.](#verification)
 * [isEqual](#verification_isequal). Available for simple data types. Checks if returned value is equal to expeted value. Method uses a strict equality check.
+
 ---
 ---
