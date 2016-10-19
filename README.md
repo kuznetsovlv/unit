@@ -34,6 +34,7 @@ Library for simple creating unit tests.
 		* _isTrue_
 		* _isFalse_
 		* _isTypeOf_
+		* _isInstanceOf_
 
 ## Instalation
 The product is not published yet. The only way to use it is to copy from repository
