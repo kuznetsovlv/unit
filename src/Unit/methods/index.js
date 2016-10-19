@@ -10,3 +10,5 @@ export {default as isNaN}				from './isNaN';
 export {default as isNotNaN}			from './isNotNaN';
 export {default as isTrue}				from './isTrue';
 export {default as isFalse}				from './isFalse';
+export {default as isTypeOf}			from './isTypeOf';
+export {default as isInstanceOf}		from './isInstanceOf';

@@ -33,6 +33,7 @@ Library for simple creating unit tests.
 		* _isNotNaN_
 		* _isTrue_
 		* _isFalse_
+		* _isTypeOf_
 
 ## Instalation
 The product is not published yet. The only way to use it is to copy from repository
@@ -121,4 +122,6 @@ const test = new Test({
 * _isNaN_. Checks if returned value is `NaN`.
 * _isNotNaN_. Checks if returned value is not `NaN`.
 * _isTrue_. Checks if returned value can be interpreted as `true`.
-* isFalse. Checks if returned value can be interpreted as `false`.
+* _isFalse_. Checks if returned value can be interpreted as `false`.
+* _isTypeOf_. Checks if returned value`s type is equal to `expectation`.
+* _isInstanceOf_. Checks if returned value is instance of `expectation`.

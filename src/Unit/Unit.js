@@ -9,11 +9,17 @@ import {dateDiff, msToHR}				from '../lib/date';
  * @return {string}
  */
 function argToStr (arg) {
+	if (typeof arg === 'function')
+		return arg.name || arg.toLocaleString() || arg.toString();
+
 	if (!arg || typeof arg !== 'object')
 		return `${arg}`;
 
 	if (arg instanceof Array)
 		return `[${arg.map(x => argToStr(x)).join(', ')}]`;
+
+	if ((arg.prototype || arg).toString !== Object.prototype.toString)
+		return arg.toString();
 
 	const keys = [];
 
@@ -54,6 +60,27 @@ function argsToStr (args = []) {
  	}
 
  	return str.join(' ');
+ }
+
+ /**
+  * Describes expectation.
+  * @param {object} result - result object.
+  * @return {string}
+  */
+ function describeExpectation (result = {}) {
+ 	const {expectation, method} = result;
+
+ 	if (!('expectation' in result))
+ 		return '';
+
+ 	const endStr = `${fontColors.Magenta}${argToStr(expectation)}${fontColors.Yellow}.`;
+
+ 	switch (method) {
+ 		case 'isTypeOf': return `Expected that value is type of ${endStr}`;
+ 		case 'isInstanceOf': return `Expected that value is instance of ${endStr}`;
+ 		default: return `Expected value is ${endStr}`;
+ 	}
+
  }
 
 /**
@@ -175,7 +202,7 @@ export default class Unit {
 
 				const str1 = `${fontColors.Blue}${i}. ${fontColors.Yellow}Function called with ${argsToStr(args)}${fontColors.Yellow}.`;
 				const str2 = `${fontColors.Yellow}Function checked by method ${fontColors.Magenta}${method}${fontColors.Yellow}.`;
-				const str3 = 'expectation' in result ? `Expected value is ${fontColors.Magenta}${argToStr(expectation)}${fontColors.Yellow}.` : '';
+				const str3 = describeExpectation(result);
 				const str4 = parseRes(res);
 
 				console.log(`${str1} ${str2} ${str3 ? str3 : ''} ${str4}`.replace(/\s+/g, ' '));

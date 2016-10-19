@@ -50,50 +50,14 @@
 
 	var testUnit_1 = new _index.Unit(function (x) {
 	          return x;
-	}, 'Compare "isEqual" and "isEqualNonStrict"');
+	}, 'Check "isTypeOf"');
 	var testUnit_2 = new _index.Unit(function (x) {
 	          return x;
-	}, 'Check methods "exist" and "notExist"');
-	var testUnit_3 = new _index.Unit(function (x) {
-	          return x;
-	}, 'Check methods "isNull" and "isNotNull"');
-	var testUnit_4 = new _index.Unit(function (x) {
-	          return x;
-	}, 'Check methods "isNill" and "isNotNill"');
-	var testUnit_5 = new _index.Unit(function (x) {
-	          return x;
-	}, 'Check methods "isNaN" and "isNotNaN"');
-	var testUnit_6 = new _index.Unit(function (x) {
-	          return x;
-	}, 'Check methods "isTrue" and "isFalse"');
+	}, 'Check methods "isInstanceOf"');
 
-	testUnit_1.addTest(new _index.Test({
-	          arg: 5,
-	          expectation: 5,
-	          method: 'isEqual'
-	})).addTest(new _index.Test({
-	          arg: 5,
-	          expectation: '5',
-	          method: 'isEqual'
-	})).addTest(new _index.Test({
-	          arg: 5,
-	          expectation: 5,
-	          method: 'isEqualNonStrict'
-	})).addTest(new _index.Test({
-	          arg: 5,
-	          expectation: '5',
-	          method: 'isEqualNonStrict'
-	})).drawResult();
+	testUnit_1.addTest(new _index.Test({ arg: 5, method: 'isTypeOf', expectation: 'Object' })).addTest(new _index.Test({ arg: 5, method: 'isTypeOf', expectation: 'number' })).addTest(new _index.Test({ arg: 5, method: 'isTypeOf', expectation: 'string' })).addTest(new _index.Test({ arg: '5', method: 'isTypeOf', expectation: 'number' })).addTest(new _index.Test({ arg: '5', method: 'isTypeOf', expectation: 'string' })).addTest(new _index.Test({ arg: undefined, method: 'isTypeOf', expectation: 'undefined' })).addTest(new _index.Test({ arg: undefined, method: 'isTypeOf', expectation: 'object' })).addTest(new _index.Test({ arg: null, method: 'isTypeOf', expectation: 'null' })).addTest(new _index.Test({ arg: null, method: 'isTypeOf', expectation: 'object' })).addTest(new _index.Test({ arg: NaN, method: 'isTypeOf', expectation: 'NaN' })).addTest(new _index.Test({ arg: NaN, method: 'isTypeOf', expectation: 'object' })).addTest(new _index.Test({ arg: NaN, method: 'isTypeOf', expectation: 'number' })).addTest(new _index.Test({ arg: {}, method: 'isTypeOf', expectation: 'object' })).addTest(new _index.Test({ arg: { a: 2 }, method: 'isTypeOf', expectation: 'object' })).addTest(new _index.Test({ arg: [1, 2, 3], method: 'isTypeOf', expectation: 'object' })).addTest(new _index.Test({ arg: [1, 2, 3], method: 'isTypeOf', expectation: 'array' })).addTest(new _index.Test({ arg: new Date(), method: 'isTypeOf', expectation: 'object' })).addTest(new _index.Test({ arg: new Date().toString(), method: 'isTypeOf', expectation: 'string' })).addTest(new _index.Test({ arg: new Date().toString(), method: 'isTypeOf', expectation: 'object' })).drawResult();
 
-	testUnit_2.addTest(new _index.Test({ arg: 5, method: 'exist' })).addTest(new _index.Test({ arg: undefined, method: 'exist' })).addTest(new _index.Test({ arg: null, method: 'exist' })).addTest(new _index.Test({ arg: NaN, method: 'exist' })).addTest(new _index.Test({ arg: 5, method: 'notExist' })).addTest(new _index.Test({ arg: undefined, method: 'notExist' })).addTest(new _index.Test({ arg: null, method: 'notExist' })).addTest(new _index.Test({ arg: NaN, method: 'notExist' })).drawResult();
-
-	testUnit_3.addTest(new _index.Test({ arg: 5, method: 'isNull' })).addTest(new _index.Test({ arg: undefined, method: 'isNull' })).addTest(new _index.Test({ arg: null, method: 'isNull' })).addTest(new _index.Test({ arg: NaN, method: 'isNull' })).addTest(new _index.Test({ arg: 5, method: 'isNotNull' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNull' })).addTest(new _index.Test({ arg: null, method: 'isNotNull' })).addTest(new _index.Test({ arg: NaN, method: 'isNotNull' })).drawResult();
-
-	testUnit_4.addTest(new _index.Test({ arg: 5, method: 'isNill' })).addTest(new _index.Test({ arg: undefined, method: 'isNill' })).addTest(new _index.Test({ arg: null, method: 'isNill' })).addTest(new _index.Test({ arg: NaN, method: 'isNill' })).addTest(new _index.Test({ arg: 5, method: 'isNotNill' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNill' })).addTest(new _index.Test({ arg: null, method: 'isNotNill' })).addTest(new _index.Test({ arg: NaN, method: 'isNotNill' })).drawResult();
-
-	testUnit_5.addTest(new _index.Test({ arg: 5, method: 'isNaN' })).addTest(new _index.Test({ arg: undefined, method: 'isNaN' })).addTest(new _index.Test({ arg: null, method: 'isNaN' })).addTest(new _index.Test({ arg: NaN, method: 'isNaN' })).addTest(new _index.Test({ arg: 5, method: 'isNotNaN' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNaN' })).addTest(new _index.Test({ arg: null, method: 'isNotNaN' })).addTest(new _index.Test({ arg: NaN, method: 'isNotNaN' })).drawResult();
-
-	testUnit_6.addTest(new _index.Test({ arg: 5, method: 'isTrue' })).addTest(new _index.Test({ arg: undefined, method: 'isTrue' })).addTest(new _index.Test({ arg: null, method: 'isTrue' })).addTest(new _index.Test({ arg: NaN, method: 'isTrue' })).addTest(new _index.Test({ arg: 0, method: 'isTrue' })).addTest(new _index.Test({ arg: '', method: 'isTrue' })).addTest(new _index.Test({ arg: 'true', method: 'isTrue' })).addTest(new _index.Test({ arg: 'false', method: 'isTrue' })).addTest(new _index.Test({ arg: true, method: 'isTrue' })).addTest(new _index.Test({ arg: false, method: 'isTrue' })).addTest(new _index.Test({ arg: 5, method: 'isFalse' })).addTest(new _index.Test({ arg: undefined, method: 'isFalse' })).addTest(new _index.Test({ arg: null, method: 'isFalse' })).addTest(new _index.Test({ arg: NaN, method: 'isFalse' })).addTest(new _index.Test({ arg: 0, method: 'isFalse' })).addTest(new _index.Test({ arg: '', method: 'isFalse' })).addTest(new _index.Test({ arg: 'true', method: 'isFalse' })).addTest(new _index.Test({ arg: 'false', method: 'isFalse' })).addTest(new _index.Test({ arg: true, method: 'isFalse' })).addTest(new _index.Test({ arg: false, method: 'isFalse' })).drawResult();
+	testUnit_2.addTest(new _index.Test({ arg: 5, method: 'isInstanceOf', expectation: Object })).addTest(new _index.Test({ arg: 5, method: 'isInstanceOf', expectation: Number })).addTest(new _index.Test({ arg: 5, method: 'isInstanceOf', expectation: String })).addTest(new _index.Test({ arg: '5', method: 'isInstanceOf', expectation: String })).addTest(new _index.Test({ arg: NaN, method: 'isInstanceOf', expectation: Number })).addTest(new _index.Test({ arg: {}, method: 'isInstanceOf', expectation: Object })).addTest(new _index.Test({ arg: { a: 2 }, method: 'isInstanceOf', expectation: Object })).addTest(new _index.Test({ arg: [1, 2, 3], method: 'isInstanceOf', expectation: Object })).addTest(new _index.Test({ arg: [1, 2, 3], method: 'isInstanceOf', expectation: Array })).addTest(new _index.Test({ arg: new Date(), method: 'isInstanceOf', expectation: Object })).addTest(new _index.Test({ arg: new Date(), method: 'isInstanceOf', expectation: Date })).addTest(new _index.Test({ arg: {}, method: 'isInstanceOf', expectation: Array })).addTest(new _index.Test({ arg: {}, method: 'isInstanceOf', expectation: Date })).drawResult();
 
 /***/ },
 /* 1 */
@@ -183,11 +147,15 @@
 	 * @return {string}
 	 */
 	function argToStr(arg) {
+		if (typeof arg === 'function') return arg.name || arg.toLocaleString() || arg.toString();
+
 		if (!arg || (typeof arg === 'undefined' ? 'undefined' : _typeof(arg)) !== 'object') return '' + arg;
 
 		if (arg instanceof Array) return '[' + arg.map(function (x) {
 			return argToStr(x);
 		}).join(', ') + ']';
+
+		if ((arg.prototype || arg).toString !== Object.prototype.toString) return arg.toString();
 
 		var keys = [];
 
@@ -233,6 +201,31 @@
 		}
 
 		return str.join(' ');
+	}
+
+	/**
+	 * Describes expectation.
+	 * @param {object} result - result object.
+	 * @return {string}
+	 */
+	function describeExpectation() {
+		var result = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+		var expectation = result.expectation;
+		var method = result.method;
+
+
+		if (!('expectation' in result)) return '';
+
+		var endStr = '' + _styles.fontColors.Magenta + argToStr(expectation) + _styles.fontColors.Yellow + '.';
+
+		switch (method) {
+			case 'isTypeOf':
+				return 'Expected that value is type of ' + endStr;
+			case 'isInstanceOf':
+				return 'Expected that value is instance of ' + endStr;
+			default:
+				return 'Expected value is ' + endStr;
+		}
 	}
 
 	/**
@@ -392,7 +385,7 @@
 
 							var str1 = '' + _styles.fontColors.Blue + i + '. ' + _styles.fontColors.Yellow + 'Function called with ' + argsToStr(args) + _styles.fontColors.Yellow + '.';
 							var str2 = _styles.fontColors.Yellow + 'Function checked by method ' + _styles.fontColors.Magenta + method + _styles.fontColors.Yellow + '.';
-							var str3 = 'expectation' in result ? 'Expected value is ' + _styles.fontColors.Magenta + argToStr(expectation) + _styles.fontColors.Yellow + '.' : '';
+							var str3 = describeExpectation(result);
 							var str4 = parseRes(res);
 
 							console.log((str1 + ' ' + str2 + ' ' + (str3 ? str3 : '') + ' ' + str4).replace(/\s+/g, ' '));
@@ -532,6 +525,24 @@
 	  enumerable: true,
 	  get: function get() {
 	    return _interopRequireDefault(_isFalse).default;
+	  }
+	});
+
+	var _isTypeOf = __webpack_require__(25);
+
+	Object.defineProperty(exports, 'isTypeOf', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_isTypeOf).default;
+	  }
+	});
+
+	var _isInstanceOf = __webpack_require__(26);
+
+	Object.defineProperty(exports, 'isInstanceOf', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_isInstanceOf).default;
 	  }
 	});
 
@@ -1157,6 +1168,73 @@
 		for (var i = 0; i < len; ++i) {
 			zeros.push(0);
 		}return ('' + zeros.join('') + num).substr(-len);
+	}
+
+/***/ },
+/* 25 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+	exports.default = isTypeOf;
+	/**
+	 * Test method that checks if test method's result's data type is equal to expectation.
+	 * @param {function} method - testing method.
+	 * @param {object} test - test`s object.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {string} test#expectation - expected result value.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {object}
+	 */
+	function isTypeOf(method) {
+	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	  var _test$args = test.args;
+	  var args = _test$args === undefined ? [] : _test$args;
+	  var expectation = test.expectation;
+
+
+	  var result = method.apply(context, args);
+
+	  return { result: result, success: (typeof result === "undefined" ? "undefined" : _typeof(result)) === expectation };
+	}
+
+/***/ },
+/* 26 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = isInstanceOf;
+	/**
+	 * Test method that checks if test method's result is instance of expectation.
+	 * @param {function} method - testing method.
+	 * @param {object} test - test`s object.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {function} test#expectation - expected result value.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {object}
+	 */
+	function isInstanceOf(method) {
+	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	  var _test$args = test.args;
+	  var args = _test$args === undefined ? [] : _test$args;
+	  var expectation = test.expectation;
+
+
+	  var result = method.apply(context, args);
+
+	  return { result: result, success: result instanceof expectation };
 	}
 
 /***/ }
