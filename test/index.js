@@ -134,7 +134,7 @@
 	  }
 	});
 
-	var _Test = __webpack_require__(19);
+	var _Test = __webpack_require__(23);
 
 	Object.defineProperty(exports, 'Test', {
 	  enumerable: true,
@@ -183,13 +183,13 @@
 
 	var methods = _interopRequireWildcard(_methods);
 
-	var _Test = __webpack_require__(19);
+	var _Test = __webpack_require__(23);
 
 	var _Test2 = _interopRequireDefault(_Test);
 
-	var _styles = __webpack_require__(21);
+	var _styles = __webpack_require__(25);
 
-	var _date = __webpack_require__(24);
+	var _date = __webpack_require__(28);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -605,7 +605,7 @@
 	  }
 	});
 
-	var _isSameStructure = __webpack_require__(27);
+	var _isSameStructure = __webpack_require__(19);
 
 	Object.defineProperty(exports, 'isSameStructure', {
 	  enumerable: true,
@@ -614,7 +614,7 @@
 	  }
 	});
 
-	var _isSameNotOrderedStructure = __webpack_require__(30);
+	var _isSameNotOrderedStructure = __webpack_require__(22);
 
 	Object.defineProperty(exports, 'isSameNotOrderedStructure', {
 	  enumerable: true,
@@ -636,7 +636,7 @@
 	});
 	exports.default = isEqual;
 	/**
-	 * Test method that checks if test method's result is equal to expected value.
+	 * Test method that checks if tested method's result is equal to expected value.
 	 * @param {function} method - testing method.
 	 * @param {object} test - test`s object.
 	 * @param {array} [test#args] - array of arguments that function get.
@@ -668,7 +668,7 @@
 	});
 	exports.default = isEqualNonStrict;
 	/**
-	 * Test method that checks if test method's result is equal to expected value.
+	 * Test method that checks if tested method's result is equal to expected value.
 	 * Method uses nonstrict comparison.
 	 * @param {function} method - testing method.
 	 * @param {object} test - test`s object.
@@ -701,7 +701,7 @@
 	});
 	exports.default = exist;
 	/**
-	 * Test method that checks if test method's result is not undefined, but may be a null, NaN, or others.
+	 * Test method that checks if tested method's result is not undefined, but may be a null, NaN, or others.
 	 * @param {function} method - testing method.
 	 * @param {object} test - test`s object.
 	 * @param {array} [test#args] - array of arguments that function get.
@@ -731,7 +731,7 @@
 	});
 	exports.default = notExist;
 	/**
-	 * Test method that checks if test method's result is undefined.
+	 * Test method that checks if tested method's result is undefined.
 	 * @param {function} method - testing method.
 	 * @param {object} test - test`s object.
 	 * @param {array} [test#args] - array of arguments that function get.
@@ -761,7 +761,7 @@
 	});
 	exports.default = isNull;
 	/**
-	 * Test method that checks if test method's result is null.
+	 * Test method that checks if tested method's result is null.
 	 * @param {function} method - testing method.
 	 * @param {object} test - test`s object.
 	 * @param {array} [test#args] - array of arguments that function get.
@@ -791,7 +791,7 @@
 	});
 	exports.default = isNotNull;
 	/**
-	 * Test method that checks if test method's result is not null.
+	 * Test method that checks if tested method's result is not null.
 	 * @param {function} method - testing method.
 	 * @param {object} test - test`s object.
 	 * @param {array} [test#args] - array of arguments that function get.
@@ -821,7 +821,7 @@
 	});
 	exports.default = isNill;
 	/**
-	 * Test method that checks if test method's result is null or undefined.
+	 * Test method that checks if tested method's result is null or undefined.
 	 * @param {function} method - testing method.
 	 * @param {object} test - test`s object.
 	 * @param {array} [test#args] - array of arguments that function get.
@@ -851,7 +851,7 @@
 	});
 	exports.default = isNotNill;
 	/**
-	 * Test method that checks if test method's result is not null nor undefined.
+	 * Test method that checks if tested method's result is not null nor undefined.
 	 * @param {function} method - testing method.
 	 * @param {object} test - test`s object.
 	 * @param {array} [test#args] - array of arguments that function get.
@@ -882,7 +882,7 @@
 	exports.default = isNaN;
 
 	/**
-	 * Test method that checks if test method's result is NaN.
+	 * Test method that checks if tested method's result is NaN.
 	 * @param {function} method - testing method.
 	 * @param {object} test - test`s object.
 	 * @param {array} [test#args] - array of arguments that function get.
@@ -913,7 +913,7 @@
 	exports.default = isNaN;
 
 	/**
-	 * Test method that checks if test method's result is not NaN.
+	 * Test method that checks if tested method's result is not NaN.
 	 * @param {function} method - testing method.
 	 * @param {object} test - test`s object.
 	 * @param {array} [test#args] - array of arguments that function get.
@@ -944,7 +944,7 @@
 	exports.default = isTrue;
 
 	/**
-	 * Test method that checks if test method's result is interpreted as true.
+	 * Test method that checks if tested method's result is interpreted as true.
 	 * @param {function} method - testing method.
 	 * @param {object} test - test`s object.
 	 * @param {array} [test#args] - array of arguments that function get.
@@ -975,7 +975,7 @@
 	exports.default = isFalse;
 
 	/**
-	 * Test method that checks if test method's result is interpreted as false.
+	 * Test method that checks if tested method's result is interpreted as false.
 	 * @param {function} method - testing method.
 	 * @param {object} test - test`s object.
 	 * @param {array} [test#args] - array of arguments that function get.
@@ -1008,7 +1008,7 @@
 
 	exports.default = isTypeOf;
 	/**
-	 * Test method that checks if test method's result's data type is equal to expectation.
+	 * Test method that checks if tested method's result's data type is equal to expectation.
 	 * @param {function} method - testing method.
 	 * @param {object} test - test`s object.
 	 * @param {array} [test#args] - array of arguments that function get.
@@ -1040,7 +1040,7 @@
 	});
 	exports.default = isInstanceOf;
 	/**
-	 * Test method that checks if test method's result is instance of expectation.
+	 * Test method that checks if tested method's result is instance of expectation.
 	 * @param {function} method - testing method.
 	 * @param {object} test - test`s object.
 	 * @param {array} [test#args] - array of arguments that function get.
@@ -1070,269 +1070,16 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = undefined;
-
-	var _Test = __webpack_require__(20);
-
-	var _Test2 = _interopRequireDefault(_Test);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _Test2.default;
-
-/***/ },
-/* 20 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	/**
-	 * Class to create test.
-	 * @param {object} test - test`s object.
-	 * @param {*} [test#arg] - argument that function get.
-	 * @param {array} [test#args] - array of arguments that function get.
-	 * @param {*} test#expectation - expected result value.
-	 * @param {string} test#method - method name.
-	 */
-	var Test = function Test() {
-		var test = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-		_classCallCheck(this, Test);
-
-		var arg = test.arg;
-		var args = test.args;
-		var expectation = test.expectation;
-		var method = test.method;
-
-
-		if (!method) throw new Error("Verification method is not specified");
-
-		if (args && !(args instanceof Array)) throw new Error("args must be an Array or not defined");
-
-		this.args = args || [arg];
-
-		this.expectation = expectation;
-
-		this.method = method;
-	};
-
-	exports.default = Test;
-
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.bgColors = exports.fontColors = exports.common = undefined;
-
-	var _common2 = __webpack_require__(22);
-
-	var _common = _interopRequireWildcard(_common2);
-
-	var _colors = __webpack_require__(23);
-
-	var _colors2 = _interopRequireDefault(_colors);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	function toFormat() {
-		var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-		var res = {};
-
-		for (var key in obj) {
-			res[key] = "\x1B[" + obj[key] + "m";
-		}return res;
-	}
-
-	function setColors() {
-		var colors = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-		var shift = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-
-		var colorList = {};
-
-		colors.forEach(function (color, i) {
-			colorList[color] = i + shift;
-		});
-
-		return colorList;
-	}
-
-	var common = exports.common = toFormat(_common);
-	var fontColors = exports.fontColors = toFormat(setColors(_colors2.default, 30));
-	var bgColors = exports.bgColors = toFormat(setColors(_colors2.default, 40));
-
-/***/ },
-/* 22 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var Reset = exports.Reset = 0;
-	var Bright = exports.Bright = 1;
-	var Dim = exports.Dim = 2;
-	var Underscore = exports.Underscore = 4;
-	var Blink = exports.Blink = 5;
-	var Reverse = exports.Reverse = 7;
-	var Hidden = exports.Hidden = 8;
-
-/***/ },
-/* 23 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = 'Black,Red,Green,Yellow,Blue,Magenta,Cyan,White'.split(',');
-
-/***/ },
-/* 24 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.dateDiff = undefined;
-	exports.msToHR = msToHR;
-
-	var _dd = __webpack_require__(25);
-
-	var _dd2 = _interopRequireDefault(_dd);
-
-	var _n = __webpack_require__(26);
-
-	var _n2 = _interopRequireDefault(_n);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/**
-	 * Calculetes absolute difference between two dates.
-	 * @param {Date} d1 - first date.
-	 * @param {Date} d2 - second date.
-	 * @return {number} - number of ms between two dates.
-	 */
-	var dateDiff = exports.dateDiff = function dateDiff(d1, d2) {
-		return Math.abs(d1.getTime() - d2.getTime());
-	};
-
-	/**
-	 * Converts number of milliseconds to human readable period.
-	 * @param {number} ms - number of milliseconds.
-	 * @return {string} - human readable period.
-	 */
-	function msToHR() {
-		var ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-
-		var milliseconds = ms % 1000;
-		ms = (0, _dd2.default)(ms, 1000);
-
-		var seconds = ms % 60;
-		ms = (0, _dd2.default)(ms, 60);
-
-		var minutes = ms % 60;
-		ms = (0, _dd2.default)(ms, 60);
-
-		var hours = ms % 24;
-		var days = (0, _dd2.default)(ms, 24);
-
-		var str = [];
-
-		if (days) str.push(days + ' day' + (days > 1 ? 's' : ''));
-		if (hours || days) str.push((0, _n2.default)(hours, 2) + ' h');
-		if (minutes || hours || days) str.push((0, _n2.default)(minutes) + ' m');
-		if (seconds || minutes || hours || days) str.push((0, _n2.default)(seconds, 2) + ' s');
-		str.push((0, _n2.default)(milliseconds, 3) + ' ms');
-
-		return str.join(' ');
-	}
-
-/***/ },
-/* 25 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = dd;
-	/**
-	 * Divisible division method.
-	 * @param {number} n - dividend.
-	 * @param {number} div - divider.
-	 * @return {number} quotient.
-	 */
-	function dd(n, div) {
-	  return n / div >> 0;
-	}
-
-/***/ },
-/* 26 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.default = n;
-	/**
-	 * Formats number to stundard length;
-	 * @param {number} num - number to be formated.
-	 * @param {number} len - needed length;
-	 * @return {string} - formated number.
-	 */
-	function n() {
-		var num = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-		var len = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-
-		if (len < 1) len = 1;
-
-		var zeros = [];
-
-		for (var i = 0; i < len; ++i) {
-			zeros.push(0);
-		}return ('' + zeros.join('') + num).substr(-len);
-	}
-
-/***/ },
-/* 27 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 	exports.default = isSameStructure;
 
-	var _isSame = __webpack_require__(28);
+	var _isSame = __webpack_require__(20);
 
 	var _isSame2 = _interopRequireDefault(_isSame);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
-	 * Test method that checks if test method's result's data has same structure with expectation.
+	 * Test method that checks if tesed method's result's data has same structure with expectation.
 	 * @param {function} method - testing method.
 	 * @param {object} test - test`s object.
 	 * @param {array} [test#args] - array of arguments that function get.
@@ -1354,7 +1101,7 @@
 	}
 
 /***/ },
-/* 28 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1367,7 +1114,7 @@
 
 	exports.default = isSame;
 
-	var _keys = __webpack_require__(29);
+	var _keys = __webpack_require__(21);
 
 	var _keys2 = _interopRequireDefault(_keys);
 
@@ -1442,9 +1189,7 @@
 
 	  if (isArr !== r instanceof Array) return false;
 
-	  if (isArr) return isArrSame(l, r, strictOrder);
-
-	  return isObjSame(l, r, strictOrder);
+	  return isArr ? isArrSame(l, r, strictOrder) : isObjSame(l, r, strictOrder);
 	}
 
 	/**
@@ -1493,7 +1238,7 @@
 	}
 
 /***/ },
-/* 29 */
+/* 21 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1518,7 +1263,7 @@
 	}
 
 /***/ },
-/* 30 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1528,14 +1273,14 @@
 	});
 	exports.default = isSameNotOrderedStructure;
 
-	var _isSame = __webpack_require__(28);
+	var _isSame = __webpack_require__(20);
 
 	var _isSame2 = _interopRequireDefault(_isSame);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
-	 * Test method that checks if test method's result's data has same structure with expectation without dependency on order.
+	 * Test method that checks if tested method's result's data has same structure with expectation without dependency on order.
 	 * @param {function} method - testing method.
 	 * @param {object} test - test`s object.
 	 * @param {array} [test#args] - array of arguments that function get.
@@ -1554,6 +1299,259 @@
 	  var result = method.apply(context, args);
 
 	  return { result: result, success: (0, _isSame2.default)(result, expectation, false) };
+	}
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _Test = __webpack_require__(24);
+
+	var _Test2 = _interopRequireDefault(_Test);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _Test2.default;
+
+/***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	/**
+	 * Class to create test.
+	 * @param {object} test - test`s object.
+	 * @param {*} [test#arg] - argument that function get.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {*} test#expectation - expected result value.
+	 * @param {string} test#method - method name.
+	 */
+	var Test = function Test() {
+		var test = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+		_classCallCheck(this, Test);
+
+		var arg = test.arg;
+		var args = test.args;
+		var expectation = test.expectation;
+		var method = test.method;
+
+
+		if (!method) throw new Error("Verification method is not specified");
+
+		if (args && !(args instanceof Array)) throw new Error("args must be an Array or not defined");
+
+		this.args = args || [arg];
+
+		this.expectation = expectation;
+
+		this.method = method;
+	};
+
+	exports.default = Test;
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.bgColors = exports.fontColors = exports.common = undefined;
+
+	var _common2 = __webpack_require__(26);
+
+	var _common = _interopRequireWildcard(_common2);
+
+	var _colors = __webpack_require__(27);
+
+	var _colors2 = _interopRequireDefault(_colors);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function toFormat() {
+		var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+		var res = {};
+
+		for (var key in obj) {
+			res[key] = "\x1B[" + obj[key] + "m";
+		}return res;
+	}
+
+	function setColors() {
+		var colors = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+		var shift = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+		var colorList = {};
+
+		colors.forEach(function (color, i) {
+			colorList[color] = i + shift;
+		});
+
+		return colorList;
+	}
+
+	var common = exports.common = toFormat(_common);
+	var fontColors = exports.fontColors = toFormat(setColors(_colors2.default, 30));
+	var bgColors = exports.bgColors = toFormat(setColors(_colors2.default, 40));
+
+/***/ },
+/* 26 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var Reset = exports.Reset = 0;
+	var Bright = exports.Bright = 1;
+	var Dim = exports.Dim = 2;
+	var Underscore = exports.Underscore = 4;
+	var Blink = exports.Blink = 5;
+	var Reverse = exports.Reverse = 7;
+	var Hidden = exports.Hidden = 8;
+
+/***/ },
+/* 27 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = 'Black,Red,Green,Yellow,Blue,Magenta,Cyan,White'.split(',');
+
+/***/ },
+/* 28 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.dateDiff = undefined;
+	exports.msToHR = msToHR;
+
+	var _dd = __webpack_require__(29);
+
+	var _dd2 = _interopRequireDefault(_dd);
+
+	var _n = __webpack_require__(30);
+
+	var _n2 = _interopRequireDefault(_n);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Calculetes absolute difference between two dates.
+	 * @param {Date} d1 - first date.
+	 * @param {Date} d2 - second date.
+	 * @return {number} - number of ms between two dates.
+	 */
+	var dateDiff = exports.dateDiff = function dateDiff(d1, d2) {
+		return Math.abs(d1.getTime() - d2.getTime());
+	};
+
+	/**
+	 * Converts number of milliseconds to human readable period.
+	 * @param {number} ms - number of milliseconds.
+	 * @return {string} - human readable period.
+	 */
+	function msToHR() {
+		var ms = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+
+		var milliseconds = ms % 1000;
+		ms = (0, _dd2.default)(ms, 1000);
+
+		var seconds = ms % 60;
+		ms = (0, _dd2.default)(ms, 60);
+
+		var minutes = ms % 60;
+		ms = (0, _dd2.default)(ms, 60);
+
+		var hours = ms % 24;
+		var days = (0, _dd2.default)(ms, 24);
+
+		var str = [];
+
+		if (days) str.push(days + ' day' + (days > 1 ? 's' : ''));
+		if (hours || days) str.push((0, _n2.default)(hours, 2) + ' h');
+		if (minutes || hours || days) str.push((0, _n2.default)(minutes) + ' m');
+		if (seconds || minutes || hours || days) str.push((0, _n2.default)(seconds, 2) + ' s');
+		str.push((0, _n2.default)(milliseconds, 3) + ' ms');
+
+		return str.join(' ');
+	}
+
+/***/ },
+/* 29 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = dd;
+	/**
+	 * Divisible division method.
+	 * @param {number} n - dividend.
+	 * @param {number} div - divider.
+	 * @return {number} quotient.
+	 */
+	function dd(n, div) {
+	  return n / div >> 0;
+	}
+
+/***/ },
+/* 30 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = n;
+	/**
+	 * Formats number to stundard length;
+	 * @param {number} num - number to be formated.
+	 * @param {number} len - needed length;
+	 * @return {string} - formated number.
+	 */
+	function n() {
+		var num = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+		var len = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+
+		if (len < 1) len = 1;
+
+		var zeros = [];
+
+		for (var i = 0; i < len; ++i) {
+			zeros.push(0);
+		}return ('' + zeros.join('') + num).substr(-len);
 	}
 
 /***/ }

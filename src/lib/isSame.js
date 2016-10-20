@@ -55,10 +55,7 @@ function isEqObj (l = {}, r = {}, strictOrder = true) {
 	if (isArr !== r instanceof Array)
 		return false;
 
-	if (isArr)
-		return isArrSame(l, r, strictOrder);
-
-	return isObjSame(l, r, strictOrder);
+	return isArr ? isArrSame(l, r, strictOrder) : isObjSame(l, r, strictOrder);
 }
 
 /**
