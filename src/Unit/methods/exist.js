@@ -1,5 +1,5 @@
 /**
- * Test method that checks if test method's result is not undefined, but may be a null, NaN, or others.
+ * Test method that checks if tested method's result is not undefined, but may be a null, NaN, or others.
  * @param {function} method - testing method.
  * @param {object} test - test`s object.
  * @param {array} [test#args] - array of arguments that function get.

@@ -35,6 +35,8 @@ Library for simple creating unit tests.
 		* _isFalse_
 		* _isTypeOf_
 		* _isInstanceOf_
+		* _isSameStructure_
+		* _isSameNotOrderedStructure_
 
 ## Instalation
 The product is not published yet. The only way to use it is to copy from repository
@@ -126,3 +128,5 @@ const test = new Test({
 * _isFalse_. Checks if returned value can be interpreted as `false`.
 * _isTypeOf_. Checks if returned value`s type is equal to `expectation`.
 * _isInstanceOf_. Checks if returned value is instance of `expectation`.
+* _isSameStructure_. Checks if returned value has same structure with `expectation`.
+* _isSameNotOrderedStructure_. Checks if returned value has same structure with `expectation` without dependency on order.

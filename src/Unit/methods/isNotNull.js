@@ -1,5 +1,5 @@
 /**
- * Test method that checks if test method's result is not null.
+ * Test method that checks if tested method's result is not null.
  * @param {function} method - testing method.
  * @param {object} test - test`s object.
  * @param {array} [test#args] - array of arguments that function get.
