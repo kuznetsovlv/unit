@@ -78,6 +78,8 @@ function argsToStr (args = []) {
  	switch (method) {
  		case 'isTypeOf': return `Expected that value is type of ${endStr}`;
  		case 'isInstanceOf': return `Expected that value is instance of ${endStr}`;
+ 		case 'isSameNotOrderedStructure':
+ 		case 'isSameStructure': return `Expected that value has same structure with ${endStr}`;
  		default: return `Expected value is ${endStr}`;
  	}
 
