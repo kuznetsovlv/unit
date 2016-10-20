@@ -56,6 +56,9 @@
 	var testUnit_2 = new _index.Unit(function (x) {
 	     return x;
 	}, 'Check "isSameNotOrderedStructure"');
+	var testUnit_3 = new _index.Unit(function (x) {
+	     return x;
+	}, 'Check "isLikeStructure"');
 
 	var test_obj_1 = {
 	     item1: 2,
@@ -115,6 +118,8 @@
 
 	testUnit_2.addTest(new _index.Test({ arg: 5, method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: 5, method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: '5', method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: '5', method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: 6, method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: 'string', method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: undefined, method: 'isSameNotOrderedStructure', expectation: undefined })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: null })).addTest(new _index.Test({ arg: NaN, method: 'isSameNotOrderedStructure', expectation: NaN })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: undefined })).addTest(new _index.Test({ arg: {}, method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameNotOrderedStructure', expectation: [] })).addTest(new _index.Test({ arg: new Date(), method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3, 4] })).addTest(new _index.Test({ arg: [0, 1, 2], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 2, 1, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isSameNotOrderedStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: _extends({}, test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, test_obj_1) })).addTest(new _index.Test({ arg: _extends({}, test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, test_obj_2) })).addTest(new _index.Test({ arg: _extends({}, test_obj_2), method: 'isSameNotOrderedStructure', expectation: test_obj_2 })).addTest(new _index.Test({ arg: _extends({}, test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, test_obj_3) })).drawResult();
 
+	testUnit_3.addTest(new _index.Test({ arg: 5, method: 'isLikeStructure', expectation: 5 })).addTest(new _index.Test({ arg: 5, method: 'isLikeStructure', expectation: '5' })).addTest(new _index.Test({ arg: '5', method: 'isLikeStructure', expectation: 5 })).addTest(new _index.Test({ arg: '5', method: 'isLikeStructure', expectation: '5' })).addTest(new _index.Test({ arg: 6, method: 'isLikeStructure', expectation: 5 })).addTest(new _index.Test({ arg: 'string', method: 'isLikeStructure', expectation: '5' })).addTest(new _index.Test({ arg: undefined, method: 'isLikeStructure', expectation: undefined })).addTest(new _index.Test({ arg: null, method: 'isLikeStructure', expectation: null })).addTest(new _index.Test({ arg: NaN, method: 'isLikeStructure', expectation: NaN })).addTest(new _index.Test({ arg: null, method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: null, method: 'isLikeStructure', expectation: undefined })).addTest(new _index.Test({ arg: {}, method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isLikeStructure', expectation: [] })).addTest(new _index.Test({ arg: new Date(), method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: [0, 1, 2, 3, 4] })).addTest(new _index.Test({ arg: [0, 1, 2], method: 'isLikeStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 2, 1, 3], method: 'isLikeStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isLikeStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: _extends({}, test_obj_1), method: 'isLikeStructure', expectation: _extends({}, test_obj_1) })).addTest(new _index.Test({ arg: _extends({}, test_obj_1), method: 'isLikeStructure', expectation: _extends({}, test_obj_2) })).addTest(new _index.Test({ arg: _extends({}, test_obj_2), method: 'isLikeStructure', expectation: test_obj_2 })).addTest(new _index.Test({ arg: _extends({}, test_obj_1), method: 'isLikeStructure', expectation: _extends({}, test_obj_3) })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: [0, 1, 2] })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isLikeStructure', expectation: { '0': 0, '1': 1, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '3': 3 }, method: 'isLikeStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).drawResult();
+
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
@@ -134,7 +139,7 @@
 	  }
 	});
 
-	var _Test = __webpack_require__(23);
+	var _Test = __webpack_require__(25);
 
 	Object.defineProperty(exports, 'Test', {
 	  enumerable: true,
@@ -183,13 +188,13 @@
 
 	var methods = _interopRequireWildcard(_methods);
 
-	var _Test = __webpack_require__(23);
+	var _Test = __webpack_require__(25);
 
 	var _Test2 = _interopRequireDefault(_Test);
 
-	var _styles = __webpack_require__(25);
+	var _styles = __webpack_require__(27);
 
-	var _date = __webpack_require__(28);
+	var _date = __webpack_require__(30);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -282,6 +287,8 @@
 			case 'isSameNotOrderedStructure':
 			case 'isSameStructure':
 				return 'Expected that value has same structure with ' + endStr;
+			case 'isLikeStructure':
+				return 'Expected that value equals or has properties from ' + endStr;
 			default:
 				return 'Expected value is ' + endStr;
 		}
@@ -620,6 +627,15 @@
 	  enumerable: true,
 	  get: function get() {
 	    return _interopRequireDefault(_isSameNotOrderedStructure).default;
+	  }
+	});
+
+	var _isLikeStructure = __webpack_require__(23);
+
+	Object.defineProperty(exports, 'isLikeStructure', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_isLikeStructure).default;
 	  }
 	});
 
@@ -1310,9 +1326,155 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.default = isLikeStructure;
+
+	var _isLike = __webpack_require__(24);
+
+	var _isLike2 = _interopRequireDefault(_isLike);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Test method that checks if tesed method's result's data equals expectation or if they are objects it has properties from expectation and they are like.
+	 * @param {function} method - testing method.
+	 * @param {object} test - test`s object.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {string} test#expectation - expected structure of result value.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {object}
+	 */
+	function isLikeStructure(method) {
+	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	  var _test$args = test.args;
+	  var args = _test$args === undefined ? [] : _test$args;
+	  var expectation = test.expectation;
+
+
+	  var result = method.apply(context, args);
+
+	  return { result: result, success: (0, _isLike2.default)(result, expectation) };
+	}
+
+/***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+	exports.default = isLike;
+	/**
+	 * Checks if first array has items like in second.
+	 * @param {array} val - checked value
+	 * @param {array} expect - contorl
+	 * @return {boolean}
+	 */
+	function isLikeArr() {
+	  var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+	  var expect = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+	  var length = expect.length;
+
+	  if (val.length < length) return false;
+	  console.log(val, expect, length);
+	  return val.every(function (v, i) {
+	    return _isLike(v, expect[i]) || i >= length;
+	  });
+	}
+
+	/**
+	 * Checks if first object has items like in second.
+	 * @param {object} val - checked value
+	 * @param {object} expect - contorl
+	 * @return {boolean}
+	 */
+	function isLikeObj() {
+	  var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+	  var expect = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+	  for (var key in expect) {
+	    if (!_isLike(val[key], expect[key])) return false;
+	  }return true;
+	}
+
+	/**
+	 * Checks if firstobject has properties from secod argument they are like.
+	 * @param {object} val - checked value
+	 * @param {object} expect - contorl
+	 * @return {boolean}
+	 */
+	function isObjLike() {
+	  var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+	  var expect = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+	  var isArr = val instanceof Array;
+
+	  if (isArr !== expect instanceof Array) return false;
+
+	  return isArr ? isLikeArr(val, expect) : isLikeObj(val, expect);
+	}
+
+	/**
+	 * Checks if first argument equals second or if they are objects it has properties from secod argument and they are like.
+	 * Ignores functions.
+	 * @param {*} val - checked value
+	 * @param {*} expect - contorl
+	 * @return {boolean}
+	 */
+	function _isLike() {
+	  var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+	  var expect = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+	  if (val && val == expect) return true;
+
+	  if (val !== val && expect !== expect) return true;
+
+	  var tv = typeof val === 'undefined' ? 'undefined' : _typeof(val);
+	  var te = typeof expect === 'undefined' ? 'undefined' : _typeof(expect);
+
+	  if (tv !== te) return false;
+
+	  switch (tv) {
+	    case 'function':
+	      return true;
+	    case 'object':
+	      return val ? isObjLike(val, expect) : val === expect;
+	  }
+
+	  return val === expect;
+	}
+
+	/**
+	 * Checks if first argument equals second or if they are objects it has properties from secod argument and they are like.
+	 * Ignores functions.
+	 * @param {*} val - checked value
+	 * @param {*} expect - contorl
+	 * @return {boolean}
+	 */
+	function isLike() {
+	  var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+	  var expect = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+	  return _isLike(val, expect);
+	}
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	exports.default = undefined;
 
-	var _Test = __webpack_require__(24);
+	var _Test = __webpack_require__(26);
 
 	var _Test2 = _interopRequireDefault(_Test);
 
@@ -1321,7 +1483,7 @@
 	exports.default = _Test2.default;
 
 /***/ },
-/* 24 */
+/* 26 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1365,7 +1527,7 @@
 	exports.default = Test;
 
 /***/ },
-/* 25 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1375,11 +1537,11 @@
 	});
 	exports.bgColors = exports.fontColors = exports.common = undefined;
 
-	var _common2 = __webpack_require__(26);
+	var _common2 = __webpack_require__(28);
 
 	var _common = _interopRequireWildcard(_common2);
 
-	var _colors = __webpack_require__(27);
+	var _colors = __webpack_require__(29);
 
 	var _colors2 = _interopRequireDefault(_colors);
 
@@ -1415,7 +1577,7 @@
 	var bgColors = exports.bgColors = toFormat(setColors(_colors2.default, 40));
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1432,7 +1594,7 @@
 	var Hidden = exports.Hidden = 8;
 
 /***/ },
-/* 27 */
+/* 29 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1443,7 +1605,7 @@
 	exports.default = 'Black,Red,Green,Yellow,Blue,Magenta,Cyan,White'.split(',');
 
 /***/ },
-/* 28 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1454,11 +1616,11 @@
 	exports.dateDiff = undefined;
 	exports.msToHR = msToHR;
 
-	var _dd = __webpack_require__(29);
+	var _dd = __webpack_require__(31);
 
 	var _dd2 = _interopRequireDefault(_dd);
 
-	var _n = __webpack_require__(30);
+	var _n = __webpack_require__(32);
 
 	var _n2 = _interopRequireDefault(_n);
 
@@ -1506,7 +1668,7 @@
 	}
 
 /***/ },
-/* 29 */
+/* 31 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1526,7 +1688,7 @@
 	}
 
 /***/ },
-/* 30 */
+/* 32 */
 /***/ function(module, exports) {
 
 	'use strict';

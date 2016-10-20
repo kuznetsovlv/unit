@@ -37,6 +37,7 @@ Library for simple creating unit tests.
 		* _isInstanceOf_
 		* _isSameStructure_
 		* _isSameNotOrderedStructure_
+		* _isLikeStructure_
 
 ## Instalation
 The product is not published yet. The only way to use it is to copy from repository
@@ -130,3 +131,4 @@ const test = new Test({
 * _isInstanceOf_. Checks if returned value is instance of `expectation`.
 * _isSameStructure_. Checks if returned value has same structure with `expectation`.
 * _isSameNotOrderedStructure_. Checks if returned value has same structure with `expectation` without dependency on order.
+* _isLikeStructure_. Checks if returned value data equals `expectation` or if they are objects it has properties from `expectation` and they are like

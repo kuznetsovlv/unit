@@ -80,6 +80,7 @@ function argsToStr (args = []) {
  		case 'isInstanceOf': return `Expected that value is instance of ${endStr}`;
  		case 'isSameNotOrderedStructure':
  		case 'isSameStructure': return `Expected that value has same structure with ${endStr}`;
+ 		case 'isLikeStructure': return `Expected that value equals or has properties from ${endStr}`;
  		default: return `Expected value is ${endStr}`;
  	}
 

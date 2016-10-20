@@ -14,3 +14,4 @@ export {default as isTypeOf}					from './isTypeOf';
 export {default as isInstanceOf}				from './isInstanceOf';
 export {default as isSameStructure}				from './isSameStructure';
 export {default as isSameNotOrderedStructure}	from './isSameNotOrderedStructure';
+export {default as isLikeStructure}				from './isLikeStructure';
