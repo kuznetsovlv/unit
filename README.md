@@ -2,44 +2,47 @@
 
 Library for simple creating unit tests.
 
-## Content
-- Instalation
-- How to use
-	- Class `Unit`
-		* Constructor
+## Content.
+- Instalation.
+- How to use.
+	- Class `Unit`.
+		* Constructor.
 			* `func`
 			* `description`
 			* `context`
-		* Methods
+		* Methods.
 			* `addTest`
 			* `commitTests`
 			* `getResult`
 			* `drawresult`
-	- Class `Test`
+	- Class `Test`.
 		* `method`
 		* `arg`
 		* `args`
 		* `expectation`
-	- Verification Methods
-		* _isEqual_
-		* _isEqualNonStrict_
-		* _exist_
-		* _notExist_
-		* _isNull_
-		* _isNotNull_
-		* _isNill_
-		* _isNotNill_
-		* _isNaN_
-		* _isNotNaN_
-		* _isTrue_
-		* _isFalse_
-		* _isTypeOf_
-		* _isInstanceOf_
-		* _isSameStructure_
-		* _isSameNotOrderedStructure_
-		* _isLikeStructure_
+	- Verification Methods.
+		* Simple data types.
+			* _isEqual_
+			* _isEqualNonStrict_
+		* Check types.
+			* _exist_
+			* _notExist_		
+			* _isNull_
+			* _isNotNull_
+			* _isNill_
+			* _isNotNill_
+			* _isNaN_
+			* _isNotNaN_
+			* _isTrue_
+			* _isFalse_
+			* _isTypeOf_
+			* _isInstanceOf_
+		* Complex data types.
+			* _isSameStructure_
+			* _isSameNotOrderedStructure_
+			* _isLikeStructure_
 
-## Instalation
+## Instalation.
 The product is not published yet. The only way to use it is to copy from repository
 ```bash
 git clone https://github.com/kuznetsovlv/unit.git
@@ -69,7 +72,7 @@ cp -r * pathToYourPogectDirrectory/node_modules/unit
 ## How to use.
 The library exports two class `Unit` and `Test`.
 
-### Class `Unit`
+### Class `Unit`.
 #### Constructor.
 Class `Unit` creates an object which perform a set of unit tests for a function. It's constructor gets three arguments:
 * `func: function` - Function you want to test
@@ -100,7 +103,7 @@ unit.addTest(new Test({
 })).commitTests().drawResult(true);
 ```
 
-### Class `Test`
+### Class `Test`.
 Class `Test` is a simple class which describes single test algorithm. `Test` was added to simplify validating description of test algorithm. `Test` does not have any own methods exept the constructor. Constructor requires the only object argument which describes test algorithm, here the list of it's fields:
 * `method: string` - Name of the verification method algorith will use to check function. ___This field is needed___.
 * `arg: *` - Argument for testing function.
@@ -115,8 +118,11 @@ const test = new Test({
 ```
 
 ### Verification Methods.
+#### Simple data types.
 * _isEqual_. Usable with simple data types. Checks if returned value is equal to expeted value. Method uses a strict comparison.
 * _isEqualnonStrict_. Usable with simple data types. Checks if returned value is equal to expeted value. Method uses a nonstrict comparison.
+
+#### Check types.
 * _exist_. Checks if returned value is not `undefined`.
 * _notExist_. Checks if returned value is `undefined`.
 * _isNull_. Checks if returned value is `null`.
@@ -129,6 +135,8 @@ const test = new Test({
 * _isFalse_. Checks if returned value can be interpreted as `false`.
 * _isTypeOf_. Checks if returned value`s type is equal to `expectation`.
 * _isInstanceOf_. Checks if returned value is instance of `expectation`.
+
+#### Complex data types.
 * _isSameStructure_. Checks if returned value has same structure with `expectation`.
 * _isSameNotOrderedStructure_. Checks if returned value has same structure with `expectation` without dependency on order.
 * _isLikeStructure_. Checks if returned value data equals `expectation` or if they are objects it has properties from `expectation` and they are like
