@@ -9,10 +9,15 @@ import {dateDiff, msToHR}				from '../lib/date';
  * @return {string}
  */
 function argToStr (arg) {
-	if (typeof arg === 'function')
-		return arg.name || arg.toLocaleString() || arg.toString();
+	const argType = typeof arg;
 
-	if (!arg || typeof arg !== 'object')
+	if (argType === 'function')
+		return `function: ${arg.name || arg.toLocaleString() || arg.toString()}`;
+
+	if (argType === 'string')
+		return `"${arg}"`;
+
+	if (!arg || argType !== 'object')
 		return `${arg}`;
 
 	if (arg instanceof Array)

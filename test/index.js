@@ -208,9 +208,13 @@
 	 * @return {string}
 	 */
 	function argToStr(arg) {
-		if (typeof arg === 'function') return arg.name || arg.toLocaleString() || arg.toString();
+		var argType = typeof arg === 'undefined' ? 'undefined' : _typeof(arg);
 
-		if (!arg || (typeof arg === 'undefined' ? 'undefined' : _typeof(arg)) !== 'object') return '' + arg;
+		if (argType === 'function') return 'function: ' + (arg.name || arg.toLocaleString() || arg.toString());
+
+		if (argType === 'string') return '"' + arg + '"';
+
+		if (!arg || argType !== 'object') return '' + arg;
 
 		if (arg instanceof Array) return '[' + arg.map(function (x) {
 			return argToStr(x);
