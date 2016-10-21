@@ -1381,7 +1381,7 @@
 	  var length = expect.length;
 
 	  if (val.length < length) return false;
-	  console.log(val, expect, length);
+
 	  return val.every(function (v, i) {
 	    return _isLike(v, expect[i]) || i >= length;
 	  });

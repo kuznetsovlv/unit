@@ -8,7 +8,7 @@ function isLikeArr (val = [], expect = []) {
 	const {length} = expect;
 	if (val.length < length)
 		return false;
-console.log(val, expect, length);
+
 	return val.every((v, i) => {return _isLike(v, expect[i]) || i >= length;});
 }
 
