@@ -44,30 +44,8 @@ Library for simple creating unit tests.
 	- Example.
 
 ## Instalation.
-The product is not published yet. The only way to use it is to copy from repository
 ```bash
-git clone https://github.com/kuznetsovlv/unit.git
-```
-move to the products directory
-```bash
-cd unit
-```
-install all required packages
-```bash
-npm install
-```
-or
-```bash
-npm i
-```
-build product
-```bash
-npm run build
-```
-finaly copy product into your project
-```bash
-mkdir -p pathToYourPogectDirrectory/node_modules/unit
-cp -r * pathToYourPogectDirrectory/node_modules/unit
+npm install unit-kuznetsov --save-dev
 ```
 
 ## How to use.
