@@ -45,7 +45,7 @@ Library for simple creating unit tests.
 	- [Example.](#user-content-example "Example")
 
 ##GitHub
-	[Progect on GitHub.](https://github.com/kuznetsovlv/unit "Link to GitHub repository")
+[Progect on GitHub.](https://github.com/kuznetsovlv/unit "Link to GitHub repository")
 
 ## Install.
 ```bash
