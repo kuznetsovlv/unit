@@ -1,6 +1,6 @@
 {
   "name": "unit-kuznetsov",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Unit Test Library",
   "main": "dist/index.js",
   "scripts": {
