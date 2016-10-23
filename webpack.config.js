@@ -17,7 +17,7 @@ const plugins = [
 
 const productPlugins = [
 	new webpack.optimize.UglifyJsPlugin({
-		compress: { warnings: false, drop_console: true, unsafe: true }
+		compress: { warnings: false, drop_console: false, unsafe: true }
 	}),
 	// new webpack.optimize.OccurenceOrderPlugin(),
 	// new webpack.ProvidePlugin({
@@ -35,7 +35,7 @@ module.exports = {
 
 	target: 'node',
 
-	output: {filename: 'index.js', path: path.resolve(__dirname, DEV ? 'test' : 'dist')},
+	output: {filename: 'index.js', path: path.resolve(__dirname, DEV ? 'test' : 'dist'), library: 'unit', libraryTarget: 'umd'},
 
 	watch: DEV,
 
@@ -46,6 +46,7 @@ module.exports = {
 	devtool: DEV ? "cheap-source-map" : null,
 
 	plugins: DEV ? plugins : plugins.concat(productPlugins),
+	// plugins: plugins,
 
 	resolve: {
 		modulesDirectories: ['node_modules', 'src'],

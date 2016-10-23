@@ -1,2 +1,2 @@
-export {default as Unit}	from './Unit';
-export {default as Test}	from './Test';
+export Unit	from './Unit';
+export Test	from './Test';

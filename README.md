@@ -126,7 +126,7 @@ const test = new Test({
 
 ### Example.
 ```javascript
-import {Unit, Test}	from './index';
+import {Unit, Test}	from 'unit-kuznetsov';
 
 const testUnit_1 = new Unit (x => x, 'Check "isSameStructure"');
 const testUnit_2 = new Unit (x => x, 'Check "isSameNotOrderedStructure"');

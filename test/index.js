@@ -129,26 +129,20 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.Test = exports.Unit = undefined;
 
-	var _Unit = __webpack_require__(2);
+	var _Unit2 = __webpack_require__(2);
 
-	Object.defineProperty(exports, 'Unit', {
-	  enumerable: true,
-	  get: function get() {
-	    return _interopRequireDefault(_Unit).default;
-	  }
-	});
+	var _Unit3 = _interopRequireDefault(_Unit2);
 
-	var _Test = __webpack_require__(25);
+	var _Test2 = __webpack_require__(25);
 
-	Object.defineProperty(exports, 'Test', {
-	  enumerable: true,
-	  get: function get() {
-	    return _interopRequireDefault(_Test).default;
-	  }
-	});
+	var _Test3 = _interopRequireDefault(_Test2);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.Unit = _Unit3.default;
+	exports.Test = _Test3.default;
 
 /***/ },
 /* 2 */
