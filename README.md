@@ -43,7 +43,10 @@ Library for simple creating unit tests.
 			* _isLikeStructure_
 	- Example.
 
-## Instalation.
+##GitHub
+[Progect on GitHub.](https://github.com/kuznetsovlv/unit "Link to GitHub repository")
+
+## Install.
 ```bash
 npm install unit-kuznetsov --save-dev
 ```
