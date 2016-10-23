@@ -1,30 +1,31 @@
-# [Unit Test Library](https://github.com/kuznetsovlv/unit "Unit Test Library on gitHub")
+# Unit Test Library
 
 Library for simple creating unit tests.
 
-## Content.
-- Instalation.
-- How to use.
-	- Class `Unit`.
-		* Constructor.
+## [Content.](#user-content-content "Conten")
+- [GitHub](#user-content-github "Link to GitHub repository")
+- [Install.](#user-content-install "Install")
+- [How to use.](#user-content-how-to-use "How to use")
+	- [Class `Unit`.](#user-content-class-unit "Class Unit")
+		* [Constructor.](#user-content-constructor "Unit's constructor")
 			* `func`
 			* `description`
 			* `context`
-		* Methods.
+		* [Methods.](#user-content-methods "Unit's methods")
 			* `addTest`
 			* `commitTests`
 			* `getResult`
 			* `drawresult`
-	- Class `Test`.
+	- [Class `Test`.](#user-content-class-test "Class Test")
 		* `method`
 		* `arg`
 		* `args`
 		* `expectation`
-	- Verification Methods.
-		* Simple data types.
+	- [Verification Methods.](#user-content-verification-methods "Verification methods")
+		* [Simple data types.](#user-content-simple-data-types "Methods for simple data types")
 			* _isEqual_
 			* _isEqualNonStrict_
-		* Check types.
+		* [Check types.](#user-content-check-types "Methods that check types")
 			* _exist_
 			* _notExist_		
 			* _isNull_
@@ -37,11 +38,11 @@ Library for simple creating unit tests.
 			* _isFalse_
 			* _isTypeOf_
 			* _isInstanceOf_
-		* Complex data types.
+		* [Complex data types.](#user-content-complex-data-types "Methods for complex data types")
 			* _isSameStructure_
 			* _isSameNotOrderedStructure_
 			* _isLikeStructure_
-	- Example.
+	- [Example.](#user-content-example "Example")
 
 ##GitHub
 [Progect on GitHub.](https://github.com/kuznetsovlv/unit "Link to GitHub repository")
