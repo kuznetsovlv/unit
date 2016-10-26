@@ -1,17 +1,8 @@
 /**
- * Test method that checks if tested method's result is equal to expected value.
+ * Tests that first and second arguments are equal.
  * Method uses nonstrict comparison.
- * @param {function} method - testing method.
- * @param {object} test - test`s object.
- * @param {array} [test#args] - array of arguments that function get.
- * @param {*} test#expectation - expected result value.
- * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
- * @return {object}
+ * @param {*} value - tested value.
+ * @param {expectation} - expected value.
+ * @return {boolean}
  */
-export default function isEqualNonStrict (method, test = {}, context = {}) {
-	const {args = [], expectation} = test;
-
-	const result = method.apply(context, args);
-
-	return {result, success: result == expectation};
-}
+export default (value, expectation) => value == expectation;

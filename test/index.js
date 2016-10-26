@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["unit"] = factory();
+	else
+		root["unit"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 
@@ -46,79 +56,33 @@
 
 	'use strict';
 
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 	var _index = __webpack_require__(1);
 
 	var testUnit_1 = new _index.Unit(function (x) {
-	     return x;
-	}, 'Check "isSameStructure"');
+	          return x;
+	}, 'Check "Exist"');
 	var testUnit_2 = new _index.Unit(function (x) {
-	     return x;
-	}, 'Check "isSameNotOrderedStructure"');
+	          return x;
+	}, 'Check "isEqual"');
 	var testUnit_3 = new _index.Unit(function (x) {
-	     return x;
-	}, 'Check "isLikeStructure"');
+	          return x;
+	}, 'Check "isEqualNonStrict"');
+	var testUnit_4 = new _index.Unit(function (x) {
+	          return x;
+	}, 'Check "isFalse"');
+	var testUnit_5 = new _index.Unit(function (x) {
+	          return x;
+	}, 'Check "isInstanceOf"');
 
-	var test_obj_1 = {
-	     item1: 2,
-	     item2: '3',
-	     item3: [],
-	     test: 'test',
-	     any: false,
-	     obj: {
-	          test: 123,
-	          arr: [12, 3, 'test', {}, [1, 2, 7, { d: 2 }], ''],
-	          obj: {
-	               'null': null,
-	               nan: NaN,
-	               u: undefined,
-	               'true': true
-	          }
-	     }
-	};
+	testUnit_1.addTest(new _index.Test({ arg: null, method: 'exist' })).addTest(new _index.Test({ arg: undefined, method: 'exist' })).addTest(new _index.Test({ arg: NaN, method: 'exist' })).addTest(new _index.Test({ arg: 0, method: 'exist' })).drawResult();
 
-	var test_obj_2 = {
-	     item_1: 2,
-	     item2: '3',
-	     item3: [],
-	     test: 'test',
-	     any: false,
-	     obj: {
-	          test: 123,
-	          arr: [12, 3, 'test', {}, [1, 2, 7, { d: 2 }], ''],
-	          obj: {
-	               'null': null,
-	               nan: NaN,
-	               u: undefined,
-	               'true': true
-	          }
-	     }
-	};
+	testUnit_2.addTest(new _index.Test({ arg: 4, expectation: 4, method: 'isEqual' })).addTest(new _index.Test({ arg: 4, expectation: '4', method: 'isEqual' })).addTest(new _index.Test({ arg: '4', expectation: 4, method: 'isEqual' })).addTest(new _index.Test({ arg: '4', expectation: '4', method: 'isEqual' })).addTest(new _index.Test({ arg: 4, expectation: 8, method: 'isEqualNonStrict' })).drawResult();
 
-	var test_obj_3 = {
-	     item2: '3',
-	     item1: 2,
-	     item3: [],
-	     test: 'test',
-	     any: false,
-	     obj: {
-	          test: 123,
-	          arr: [12, 3, 'test', {}, [1, 2, 7, { d: 2 }], ''],
-	          obj: {
-	               'null': null,
-	               nan: NaN,
-	               u: undefined,
-	               'true': true
-	          }
-	     }
-	};
+	testUnit_3.addTest(new _index.Test({ arg: 4, expectation: 4, method: 'isEqualNonStrict' })).addTest(new _index.Test({ arg: 4, expectation: '4', method: 'isEqualNonStrict' })).addTest(new _index.Test({ arg: '4', expectation: 4, method: 'isEqualNonStrict' })).addTest(new _index.Test({ arg: '4', expectation: '4', method: 'isEqualNonStrict' })).addTest(new _index.Test({ arg: 4, expectation: 8, method: 'isEqualNonStrict' })).drawResult();
 
-	testUnit_1.addTest(new _index.Test({ arg: 5, method: 'isSameStructure', expectation: 5 })).addTest(new _index.Test({ arg: 5, method: 'isSameStructure', expectation: '5' })).addTest(new _index.Test({ arg: '5', method: 'isSameStructure', expectation: 5 })).addTest(new _index.Test({ arg: '5', method: 'isSameStructure', expectation: '5' })).addTest(new _index.Test({ arg: 6, method: 'isSameStructure', expectation: 5 })).addTest(new _index.Test({ arg: 'string', method: 'isSameStructure', expectation: '5' })).addTest(new _index.Test({ arg: undefined, method: 'isSameStructure', expectation: undefined })).addTest(new _index.Test({ arg: null, method: 'isSameStructure', expectation: null })).addTest(new _index.Test({ arg: NaN, method: 'isSameStructure', expectation: NaN })).addTest(new _index.Test({ arg: null, method: 'isSameStructure', expectation: {} })).addTest(new _index.Test({ arg: null, method: 'isSameStructure', expectation: undefined })).addTest(new _index.Test({ arg: {}, method: 'isSameStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameStructure', expectation: [] })).addTest(new _index.Test({ arg: new Date(), method: 'isSameStructure', expectation: {} })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameStructure', expectation: [0, 1, 2, 3, 4] })).addTest(new _index.Test({ arg: [0, 1, 2], method: 'isSameStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 2, 1, 3], method: 'isSameStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isSameStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: _extends({}, test_obj_1), method: 'isSameStructure', expectation: _extends({}, test_obj_1) })).addTest(new _index.Test({ arg: _extends({}, test_obj_1), method: 'isSameStructure', expectation: _extends({}, test_obj_2) })).addTest(new _index.Test({ arg: _extends({}, test_obj_2), method: 'isSameStructure', expectation: test_obj_2 })).addTest(new _index.Test({ arg: _extends({}, test_obj_1), method: 'isSameStructure', expectation: _extends({}, test_obj_3) })).drawResult();
+	testUnit_4.addTest(new _index.Test({ arg: null, method: 'isFalse' })).addTest(new _index.Test({ arg: undefined, method: 'isFalse' })).addTest(new _index.Test({ arg: NaN, method: 'isFalse' })).addTest(new _index.Test({ arg: 0, method: 'isFalse' })).addTest(new _index.Test({ arg: '', method: 'isFalse' })).addTest(new _index.Test({ arg: false, method: 'isFalse' })).addTest(new _index.Test({ arg: '0', method: 'isFalse' })).addTest(new _index.Test({ arg: 'false', method: 'isFalse' })).drawResult();
 
-	testUnit_2.addTest(new _index.Test({ arg: 5, method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: 5, method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: '5', method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: '5', method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: 6, method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: 'string', method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: undefined, method: 'isSameNotOrderedStructure', expectation: undefined })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: null })).addTest(new _index.Test({ arg: NaN, method: 'isSameNotOrderedStructure', expectation: NaN })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: undefined })).addTest(new _index.Test({ arg: {}, method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameNotOrderedStructure', expectation: [] })).addTest(new _index.Test({ arg: new Date(), method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3, 4] })).addTest(new _index.Test({ arg: [0, 1, 2], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 2, 1, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isSameNotOrderedStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: _extends({}, test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, test_obj_1) })).addTest(new _index.Test({ arg: _extends({}, test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, test_obj_2) })).addTest(new _index.Test({ arg: _extends({}, test_obj_2), method: 'isSameNotOrderedStructure', expectation: test_obj_2 })).addTest(new _index.Test({ arg: _extends({}, test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, test_obj_3) })).drawResult();
-
-	testUnit_3.addTest(new _index.Test({ arg: 5, method: 'isLikeStructure', expectation: 5 })).addTest(new _index.Test({ arg: 5, method: 'isLikeStructure', expectation: '5' })).addTest(new _index.Test({ arg: '5', method: 'isLikeStructure', expectation: 5 })).addTest(new _index.Test({ arg: '5', method: 'isLikeStructure', expectation: '5' })).addTest(new _index.Test({ arg: 6, method: 'isLikeStructure', expectation: 5 })).addTest(new _index.Test({ arg: 'string', method: 'isLikeStructure', expectation: '5' })).addTest(new _index.Test({ arg: undefined, method: 'isLikeStructure', expectation: undefined })).addTest(new _index.Test({ arg: null, method: 'isLikeStructure', expectation: null })).addTest(new _index.Test({ arg: NaN, method: 'isLikeStructure', expectation: NaN })).addTest(new _index.Test({ arg: null, method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: null, method: 'isLikeStructure', expectation: undefined })).addTest(new _index.Test({ arg: {}, method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isLikeStructure', expectation: [] })).addTest(new _index.Test({ arg: new Date(), method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: [0, 1, 2, 3, 4] })).addTest(new _index.Test({ arg: [0, 1, 2], method: 'isLikeStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 2, 1, 3], method: 'isLikeStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isLikeStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: _extends({}, test_obj_1), method: 'isLikeStructure', expectation: _extends({}, test_obj_1) })).addTest(new _index.Test({ arg: _extends({}, test_obj_1), method: 'isLikeStructure', expectation: _extends({}, test_obj_2) })).addTest(new _index.Test({ arg: _extends({}, test_obj_2), method: 'isLikeStructure', expectation: test_obj_2 })).addTest(new _index.Test({ arg: _extends({}, test_obj_1), method: 'isLikeStructure', expectation: _extends({}, test_obj_3) })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: [0, 1, 2] })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isLikeStructure', expectation: { '0': 0, '1': 1, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '3': 3 }, method: 'isLikeStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).drawResult();
+	testUnit_5.addTest(new _index.Test({ arg: {}, expectation: Object, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: {}, expectation: Array, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: [], expectation: Array, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: [], expectation: Object, method: 'isInstanceOf' })).drawResult();
 
 /***/ },
 /* 1 */
@@ -181,6 +145,10 @@
 	var _methods = __webpack_require__(4);
 
 	var methods = _interopRequireWildcard(_methods);
+
+	var _commiter = __webpack_require__(33);
+
+	var _commiter2 = _interopRequireDefault(_commiter);
 
 	var _Test = __webpack_require__(25);
 
@@ -361,7 +329,8 @@
 					var res = void 0;
 
 					try {
-						res = methods[method](_this.method, { args: args, expectation: expectation }, _this.context);
+						// res = methods[method](this.method, {args, expectation}, this.context);
+						res = (0, _commiter2.default)(methods[method], _this.method, { args: args, expectation: expectation }, _this.context);
 					} catch (e) {
 						res = {
 							error: e
@@ -648,28 +617,16 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = isEqual;
+
 	/**
-	 * Test method that checks if tested method's result is equal to expected value.
-	 * @param {function} method - testing method.
-	 * @param {object} test - test`s object.
-	 * @param {array} [test#args] - array of arguments that function get.
-	 * @param {*} test#expectation - expected result value.
-	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {object}
+	 * Tests that first and second arguments are equal.
+	 * @param {*} value - tested value.
+	 * @param {expectation} - expected value.
+	 * @return {boolean}
 	 */
-	function isEqual(method) {
-	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-	  var _test$args = test.args;
-	  var args = _test$args === undefined ? [] : _test$args;
-	  var expectation = test.expectation;
-
-
-	  var result = method.apply(context, args);
-
-	  return { result: result, success: result === expectation };
-	}
+	exports.default = function (value, expectation) {
+	  return value === expectation;
+	};
 
 /***/ },
 /* 6 */
@@ -680,29 +637,17 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = isEqualNonStrict;
+
 	/**
-	 * Test method that checks if tested method's result is equal to expected value.
+	 * Tests that first and second arguments are equal.
 	 * Method uses nonstrict comparison.
-	 * @param {function} method - testing method.
-	 * @param {object} test - test`s object.
-	 * @param {array} [test#args] - array of arguments that function get.
-	 * @param {*} test#expectation - expected result value.
-	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {object}
+	 * @param {*} value - tested value.
+	 * @param {expectation} - expected value.
+	 * @return {boolean}
 	 */
-	function isEqualNonStrict(method) {
-	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-	  var _test$args = test.args;
-	  var args = _test$args === undefined ? [] : _test$args;
-	  var expectation = test.expectation;
-
-
-	  var result = method.apply(context, args);
-
-	  return { result: result, success: result == expectation };
-	}
+	exports.default = function (value, expectation) {
+	  return value == expectation;
+	};
 
 /***/ },
 /* 7 */
@@ -713,26 +658,15 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = exist;
+
 	/**
-	 * Test method that checks if tested method's result is not undefined, but may be a null, NaN, or others.
-	 * @param {function} method - testing method.
-	 * @param {object} test - test`s object.
-	 * @param {array} [test#args] - array of arguments that function get.
-	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {object}
+	 * Tests that the first argument is not undefined.
+	 * @param {*} v - tested argument.
+	 * @return {boolean}
 	 */
-	function exist(method) {
-	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-	  var _test$args = test.args;
-	  var args = _test$args === undefined ? [] : _test$args;
-
-
-	  var result = method.apply(context, args);
-
-	  return { result: result, success: result !== undefined };
-	}
+	exports.default = function (v) {
+	  return v !== undefined;
+	};
 
 /***/ },
 /* 8 */
@@ -986,27 +920,15 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = isFalse;
 
 	/**
-	 * Test method that checks if tested method's result is interpreted as false.
-	 * @param {function} method - testing method.
-	 * @param {object} test - test`s object.
-	 * @param {array} [test#args] - array of arguments that function get.
-	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {object}
+	 * Tests first argument if it can be interpreted as false.
+	 * @param {*} v - tested value.
+	 * @return {boolean}
 	 */
-	function isFalse(method) {
-	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-	  var _test$args = test.args;
-	  var args = _test$args === undefined ? [] : _test$args;
-
-
-	  var result = method.apply(context, args);
-
-	  return { result: result, success: !result };
-	}
+	exports.default = function (v) {
+	  return !v;
+	};
 
 /***/ },
 /* 17 */
@@ -1052,28 +974,16 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = isInstanceOf;
+
 	/**
-	 * Test method that checks if tested method's result is instance of expectation.
-	 * @param {function} method - testing method.
-	 * @param {object} test - test`s object.
-	 * @param {array} [test#args] - array of arguments that function get.
-	 * @param {function} test#expectation - expected result value.
-	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {object}
+	 * Tests firsts argument if it instance of second.
+	 * @param {*} value - tested argument.
+	 * @param {function} expectation - expected constructor of value.
+	 * @return {boolean}
 	 */
-	function isInstanceOf(method) {
-	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-	  var _test$args = test.args;
-	  var args = _test$args === undefined ? [] : _test$args;
-	  var expectation = test.expectation;
-
-
-	  var result = method.apply(context, args);
-
-	  return { result: result, success: result instanceof expectation };
-	}
+	exports.default = function (value, expectation) {
+	  return value instanceof expectation;
+	};
 
 /***/ },
 /* 19 */
@@ -1324,7 +1234,6 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = isLikeStructure;
 
 	var _isLike = __webpack_require__(24);
 
@@ -1333,26 +1242,11 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
-	 * Test method that checks if tesed method's result's data equals expectation or if they are objects it has properties from expectation and they are like.
-	 * @param {function} method - testing method.
-	 * @param {object} test - test`s object.
-	 * @param {array} [test#args] - array of arguments that function get.
-	 * @param {string} test#expectation - expected structure of result value.
-	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {object}
+	 * Tests first argument is equal to expectation or if they are objects it has properties from expectation and they are like.
 	 */
-	function isLikeStructure(method) {
-	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-	  var _test$args = test.args;
-	  var args = _test$args === undefined ? [] : _test$args;
-	  var expectation = test.expectation;
-
-
-	  var result = method.apply(context, args);
-
-	  return { result: result, success: (0, _isLike2.default)(result, expectation) };
-	}
+	exports.default = function (value, expectation) {
+	  return (0, _isLike2.default)(value, expectation);
+	};
 
 /***/ },
 /* 24 */
@@ -1714,6 +1608,59 @@
 		}return ('' + zeros.join('') + num).substr(-len);
 	}
 
+/***/ },
+/* 33 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _commiter = __webpack_require__(34);
+
+	var _commiter2 = _interopRequireDefault(_commiter);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _commiter2.default;
+
+/***/ },
+/* 34 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = commiter;
+	/**
+	 * General method to commit tests.
+	 * @param {function} isSuccess - result testing method.
+	 * @param {function} func - function to be tested.
+	 * @param {object} test - test`s object. This argument is guaranteed to be every time an object by the only calling in Unit,
+	 * so we are able to use destructuring safely.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {*} test#expectation - expected result value.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {object}
+	 */
+	function commiter(isSuccess, func, _ref) {
+	  var _ref$args = _ref.args;
+	  var args = _ref$args === undefined ? [] : _ref$args;
+	  var expectation = _ref.expectation;
+	  var context = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+
+	  var result = func.apply(context, args);
+
+	  return { result: result, success: isSuccess(result, expectation) };
+	}
+
 /***/ }
-/******/ ]);
+/******/ ])
+});
+;
 //# sourceMappingURL=index.js.map

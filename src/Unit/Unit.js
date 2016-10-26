@@ -1,4 +1,5 @@
 import * as methods						from './methods';
+import commiter							from './commiter';
 import Test								from '../Test';
 import {common, fontColors, bgColors}	from '../lib/styles';
 import {dateDiff, msToHR}				from '../lib/date';
@@ -145,7 +146,8 @@ export default class Unit {
 			let res;
 
 			try {
-				res = methods[method](this.method, {args, expectation}, this.context);
+				// res = methods[method](this.method, {args, expectation}, this.context);
+				res = commiter(methods[method], this.method, {args, expectation}, this.context)
 			} catch (e) {
 				res = {
 					error: e
