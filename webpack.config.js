@@ -26,6 +26,15 @@ const productPlugins = [
 	// })
 ];
 
+function getExtentions () {
+	const extentions = ['', '.js'];
+
+	if (DEV)
+		extentions.push('_dev.js');
+
+	return extentions;
+}
+
 module.exports = {
 	context: path.resolve(__dirname, 'src'),
 
@@ -50,7 +59,7 @@ module.exports = {
 
 	resolve: {
 		modulesDirectories: ['node_modules', 'src'],
-		extensions: ['', '.js']
+		extensions: getExtentions()
 	},
 
 	resolveLoader: {
