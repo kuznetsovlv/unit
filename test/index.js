@@ -62,6 +62,34 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _isLikeStructure_dev2 = _interopRequireDefault(_isLikeStructure_dev);
 
+	var _isNaN_dev = __webpack_require__(37);
+
+	var _isNaN_dev2 = _interopRequireDefault(_isNaN_dev);
+
+	var _isNill_dev = __webpack_require__(38);
+
+	var _isNill_dev2 = _interopRequireDefault(_isNill_dev);
+
+	var _isNotNaN_dev = __webpack_require__(39);
+
+	var _isNotNaN_dev2 = _interopRequireDefault(_isNotNaN_dev);
+
+	var _isNotNill_dev = __webpack_require__(40);
+
+	var _isNotNill_dev2 = _interopRequireDefault(_isNotNill_dev);
+
+	var _isNotNull_dev = __webpack_require__(41);
+
+	var _isNotNull_dev2 = _interopRequireDefault(_isNotNull_dev);
+
+	var _isNull_dev = __webpack_require__(42);
+
+	var _isNull_dev2 = _interopRequireDefault(_isNull_dev);
+
+	var _isSameNotOrderedStructure = __webpack_require__(43);
+
+	var _isSameNotOrderedStructure2 = _interopRequireDefault(_isSameNotOrderedStructure);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var testUnit_1 = new _index.Unit(function (x) {
@@ -91,6 +119,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	testUnit_5.addTest(new _index.Test({ arg: {}, expectation: Object, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: {}, expectation: Array, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: [], expectation: Array, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: [], expectation: Object, method: 'isInstanceOf' })).drawResult();
 
 	_isLikeStructure_dev2.default.drawResult();
+	_isNaN_dev2.default.drawResult();
+	_isNill_dev2.default.drawResult();
+	_isNotNaN_dev2.default.drawResult();
+	_isNotNill_dev2.default.drawResult();
+	_isNotNull_dev2.default.drawResult();
+	_isNull_dev2.default.drawResult();
+	_isSameNotOrderedStructure2.default.drawResult();
 
 /***/ },
 /* 1 */
@@ -715,26 +750,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = isNull;
+
 	/**
-	 * Test method that checks if tested method's result is null.
-	 * @param {function} method - testing method.
-	 * @param {object} test - test`s object.
-	 * @param {array} [test#args] - array of arguments that function get.
-	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {object}
+	 * Checks first argument that it is null.
+	 * @param {*} v - tested value.
+	 * @return {boolean}
 	 */
-	function isNull(method) {
-	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-	  var _test$args = test.args;
-	  var args = _test$args === undefined ? [] : _test$args;
-
-
-	  var result = method.apply(context, args);
-
-	  return { result: result, success: result === null };
-	}
+	exports.default = function (v) {
+	  return v === null;
+	};
 
 /***/ },
 /* 10 */
@@ -745,26 +769,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = isNotNull;
+
 	/**
-	 * Test method that checks if tested method's result is not null.
-	 * @param {function} method - testing method.
-	 * @param {object} test - test`s object.
-	 * @param {array} [test#args] - array of arguments that function get.
-	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {object}
+	 * Checks first argument that it is not null.
+	 * @param {*} v - tested value.
+	 * @return {boolean}
 	 */
-	function isNotNull(method) {
-	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-	  var _test$args = test.args;
-	  var args = _test$args === undefined ? [] : _test$args;
-
-
-	  var result = method.apply(context, args);
-
-	  return { result: result, success: result !== null };
-	}
+	exports.default = function (v) {
+	  return v !== null;
+	};
 
 /***/ },
 /* 11 */
@@ -775,26 +788,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = isNill;
+
 	/**
-	 * Test method that checks if tested method's result is null or undefined.
-	 * @param {function} method - testing method.
-	 * @param {object} test - test`s object.
-	 * @param {array} [test#args] - array of arguments that function get.
-	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {object}
+	 * The method checks if first argument is null or undefined.
+	 * @param {*} v - tested value.
+	 * @return {boolean}
 	 */
-	function isNill(method) {
-	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-	  var _test$args = test.args;
-	  var args = _test$args === undefined ? [] : _test$args;
-
-
-	  var result = method.apply(context, args);
-
-	  return { result: result, success: result === null || result === undefined };
-	}
+	exports.default = function (v) {
+	  return v === null || v === undefined;
+	};
 
 /***/ },
 /* 12 */
@@ -805,26 +807,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = isNotNill;
+
 	/**
-	 * Test method that checks if tested method's result is not null nor undefined.
-	 * @param {function} method - testing method.
-	 * @param {object} test - test`s object.
-	 * @param {array} [test#args] - array of arguments that function get.
-	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {object}
+	 * The method checks that first argument is not null nor undefined.
+	 * @param {*} v - tested value.
+	 * @return {boolean}
 	 */
-	function isNotNill(method) {
-	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-	  var _test$args = test.args;
-	  var args = _test$args === undefined ? [] : _test$args;
-
-
-	  var result = method.apply(context, args);
-
-	  return { result: result, success: result !== null && result !== undefined };
-	}
+	exports.default = function (v) {
+	  return v !== null && v !== undefined;
+	};
 
 /***/ },
 /* 13 */
@@ -835,27 +826,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = isNaN;
 
 	/**
-	 * Test method that checks if tested method's result is NaN.
-	 * @param {function} method - testing method.
-	 * @param {object} test - test`s object.
-	 * @param {array} [test#args] - array of arguments that function get.
-	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {object}
+	 * The method checks if first argument is NaN.
+	 * @param {*} v - tested value.
+	 * @return {boolean}
 	 */
-	function isNaN(method) {
-	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-	  var _test$args = test.args;
-	  var args = _test$args === undefined ? [] : _test$args;
-
-
-	  var result = method.apply(context, args);
-
-	  return { result: result, success: result !== result };
-	}
+	exports.default = function (v) {
+	  return v !== v;
+	};
 
 /***/ },
 /* 14 */
@@ -866,27 +845,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = isNaN;
 
 	/**
-	 * Test method that checks if tested method's result is not NaN.
-	 * @param {function} method - testing method.
-	 * @param {object} test - test`s object.
-	 * @param {array} [test#args] - array of arguments that function get.
-	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {object}
+	 * The method checks than first argument is not NaN.
+	 * @param {*} v - tested value.
+	 * @return {boolean}
 	 */
-	function isNaN(method) {
-	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-	  var _test$args = test.args;
-	  var args = _test$args === undefined ? [] : _test$args;
-
-
-	  var result = method.apply(context, args);
-
-	  return { result: result, success: result === result };
-	}
+	exports.default = function (v) {
+	  return v === v;
+	};
 
 /***/ },
 /* 15 */
@@ -1203,7 +1170,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = isSameNotOrderedStructure;
 
 	var _isSame = __webpack_require__(20);
 
@@ -1212,26 +1178,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
-	 * Test method that checks if tested method's result's data has same structure with expectation without dependency on order.
-	 * @param {function} method - testing method.
-	 * @param {object} test - test`s object.
-	 * @param {array} [test#args] - array of arguments that function get.
-	 * @param {string} test#expectation - expected structure of result value.
-	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {object}
+	 * Checks that first and second argumetns are equal or have same strucrure. Order and functions are ignored.
+	 * @param {*} value - checed value.
+	 * @param {*} expectation - expected value.
+	 * @return {boolean}
 	 */
-	function isSameNotOrderedStructure(method) {
-	  var test = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-	  var context = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-	  var _test$args = test.args;
-	  var args = _test$args === undefined ? [] : _test$args;
-	  var expectation = test.expectation;
-
-
-	  var result = method.apply(context, args);
-
-	  return { result: result, success: (0, _isSame2.default)(result, expectation, false) };
-	}
+	exports.default = function (value, expectation) {
+	  return (0, _isSame2.default)(value, expectation, false);
+	};
 
 /***/ },
 /* 23 */
@@ -1751,6 +1705,136 @@ return /******/ (function(modules) { // webpackBootstrap
 	          }
 	     }
 	};
+
+/***/ },
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	                       value: true
+	});
+
+	var _index = __webpack_require__(1);
+
+	var testUnit = new _index.Unit(function (x) {
+	                       return x;
+	}, 'Check "isNaN"');
+
+	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNaN' })).addTest(new _index.Test({ arg: null, method: 'isNaN' })).addTest(new _index.Test({ arg: undefined, method: 'isNaN' })).addTest(new _index.Test({ arg: false, method: 'isNaN' })).addTest(new _index.Test({ arg: 0, method: 'isNaN' }));
+
+/***/ },
+/* 38 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	                       value: true
+	});
+
+	var _index = __webpack_require__(1);
+
+	var testUnit = new _index.Unit(function (x) {
+	                       return x;
+	}, 'Check "isNill"');
+
+	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNill' })).addTest(new _index.Test({ arg: null, method: 'isNill' })).addTest(new _index.Test({ arg: undefined, method: 'isNill' })).addTest(new _index.Test({ arg: false, method: 'isNill' })).addTest(new _index.Test({ arg: 0, method: 'isNill' }));
+
+/***/ },
+/* 39 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	                       value: true
+	});
+
+	var _index = __webpack_require__(1);
+
+	var testUnit = new _index.Unit(function (x) {
+	                       return x;
+	}, 'Check "isNotNaN"');
+
+	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNotNaN' })).addTest(new _index.Test({ arg: null, method: 'isNotNaN' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNaN' })).addTest(new _index.Test({ arg: false, method: 'isNotNaN' })).addTest(new _index.Test({ arg: 0, method: 'isNotNaN' }));
+
+/***/ },
+/* 40 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	                       value: true
+	});
+
+	var _index = __webpack_require__(1);
+
+	var testUnit = new _index.Unit(function (x) {
+	                       return x;
+	}, 'Check "isNotNill"');
+
+	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNotNill' })).addTest(new _index.Test({ arg: null, method: 'isNotNill' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNill' })).addTest(new _index.Test({ arg: false, method: 'isNotNill' })).addTest(new _index.Test({ arg: 0, method: 'isNotNill' }));
+
+/***/ },
+/* 41 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	                       value: true
+	});
+
+	var _index = __webpack_require__(1);
+
+	var testUnit = new _index.Unit(function (x) {
+	                       return x;
+	}, 'Check "isNotNull"');
+
+	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNotNull' })).addTest(new _index.Test({ arg: null, method: 'isNotNull' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNull' })).addTest(new _index.Test({ arg: false, method: 'isNotNull' })).addTest(new _index.Test({ arg: 0, method: 'isNotNull' }));
+
+/***/ },
+/* 42 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	                       value: true
+	});
+
+	var _index = __webpack_require__(1);
+
+	var testUnit = new _index.Unit(function (x) {
+	                       return x;
+	}, 'Check "isNull"');
+
+	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNull' })).addTest(new _index.Test({ arg: null, method: 'isNull' })).addTest(new _index.Test({ arg: undefined, method: 'isNull' })).addTest(new _index.Test({ arg: false, method: 'isNull' })).addTest(new _index.Test({ arg: 0, method: 'isNull' }));
+
+/***/ },
+/* 43 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	          value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _test_data = __webpack_require__(36);
+
+	var _index = __webpack_require__(1);
+
+	var testUnit = new _index.Unit(function (x) {
+	          return x;
+	}, 'Check "isSameNotOrderedStructure"');
+
+	exports.default = testUnit.addTest(new _index.Test({ arg: 5, method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: 5, method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: '5', method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: '5', method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: 6, method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: 'string', method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: undefined, method: 'isSameNotOrderedStructure', expectation: undefined })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: null })).addTest(new _index.Test({ arg: NaN, method: 'isSameNotOrderedStructure', expectation: NaN })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: undefined })).addTest(new _index.Test({ arg: {}, method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameNotOrderedStructure', expectation: [] })).addTest(new _index.Test({ arg: new Date(), method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3, 4] })).addTest(new _index.Test({ arg: [0, 1, 2], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 2, 1, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isSameNotOrderedStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, _test_data.test_obj_1) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, _test_data.test_obj_2) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_2), method: 'isSameNotOrderedStructure', expectation: _test_data.test_obj_2 })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, _test_data.test_obj_3) }));
 
 /***/ }
 /******/ ])

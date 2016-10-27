@@ -1,5 +1,12 @@
-import {Unit, Test}		from './index';
-import isLikeStructure	from './lib_dev/isLikeStructure_dev';
+import {Unit, Test}				from './index';
+import isLikeStructure			from './lib_dev/isLikeStructure_dev';
+import isNaN					from './lib_dev/isNaN_dev';
+import isNill					from './lib_dev/isNill_dev';
+import isNotNaN				from './lib_dev/isNotNaN_dev';
+import isNotNill				from './lib_dev/isNotNill_dev';
+import isNotNull				from './lib_dev/isNotNull_dev';
+import isNull					from './lib_dev/isNull_dev';
+import isSameNotOrderedStructure	from './lib_dev/isSameNotOrderedStructure';
 
 const testUnit_1 = new Unit (x => x, 'Check "Exist"');
 const testUnit_2 = new Unit (x => x, 'Check "isEqual"');
@@ -44,3 +51,10 @@ testUnit_5.addTest(new Test({arg: {}, expectation: Object, method: 'isInstanceOf
           .drawResult();
 
 isLikeStructure.drawResult();
+isNaN.drawResult();
+isNill.drawResult();
+isNotNaN.drawResult();
+isNotNill.drawResult();
+isNotNull.drawResult();
+isNull.drawResult();
+isSameNotOrderedStructure.drawResult();

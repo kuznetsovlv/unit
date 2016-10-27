@@ -1,5 +1,5 @@
 import {test_obj_1, test_obj_2, test_obj_3}	from './test_data';
-import {Unit, Test}							from '../index';
+import {Unit, Test}						from '../index';
 
 const testUnit = new Unit (x => x, 'Check "isLikeStructure"');
 
