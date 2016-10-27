@@ -56,71 +56,71 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	var _exist = __webpack_require__(48);
+	var _exist = __webpack_require__(1);
 
 	var _exist2 = _interopRequireDefault(_exist);
 
-	var _isEqual = __webpack_require__(49);
+	var _isEqual = __webpack_require__(36);
 
 	var _isEqual2 = _interopRequireDefault(_isEqual);
 
-	var _isEqualNonStrict = __webpack_require__(50);
+	var _isEqualNonStrict = __webpack_require__(37);
 
 	var _isEqualNonStrict2 = _interopRequireDefault(_isEqualNonStrict);
 
-	var _isFalse = __webpack_require__(51);
+	var _isFalse = __webpack_require__(38);
 
 	var _isFalse2 = _interopRequireDefault(_isFalse);
 
-	var _isInstanceOf = __webpack_require__(52);
+	var _isInstanceOf = __webpack_require__(39);
 
 	var _isInstanceOf2 = _interopRequireDefault(_isInstanceOf);
 
-	var _isLikeStructure = __webpack_require__(35);
+	var _isLikeStructure = __webpack_require__(40);
 
 	var _isLikeStructure2 = _interopRequireDefault(_isLikeStructure);
 
-	var _isNaN = __webpack_require__(37);
+	var _isNaN = __webpack_require__(42);
 
 	var _isNaN2 = _interopRequireDefault(_isNaN);
 
-	var _isNill = __webpack_require__(38);
+	var _isNill = __webpack_require__(43);
 
 	var _isNill2 = _interopRequireDefault(_isNill);
 
-	var _isNotNaN = __webpack_require__(39);
+	var _isNotNaN = __webpack_require__(44);
 
 	var _isNotNaN2 = _interopRequireDefault(_isNotNaN);
 
-	var _isNotNill = __webpack_require__(40);
+	var _isNotNill = __webpack_require__(45);
 
 	var _isNotNill2 = _interopRequireDefault(_isNotNill);
 
-	var _isNotNull = __webpack_require__(41);
+	var _isNotNull = __webpack_require__(46);
 
 	var _isNotNull2 = _interopRequireDefault(_isNotNull);
 
-	var _isNull = __webpack_require__(42);
+	var _isNull = __webpack_require__(47);
 
 	var _isNull2 = _interopRequireDefault(_isNull);
 
-	var _isSameNotOrderedStructure = __webpack_require__(43);
+	var _isSameNotOrderedStructure = __webpack_require__(48);
 
 	var _isSameNotOrderedStructure2 = _interopRequireDefault(_isSameNotOrderedStructure);
 
-	var _isSameStructure = __webpack_require__(44);
+	var _isSameStructure = __webpack_require__(49);
 
 	var _isSameStructure2 = _interopRequireDefault(_isSameStructure);
 
-	var _isTrue = __webpack_require__(45);
+	var _isTrue = __webpack_require__(50);
 
 	var _isTrue2 = _interopRequireDefault(_isTrue);
 
-	var _isTypeOf = __webpack_require__(46);
+	var _isTypeOf = __webpack_require__(51);
 
 	var _isTypeOf2 = _interopRequireDefault(_isTypeOf);
 
-	var _notExist = __webpack_require__(47);
+	var _notExist = __webpack_require__(52);
 
 	var _notExist2 = _interopRequireDefault(_notExist);
 
@@ -151,22 +151,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	                       value: true
 	});
-	exports.Test = exports.Unit = undefined;
 
-	var _Unit2 = __webpack_require__(2);
+	var _index = __webpack_require__(2);
 
-	var _Unit3 = _interopRequireDefault(_Unit2);
+	var testUnit = new _index.Unit(function (x) {
+	                       return x;
+	}, 'Check "exist"');
 
-	var _Test2 = __webpack_require__(27);
-
-	var _Test3 = _interopRequireDefault(_Test2);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.Unit = _Unit3.default;
-	exports.Test = _Test3.default;
+	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'exist' })).addTest(new _index.Test({ arg: null, method: 'exist' })).addTest(new _index.Test({ arg: undefined, method: 'exist' })).addTest(new _index.Test({ arg: false, method: 'exist' })).addTest(new _index.Test({ arg: 0, method: 'exist' }));
 
 /***/ },
 /* 2 */
@@ -177,9 +171,33 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.Test = exports.Unit = undefined;
+
+	var _Unit2 = __webpack_require__(3);
+
+	var _Unit3 = _interopRequireDefault(_Unit2);
+
+	var _Test2 = __webpack_require__(28);
+
+	var _Test3 = _interopRequireDefault(_Test2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.Unit = _Unit3.default;
+	exports.Test = _Test3.default;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	exports.default = undefined;
 
-	var _Unit = __webpack_require__(3);
+	var _Unit = __webpack_require__(4);
 
 	var _Unit2 = _interopRequireDefault(_Unit);
 
@@ -188,7 +206,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = _Unit2.default;
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -202,21 +220,21 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-	var _methods = __webpack_require__(4);
+	var _methods = __webpack_require__(5);
 
 	var methods = _interopRequireWildcard(_methods);
 
-	var _commiter = __webpack_require__(25);
+	var _commiter = __webpack_require__(26);
 
 	var _commiter2 = _interopRequireDefault(_commiter);
 
-	var _Test = __webpack_require__(27);
+	var _Test = __webpack_require__(28);
 
 	var _Test2 = _interopRequireDefault(_Test);
 
-	var _styles = __webpack_require__(29);
+	var _styles = __webpack_require__(30);
 
-	var _date = __webpack_require__(32);
+	var _date = __webpack_require__(33);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -504,7 +522,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Unit;
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -513,7 +531,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _isEqual = __webpack_require__(5);
+	var _isEqual = __webpack_require__(6);
 
 	Object.defineProperty(exports, 'isEqual', {
 	  enumerable: true,
@@ -522,7 +540,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isEqualNonStrict = __webpack_require__(6);
+	var _isEqualNonStrict = __webpack_require__(7);
 
 	Object.defineProperty(exports, 'isEqualNonStrict', {
 	  enumerable: true,
@@ -531,7 +549,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _exist = __webpack_require__(7);
+	var _exist = __webpack_require__(8);
 
 	Object.defineProperty(exports, 'exist', {
 	  enumerable: true,
@@ -540,7 +558,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _notExist = __webpack_require__(8);
+	var _notExist = __webpack_require__(9);
 
 	Object.defineProperty(exports, 'notExist', {
 	  enumerable: true,
@@ -549,7 +567,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isNull = __webpack_require__(9);
+	var _isNull = __webpack_require__(10);
 
 	Object.defineProperty(exports, 'isNull', {
 	  enumerable: true,
@@ -558,7 +576,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isNotNull = __webpack_require__(10);
+	var _isNotNull = __webpack_require__(11);
 
 	Object.defineProperty(exports, 'isNotNull', {
 	  enumerable: true,
@@ -567,7 +585,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isNill = __webpack_require__(11);
+	var _isNill = __webpack_require__(12);
 
 	Object.defineProperty(exports, 'isNill', {
 	  enumerable: true,
@@ -576,7 +594,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isNotNill = __webpack_require__(12);
+	var _isNotNill = __webpack_require__(13);
 
 	Object.defineProperty(exports, 'isNotNill', {
 	  enumerable: true,
@@ -585,7 +603,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isNaN = __webpack_require__(13);
+	var _isNaN = __webpack_require__(14);
 
 	Object.defineProperty(exports, 'isNaN', {
 	  enumerable: true,
@@ -594,7 +612,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isNotNaN = __webpack_require__(14);
+	var _isNotNaN = __webpack_require__(15);
 
 	Object.defineProperty(exports, 'isNotNaN', {
 	  enumerable: true,
@@ -603,7 +621,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isTrue = __webpack_require__(15);
+	var _isTrue = __webpack_require__(16);
 
 	Object.defineProperty(exports, 'isTrue', {
 	  enumerable: true,
@@ -612,7 +630,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isFalse = __webpack_require__(16);
+	var _isFalse = __webpack_require__(17);
 
 	Object.defineProperty(exports, 'isFalse', {
 	  enumerable: true,
@@ -621,7 +639,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isTypeOf = __webpack_require__(17);
+	var _isTypeOf = __webpack_require__(18);
 
 	Object.defineProperty(exports, 'isTypeOf', {
 	  enumerable: true,
@@ -630,7 +648,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isInstanceOf = __webpack_require__(18);
+	var _isInstanceOf = __webpack_require__(19);
 
 	Object.defineProperty(exports, 'isInstanceOf', {
 	  enumerable: true,
@@ -639,7 +657,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isSameStructure = __webpack_require__(19);
+	var _isSameStructure = __webpack_require__(20);
 
 	Object.defineProperty(exports, 'isSameStructure', {
 	  enumerable: true,
@@ -648,7 +666,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isSameNotOrderedStructure = __webpack_require__(22);
+	var _isSameNotOrderedStructure = __webpack_require__(23);
 
 	Object.defineProperty(exports, 'isSameNotOrderedStructure', {
 	  enumerable: true,
@@ -657,7 +675,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isLikeStructure = __webpack_require__(23);
+	var _isLikeStructure = __webpack_require__(24);
 
 	Object.defineProperty(exports, 'isLikeStructure', {
 	  enumerable: true,
@@ -669,7 +687,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -689,7 +707,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -710,7 +728,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -729,7 +747,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -748,7 +766,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -767,7 +785,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -786,7 +804,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -805,7 +823,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -824,7 +842,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -843,7 +861,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -862,7 +880,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -881,7 +899,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -900,7 +918,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -922,7 +940,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -942,7 +960,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -951,7 +969,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _isSame = __webpack_require__(20);
+	var _isSame = __webpack_require__(21);
 
 	var _isSame2 = _interopRequireDefault(_isSame);
 
@@ -968,7 +986,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -981,7 +999,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports.default = isSame;
 
-	var _keys = __webpack_require__(21);
+	var _keys = __webpack_require__(22);
 
 	var _keys2 = _interopRequireDefault(_keys);
 
@@ -1105,7 +1123,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1130,7 +1148,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1139,7 +1157,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _isSame = __webpack_require__(20);
+	var _isSame = __webpack_require__(21);
 
 	var _isSame2 = _interopRequireDefault(_isSame);
 
@@ -1156,7 +1174,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1165,7 +1183,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _isLike = __webpack_require__(24);
+	var _isLike = __webpack_require__(25);
 
 	var _isLike2 = _interopRequireDefault(_isLike);
 
@@ -1179,7 +1197,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1286,7 +1304,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1296,7 +1314,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.default = undefined;
 
-	var _commiter = __webpack_require__(26);
+	var _commiter = __webpack_require__(27);
 
 	var _commiter2 = _interopRequireDefault(_commiter);
 
@@ -1305,7 +1323,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = _commiter2.default;
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1337,7 +1355,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1347,7 +1365,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.default = undefined;
 
-	var _Test = __webpack_require__(28);
+	var _Test = __webpack_require__(29);
 
 	var _Test2 = _interopRequireDefault(_Test);
 
@@ -1356,7 +1374,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = _Test2.default;
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1400,7 +1418,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Test;
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1410,11 +1428,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.bgColors = exports.fontColors = exports.common = undefined;
 
-	var _common2 = __webpack_require__(30);
+	var _common2 = __webpack_require__(31);
 
 	var _common = _interopRequireWildcard(_common2);
 
-	var _colors = __webpack_require__(31);
+	var _colors = __webpack_require__(32);
 
 	var _colors2 = _interopRequireDefault(_colors);
 
@@ -1450,7 +1468,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var bgColors = exports.bgColors = toFormat(setColors(_colors2.default, 40));
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1467,7 +1485,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Hidden = exports.Hidden = 8;
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1478,7 +1496,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = 'Black,Red,Green,Yellow,Blue,Magenta,Cyan,White'.split(',');
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1489,11 +1507,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.dateDiff = undefined;
 	exports.msToHR = msToHR;
 
-	var _dd = __webpack_require__(33);
+	var _dd = __webpack_require__(34);
 
 	var _dd2 = _interopRequireDefault(_dd);
 
-	var _n = __webpack_require__(34);
+	var _n = __webpack_require__(35);
 
 	var _n2 = _interopRequireDefault(_n);
 
@@ -1541,7 +1559,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 33 */
+/* 34 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1561,7 +1579,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 34 */
+/* 35 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1590,7 +1608,79 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 35 */
+/* 36 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	          value: true
+	});
+
+	var _index = __webpack_require__(2);
+
+	var testUnit = new _index.Unit(function (x) {
+	          return x;
+	}, 'Check "isEqual"');
+
+	exports.default = testUnit.addTest(new _index.Test({ arg: 4, expectation: 4, method: 'isEqual' })).addTest(new _index.Test({ arg: 4, expectation: '4', method: 'isEqual' })).addTest(new _index.Test({ arg: '4', expectation: 4, method: 'isEqual' })).addTest(new _index.Test({ arg: '4', expectation: '4', method: 'isEqual' })).addTest(new _index.Test({ arg: 4, expectation: 8, method: 'isEqual' }));
+
+/***/ },
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	          value: true
+	});
+
+	var _index = __webpack_require__(2);
+
+	var testUnit = new _index.Unit(function (x) {
+	          return x;
+	}, 'Check "isEqualNonStrict"');
+
+	exports.default = testUnit.addTest(new _index.Test({ arg: 4, expectation: 4, method: 'isEqualNonStrict' })).addTest(new _index.Test({ arg: 4, expectation: '4', method: 'isEqualNonStrict' })).addTest(new _index.Test({ arg: '4', expectation: 4, method: 'isEqualNonStrict' })).addTest(new _index.Test({ arg: '4', expectation: '4', method: 'isEqualNonStrict' })).addTest(new _index.Test({ arg: 4, expectation: 8, method: 'isEqualNonStrict' }));
+
+/***/ },
+/* 38 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	          value: true
+	});
+
+	var _index = __webpack_require__(2);
+
+	var testUnit = new _index.Unit(function (x) {
+	          return x;
+	}, 'Check "isFalse"');
+
+	exports.default = testUnit.addTest(new _index.Test({ arg: null, method: 'isFalse' })).addTest(new _index.Test({ arg: undefined, method: 'isFalse' })).addTest(new _index.Test({ arg: NaN, method: 'isFalse' })).addTest(new _index.Test({ arg: 0, method: 'isFalse' })).addTest(new _index.Test({ arg: '', method: 'isFalse' })).addTest(new _index.Test({ arg: true, method: 'isFalse' })).addTest(new _index.Test({ arg: false, method: 'isFalse' })).addTest(new _index.Test({ arg: '0', method: 'isFalse' })).addTest(new _index.Test({ arg: 'false', method: 'isFalse' })).addTest(new _index.Test({ arg: 'true', method: 'isFalse' }));
+
+/***/ },
+/* 39 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	                       value: true
+	});
+
+	var _index = __webpack_require__(2);
+
+	var testUnit = new _index.Unit(function (x) {
+	                       return x;
+	}, 'Check "isInstanceOf"');
+
+	exports.default = testUnit.addTest(new _index.Test({ arg: {}, expectation: Object, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: {}, expectation: Array, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: [], expectation: Array, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: [], expectation: Object, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: new Date(), expectation: Object, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: new Date(), expectation: Date, method: 'isInstanceOf' }));
+
+/***/ },
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1601,9 +1691,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	var _test_data = __webpack_require__(36);
+	var _test_data = __webpack_require__(41);
 
-	var _index = __webpack_require__(1);
+	var _index = __webpack_require__(2);
 
 	var testUnit = new _index.Unit(function (x) {
 	          return x;
@@ -1612,7 +1702,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = testUnit.addTest(new _index.Test({ arg: 5, method: 'isLikeStructure', expectation: 5 })).addTest(new _index.Test({ arg: 5, method: 'isLikeStructure', expectation: '5' })).addTest(new _index.Test({ arg: '5', method: 'isLikeStructure', expectation: 5 })).addTest(new _index.Test({ arg: '5', method: 'isLikeStructure', expectation: '5' })).addTest(new _index.Test({ arg: 6, method: 'isLikeStructure', expectation: 5 })).addTest(new _index.Test({ arg: 'string', method: 'isLikeStructure', expectation: '5' })).addTest(new _index.Test({ arg: undefined, method: 'isLikeStructure', expectation: undefined })).addTest(new _index.Test({ arg: null, method: 'isLikeStructure', expectation: null })).addTest(new _index.Test({ arg: NaN, method: 'isLikeStructure', expectation: NaN })).addTest(new _index.Test({ arg: null, method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: null, method: 'isLikeStructure', expectation: undefined })).addTest(new _index.Test({ arg: {}, method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isLikeStructure', expectation: [] })).addTest(new _index.Test({ arg: new Date(), method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: [0, 1, 2, 3, 4] })).addTest(new _index.Test({ arg: [0, 1, 2], method: 'isLikeStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 2, 1, 3], method: 'isLikeStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isLikeStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isLikeStructure', expectation: _extends({}, _test_data.test_obj_1) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isLikeStructure', expectation: _extends({}, _test_data.test_obj_2) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_2), method: 'isLikeStructure', expectation: _test_data.test_obj_2 })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isLikeStructure', expectation: _extends({}, _test_data.test_obj_3) }));
 
 /***/ },
-/* 36 */
+/* 41 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1675,96 +1765,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 37 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	                       value: true
-	});
-
-	var _index = __webpack_require__(1);
-
-	var testUnit = new _index.Unit(function (x) {
-	                       return x;
-	}, 'Check "isNaN"');
-
-	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNaN' })).addTest(new _index.Test({ arg: null, method: 'isNaN' })).addTest(new _index.Test({ arg: undefined, method: 'isNaN' })).addTest(new _index.Test({ arg: false, method: 'isNaN' })).addTest(new _index.Test({ arg: 0, method: 'isNaN' }));
-
-/***/ },
-/* 38 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	                       value: true
-	});
-
-	var _index = __webpack_require__(1);
-
-	var testUnit = new _index.Unit(function (x) {
-	                       return x;
-	}, 'Check "isNill"');
-
-	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNill' })).addTest(new _index.Test({ arg: null, method: 'isNill' })).addTest(new _index.Test({ arg: undefined, method: 'isNill' })).addTest(new _index.Test({ arg: false, method: 'isNill' })).addTest(new _index.Test({ arg: 0, method: 'isNill' }));
-
-/***/ },
-/* 39 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	                       value: true
-	});
-
-	var _index = __webpack_require__(1);
-
-	var testUnit = new _index.Unit(function (x) {
-	                       return x;
-	}, 'Check "isNotNaN"');
-
-	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNotNaN' })).addTest(new _index.Test({ arg: null, method: 'isNotNaN' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNaN' })).addTest(new _index.Test({ arg: false, method: 'isNotNaN' })).addTest(new _index.Test({ arg: 0, method: 'isNotNaN' }));
-
-/***/ },
-/* 40 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	                       value: true
-	});
-
-	var _index = __webpack_require__(1);
-
-	var testUnit = new _index.Unit(function (x) {
-	                       return x;
-	}, 'Check "isNotNill"');
-
-	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNotNill' })).addTest(new _index.Test({ arg: null, method: 'isNotNill' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNill' })).addTest(new _index.Test({ arg: false, method: 'isNotNill' })).addTest(new _index.Test({ arg: 0, method: 'isNotNill' }));
-
-/***/ },
-/* 41 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	                       value: true
-	});
-
-	var _index = __webpack_require__(1);
-
-	var testUnit = new _index.Unit(function (x) {
-	                       return x;
-	}, 'Check "isNotNull"');
-
-	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNotNull' })).addTest(new _index.Test({ arg: null, method: 'isNotNull' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNull' })).addTest(new _index.Test({ arg: false, method: 'isNotNull' })).addTest(new _index.Test({ arg: 0, method: 'isNotNull' }));
-
-/***/ },
 /* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1774,13 +1774,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	                       value: true
 	});
 
-	var _index = __webpack_require__(1);
+	var _index = __webpack_require__(2);
 
 	var testUnit = new _index.Unit(function (x) {
 	                       return x;
-	}, 'Check "isNull"');
+	}, 'Check "isNaN"');
 
-	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNull' })).addTest(new _index.Test({ arg: null, method: 'isNull' })).addTest(new _index.Test({ arg: undefined, method: 'isNull' })).addTest(new _index.Test({ arg: false, method: 'isNull' })).addTest(new _index.Test({ arg: 0, method: 'isNull' }));
+	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNaN' })).addTest(new _index.Test({ arg: null, method: 'isNaN' })).addTest(new _index.Test({ arg: undefined, method: 'isNaN' })).addTest(new _index.Test({ arg: false, method: 'isNaN' })).addTest(new _index.Test({ arg: 0, method: 'isNaN' }));
 
 /***/ },
 /* 43 */
@@ -1789,20 +1789,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	          value: true
+	                       value: true
 	});
 
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _test_data = __webpack_require__(36);
-
-	var _index = __webpack_require__(1);
+	var _index = __webpack_require__(2);
 
 	var testUnit = new _index.Unit(function (x) {
-	          return x;
-	}, 'Check "isSameNotOrderedStructure"');
+	                       return x;
+	}, 'Check "isNill"');
 
-	exports.default = testUnit.addTest(new _index.Test({ arg: 5, method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: 5, method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: '5', method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: '5', method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: 6, method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: 'string', method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: undefined, method: 'isSameNotOrderedStructure', expectation: undefined })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: null })).addTest(new _index.Test({ arg: NaN, method: 'isSameNotOrderedStructure', expectation: NaN })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: undefined })).addTest(new _index.Test({ arg: {}, method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameNotOrderedStructure', expectation: [] })).addTest(new _index.Test({ arg: new Date(), method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3, 4] })).addTest(new _index.Test({ arg: [0, 1, 2], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 2, 1, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isSameNotOrderedStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, _test_data.test_obj_1) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, _test_data.test_obj_2) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_2), method: 'isSameNotOrderedStructure', expectation: _test_data.test_obj_2 })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, _test_data.test_obj_3) }));
+	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNill' })).addTest(new _index.Test({ arg: null, method: 'isNill' })).addTest(new _index.Test({ arg: undefined, method: 'isNill' })).addTest(new _index.Test({ arg: false, method: 'isNill' })).addTest(new _index.Test({ arg: 0, method: 'isNill' }));
 
 /***/ },
 /* 44 */
@@ -1811,20 +1807,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	          value: true
+	                       value: true
 	});
 
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _test_data = __webpack_require__(36);
-
-	var _index = __webpack_require__(1);
+	var _index = __webpack_require__(2);
 
 	var testUnit = new _index.Unit(function (x) {
-	          return x;
-	}, 'Check "isSameStructure"');
+	                       return x;
+	}, 'Check "isNotNaN"');
 
-	exports.default = testUnit.addTest(new _index.Test({ arg: 5, method: 'isSameStructure', expectation: 5 })).addTest(new _index.Test({ arg: 5, method: 'isSameStructure', expectation: '5' })).addTest(new _index.Test({ arg: '5', method: 'isSameStructure', expectation: 5 })).addTest(new _index.Test({ arg: '5', method: 'isSameStructure', expectation: '5' })).addTest(new _index.Test({ arg: 6, method: 'isSameStructure', expectation: 5 })).addTest(new _index.Test({ arg: 'string', method: 'isSameStructure', expectation: '5' })).addTest(new _index.Test({ arg: undefined, method: 'isSameStructure', expectation: undefined })).addTest(new _index.Test({ arg: null, method: 'isSameStructure', expectation: null })).addTest(new _index.Test({ arg: NaN, method: 'isSameStructure', expectation: NaN })).addTest(new _index.Test({ arg: null, method: 'isSameStructure', expectation: {} })).addTest(new _index.Test({ arg: null, method: 'isSameStructure', expectation: undefined })).addTest(new _index.Test({ arg: {}, method: 'isSameStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameStructure', expectation: [] })).addTest(new _index.Test({ arg: new Date(), method: 'isSameStructure', expectation: {} })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameStructure', expectation: [0, 1, 2, 3, 4] })).addTest(new _index.Test({ arg: [0, 1, 2], method: 'isSameStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 2, 1, 3], method: 'isSameStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isSameStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameStructure', expectation: _extends({}, _test_data.test_obj_1) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameStructure', expectation: _extends({}, _test_data.test_obj_2) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_2), method: 'isSameStructure', expectation: _test_data.test_obj_2 })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameStructure', expectation: _extends({}, _test_data.test_obj_3) }));
+	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNotNaN' })).addTest(new _index.Test({ arg: null, method: 'isNotNaN' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNaN' })).addTest(new _index.Test({ arg: false, method: 'isNotNaN' })).addTest(new _index.Test({ arg: 0, method: 'isNotNaN' }));
 
 /***/ },
 /* 45 */
@@ -1833,16 +1825,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	          value: true
+	                       value: true
 	});
 
-	var _index = __webpack_require__(1);
+	var _index = __webpack_require__(2);
 
 	var testUnit = new _index.Unit(function (x) {
-	          return x;
-	}, 'Check "isTrue"');
+	                       return x;
+	}, 'Check "isNotNill"');
 
-	exports.default = testUnit.addTest(new _index.Test({ arg: null, method: 'isTrue' })).addTest(new _index.Test({ arg: undefined, method: 'isTrue' })).addTest(new _index.Test({ arg: NaN, method: 'isTrue' })).addTest(new _index.Test({ arg: 0, method: 'isTrue' })).addTest(new _index.Test({ arg: '', method: 'isTrue' })).addTest(new _index.Test({ arg: true, method: 'isTrue' })).addTest(new _index.Test({ arg: false, method: 'isTrue' })).addTest(new _index.Test({ arg: '0', method: 'isTrue' })).addTest(new _index.Test({ arg: 'false', method: 'isTrue' })).addTest(new _index.Test({ arg: 'true', method: 'isTrue' }));
+	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNotNill' })).addTest(new _index.Test({ arg: null, method: 'isNotNill' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNill' })).addTest(new _index.Test({ arg: false, method: 'isNotNill' })).addTest(new _index.Test({ arg: 0, method: 'isNotNill' }));
 
 /***/ },
 /* 46 */
@@ -1854,13 +1846,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	                       value: true
 	});
 
-	var _index = __webpack_require__(1);
+	var _index = __webpack_require__(2);
 
 	var testUnit = new _index.Unit(function (x) {
 	                       return x;
-	}, 'Check "isTypeOf"');
+	}, 'Check "isNotNull"');
 
-	exports.default = testUnit.addTest(new _index.Test({ arg: null, expectation: 'null', method: 'isTypeOf' })).addTest(new _index.Test({ arg: null, expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: undefined, expectation: 'undefined', method: 'isTypeOf' })).addTest(new _index.Test({ arg: undefined, expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: { a: 2 }, expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: [1, 2], expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: { a: 2 }, expectation: 'array', method: 'isTypeOf' })).addTest(new _index.Test({ arg: [1, 2], expectation: 'array', method: 'isTypeOf' })).addTest(new _index.Test({ arg: { a: 2 }, expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: new Date(), expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: new Date(), expectation: 'date', method: 'isTypeOf' })).addTest(new _index.Test({ arg: new Date(), expectation: 'Date', method: 'isTypeOf' }));
+	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNotNull' })).addTest(new _index.Test({ arg: null, method: 'isNotNull' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNull' })).addTest(new _index.Test({ arg: false, method: 'isNotNull' })).addTest(new _index.Test({ arg: 0, method: 'isNotNull' }));
 
 /***/ },
 /* 47 */
@@ -1872,13 +1864,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	                       value: true
 	});
 
-	var _index = __webpack_require__(1);
+	var _index = __webpack_require__(2);
 
 	var testUnit = new _index.Unit(function (x) {
 	                       return x;
-	}, 'Check "notExist"');
+	}, 'Check "isNull"');
 
-	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'notExist' })).addTest(new _index.Test({ arg: null, method: 'notExist' })).addTest(new _index.Test({ arg: undefined, method: 'notExist' })).addTest(new _index.Test({ arg: false, method: 'notExist' })).addTest(new _index.Test({ arg: 0, method: 'notExist' }));
+	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNull' })).addTest(new _index.Test({ arg: null, method: 'isNull' })).addTest(new _index.Test({ arg: undefined, method: 'isNull' })).addTest(new _index.Test({ arg: false, method: 'isNull' })).addTest(new _index.Test({ arg: 0, method: 'isNull' }));
 
 /***/ },
 /* 48 */
@@ -1887,16 +1879,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	                       value: true
+	          value: true
 	});
 
-	var _index = __webpack_require__(1);
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _test_data = __webpack_require__(41);
+
+	var _index = __webpack_require__(2);
 
 	var testUnit = new _index.Unit(function (x) {
-	                       return x;
-	}, 'Check "exist"');
+	          return x;
+	}, 'Check "isSameNotOrderedStructure"');
 
-	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'exist' })).addTest(new _index.Test({ arg: null, method: 'exist' })).addTest(new _index.Test({ arg: undefined, method: 'exist' })).addTest(new _index.Test({ arg: false, method: 'exist' })).addTest(new _index.Test({ arg: 0, method: 'exist' }));
+	exports.default = testUnit.addTest(new _index.Test({ arg: 5, method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: 5, method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: '5', method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: '5', method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: 6, method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: 'string', method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: undefined, method: 'isSameNotOrderedStructure', expectation: undefined })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: null })).addTest(new _index.Test({ arg: NaN, method: 'isSameNotOrderedStructure', expectation: NaN })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: undefined })).addTest(new _index.Test({ arg: {}, method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameNotOrderedStructure', expectation: [] })).addTest(new _index.Test({ arg: new Date(), method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3, 4] })).addTest(new _index.Test({ arg: [0, 1, 2], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 2, 1, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isSameNotOrderedStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, _test_data.test_obj_1) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, _test_data.test_obj_2) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_2), method: 'isSameNotOrderedStructure', expectation: _test_data.test_obj_2 })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, _test_data.test_obj_3) }));
 
 /***/ },
 /* 49 */
@@ -1908,13 +1904,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	          value: true
 	});
 
-	var _index = __webpack_require__(1);
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _test_data = __webpack_require__(41);
+
+	var _index = __webpack_require__(2);
 
 	var testUnit = new _index.Unit(function (x) {
 	          return x;
-	}, 'Check "isEqual"');
+	}, 'Check "isSameStructure"');
 
-	exports.default = testUnit.addTest(new _index.Test({ arg: 4, expectation: 4, method: 'isEqual' })).addTest(new _index.Test({ arg: 4, expectation: '4', method: 'isEqual' })).addTest(new _index.Test({ arg: '4', expectation: 4, method: 'isEqual' })).addTest(new _index.Test({ arg: '4', expectation: '4', method: 'isEqual' })).addTest(new _index.Test({ arg: 4, expectation: 8, method: 'isEqual' }));
+	exports.default = testUnit.addTest(new _index.Test({ arg: 5, method: 'isSameStructure', expectation: 5 })).addTest(new _index.Test({ arg: 5, method: 'isSameStructure', expectation: '5' })).addTest(new _index.Test({ arg: '5', method: 'isSameStructure', expectation: 5 })).addTest(new _index.Test({ arg: '5', method: 'isSameStructure', expectation: '5' })).addTest(new _index.Test({ arg: 6, method: 'isSameStructure', expectation: 5 })).addTest(new _index.Test({ arg: 'string', method: 'isSameStructure', expectation: '5' })).addTest(new _index.Test({ arg: undefined, method: 'isSameStructure', expectation: undefined })).addTest(new _index.Test({ arg: null, method: 'isSameStructure', expectation: null })).addTest(new _index.Test({ arg: NaN, method: 'isSameStructure', expectation: NaN })).addTest(new _index.Test({ arg: null, method: 'isSameStructure', expectation: {} })).addTest(new _index.Test({ arg: null, method: 'isSameStructure', expectation: undefined })).addTest(new _index.Test({ arg: {}, method: 'isSameStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameStructure', expectation: [] })).addTest(new _index.Test({ arg: new Date(), method: 'isSameStructure', expectation: {} })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameStructure', expectation: [0, 1, 2, 3, 4] })).addTest(new _index.Test({ arg: [0, 1, 2], method: 'isSameStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 2, 1, 3], method: 'isSameStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isSameStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameStructure', expectation: _extends({}, _test_data.test_obj_1) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameStructure', expectation: _extends({}, _test_data.test_obj_2) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_2), method: 'isSameStructure', expectation: _test_data.test_obj_2 })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameStructure', expectation: _extends({}, _test_data.test_obj_3) }));
 
 /***/ },
 /* 50 */
@@ -1926,13 +1926,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	          value: true
 	});
 
-	var _index = __webpack_require__(1);
+	var _index = __webpack_require__(2);
 
 	var testUnit = new _index.Unit(function (x) {
 	          return x;
-	}, 'Check "isEqualNonStrict"');
+	}, 'Check "isTrue"');
 
-	exports.default = testUnit.addTest(new _index.Test({ arg: 4, expectation: 4, method: 'isEqualNonStrict' })).addTest(new _index.Test({ arg: 4, expectation: '4', method: 'isEqualNonStrict' })).addTest(new _index.Test({ arg: '4', expectation: 4, method: 'isEqualNonStrict' })).addTest(new _index.Test({ arg: '4', expectation: '4', method: 'isEqualNonStrict' })).addTest(new _index.Test({ arg: 4, expectation: 8, method: 'isEqualNonStrict' }));
+	exports.default = testUnit.addTest(new _index.Test({ arg: null, method: 'isTrue' })).addTest(new _index.Test({ arg: undefined, method: 'isTrue' })).addTest(new _index.Test({ arg: NaN, method: 'isTrue' })).addTest(new _index.Test({ arg: 0, method: 'isTrue' })).addTest(new _index.Test({ arg: '', method: 'isTrue' })).addTest(new _index.Test({ arg: true, method: 'isTrue' })).addTest(new _index.Test({ arg: false, method: 'isTrue' })).addTest(new _index.Test({ arg: '0', method: 'isTrue' })).addTest(new _index.Test({ arg: 'false', method: 'isTrue' })).addTest(new _index.Test({ arg: 'true', method: 'isTrue' }));
 
 /***/ },
 /* 51 */
@@ -1941,16 +1941,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	          value: true
+	                       value: true
 	});
 
-	var _index = __webpack_require__(1);
+	var _index = __webpack_require__(2);
 
 	var testUnit = new _index.Unit(function (x) {
-	          return x;
-	}, 'Check "isFalse"');
+	                       return x;
+	}, 'Check "isTypeOf"');
 
-	exports.default = testUnit.addTest(new _index.Test({ arg: null, method: 'isFalse' })).addTest(new _index.Test({ arg: undefined, method: 'isFalse' })).addTest(new _index.Test({ arg: NaN, method: 'isFalse' })).addTest(new _index.Test({ arg: 0, method: 'isFalse' })).addTest(new _index.Test({ arg: '', method: 'isFalse' })).addTest(new _index.Test({ arg: true, method: 'isFalse' })).addTest(new _index.Test({ arg: false, method: 'isFalse' })).addTest(new _index.Test({ arg: '0', method: 'isFalse' })).addTest(new _index.Test({ arg: 'false', method: 'isFalse' })).addTest(new _index.Test({ arg: 'true', method: 'isFalse' }));
+	exports.default = testUnit.addTest(new _index.Test({ arg: null, expectation: 'null', method: 'isTypeOf' })).addTest(new _index.Test({ arg: null, expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: undefined, expectation: 'undefined', method: 'isTypeOf' })).addTest(new _index.Test({ arg: undefined, expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: { a: 2 }, expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: [1, 2], expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: { a: 2 }, expectation: 'array', method: 'isTypeOf' })).addTest(new _index.Test({ arg: [1, 2], expectation: 'array', method: 'isTypeOf' })).addTest(new _index.Test({ arg: { a: 2 }, expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: new Date(), expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: new Date(), expectation: 'date', method: 'isTypeOf' })).addTest(new _index.Test({ arg: new Date(), expectation: 'Date', method: 'isTypeOf' }));
 
 /***/ },
 /* 52 */
@@ -1962,13 +1962,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	                       value: true
 	});
 
-	var _index = __webpack_require__(1);
+	var _index = __webpack_require__(2);
 
 	var testUnit = new _index.Unit(function (x) {
 	                       return x;
-	}, 'Check "isInstanceOf"');
+	}, 'Check "notExist"');
 
-	exports.default = testUnit.addTest(new _index.Test({ arg: {}, expectation: Object, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: {}, expectation: Array, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: [], expectation: Array, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: [], expectation: Object, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: new Date(), expectation: Object, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: new Date(), expectation: Date, method: 'isInstanceOf' }));
+	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'notExist' })).addTest(new _index.Test({ arg: null, method: 'notExist' })).addTest(new _index.Test({ arg: undefined, method: 'notExist' })).addTest(new _index.Test({ arg: false, method: 'notExist' })).addTest(new _index.Test({ arg: 0, method: 'notExist' }));
 
 /***/ }
 /******/ ])
