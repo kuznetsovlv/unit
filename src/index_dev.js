@@ -1,4 +1,5 @@
-import {Unit, Test}	from './index';
+import {Unit, Test}		from './index';
+import isLikeStructure	from './lib_dev/isLikeStructure_dev';
 
 const testUnit_1 = new Unit (x => x, 'Check "Exist"');
 const testUnit_2 = new Unit (x => x, 'Check "isEqual"');
@@ -41,3 +42,5 @@ testUnit_5.addTest(new Test({arg: {}, expectation: Object, method: 'isInstanceOf
           .addTest(new Test({arg: [], expectation: Array, method: 'isInstanceOf'}))
           .addTest(new Test({arg: [], expectation: Object, method: 'isInstanceOf'}))
           .drawResult();
+
+isLikeStructure.drawResult();

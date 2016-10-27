@@ -58,6 +58,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _index = __webpack_require__(1);
 
+	var _isLikeStructure_dev = __webpack_require__(35);
+
+	var _isLikeStructure_dev2 = _interopRequireDefault(_isLikeStructure_dev);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	var testUnit_1 = new _index.Unit(function (x) {
 	          return x;
 	}, 'Check "Exist"');
@@ -84,6 +90,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	testUnit_5.addTest(new _index.Test({ arg: {}, expectation: Object, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: {}, expectation: Array, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: [], expectation: Array, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: [], expectation: Object, method: 'isInstanceOf' })).drawResult();
 
+	_isLikeStructure_dev2.default.drawResult();
+
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
@@ -99,7 +107,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _Unit3 = _interopRequireDefault(_Unit2);
 
-	var _Test2 = __webpack_require__(25);
+	var _Test2 = __webpack_require__(27);
 
 	var _Test3 = _interopRequireDefault(_Test2);
 
@@ -146,17 +154,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var methods = _interopRequireWildcard(_methods);
 
-	var _commiter = __webpack_require__(33);
+	var _commiter = __webpack_require__(25);
 
 	var _commiter2 = _interopRequireDefault(_commiter);
 
-	var _Test = __webpack_require__(25);
+	var _Test = __webpack_require__(27);
 
 	var _Test2 = _interopRequireDefault(_Test);
 
-	var _styles = __webpack_require__(27);
+	var _styles = __webpack_require__(29);
 
-	var _date = __webpack_require__(30);
+	var _date = __webpack_require__(32);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1366,7 +1374,58 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.default = undefined;
 
-	var _Test = __webpack_require__(26);
+	var _commiter = __webpack_require__(26);
+
+	var _commiter2 = _interopRequireDefault(_commiter);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _commiter2.default;
+
+/***/ },
+/* 26 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = commiter;
+	/**
+	 * General method to commit tests.
+	 * @param {function} isSuccess - result testing method.
+	 * @param {function} func - function to be tested.
+	 * @param {object} test - test`s object. This argument is guaranteed to be every time an object by the only calling in Unit,
+	 * so we are able to use destructuring safely.
+	 * @param {array} [test#args] - array of arguments that function get.
+	 * @param {*} test#expectation - expected result value.
+	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
+	 * @return {object}
+	 */
+	function commiter(isSuccess, func, _ref) {
+	  var _ref$args = _ref.args;
+	  var args = _ref$args === undefined ? [] : _ref$args;
+	  var expectation = _ref.expectation;
+	  var context = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+
+	  var result = func.apply(context, args);
+
+	  return { result: result, success: isSuccess(result, expectation) };
+	}
+
+/***/ },
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _Test = __webpack_require__(28);
 
 	var _Test2 = _interopRequireDefault(_Test);
 
@@ -1375,7 +1434,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = _Test2.default;
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1419,7 +1478,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Test;
 
 /***/ },
-/* 27 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1429,11 +1488,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.bgColors = exports.fontColors = exports.common = undefined;
 
-	var _common2 = __webpack_require__(28);
+	var _common2 = __webpack_require__(30);
 
 	var _common = _interopRequireWildcard(_common2);
 
-	var _colors = __webpack_require__(29);
+	var _colors = __webpack_require__(31);
 
 	var _colors2 = _interopRequireDefault(_colors);
 
@@ -1469,7 +1528,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var bgColors = exports.bgColors = toFormat(setColors(_colors2.default, 40));
 
 /***/ },
-/* 28 */
+/* 30 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1486,7 +1545,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Hidden = exports.Hidden = 8;
 
 /***/ },
-/* 29 */
+/* 31 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1497,7 +1556,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = 'Black,Red,Green,Yellow,Blue,Magenta,Cyan,White'.split(',');
 
 /***/ },
-/* 30 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1508,11 +1567,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.dateDiff = undefined;
 	exports.msToHR = msToHR;
 
-	var _dd = __webpack_require__(31);
+	var _dd = __webpack_require__(33);
 
 	var _dd2 = _interopRequireDefault(_dd);
 
-	var _n = __webpack_require__(32);
+	var _n = __webpack_require__(34);
 
 	var _n2 = _interopRequireDefault(_n);
 
@@ -1560,7 +1619,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 31 */
+/* 33 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1580,7 +1639,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 32 */
+/* 34 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1609,55 +1668,89 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 33 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	          value: true
 	});
-	exports.default = undefined;
 
-	var _commiter = __webpack_require__(34);
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	var _commiter2 = _interopRequireDefault(_commiter);
+	var _test_data = __webpack_require__(36);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _index = __webpack_require__(1);
 
-	exports.default = _commiter2.default;
+	var testUnit = new _index.Unit(function (x) {
+	          return x;
+	}, 'Check "isLikeStructure"');
+
+	exports.default = testUnit.addTest(new _index.Test({ arg: 5, method: 'isLikeStructure', expectation: 5 })).addTest(new _index.Test({ arg: 5, method: 'isLikeStructure', expectation: '5' })).addTest(new _index.Test({ arg: '5', method: 'isLikeStructure', expectation: 5 })).addTest(new _index.Test({ arg: '5', method: 'isLikeStructure', expectation: '5' })).addTest(new _index.Test({ arg: 6, method: 'isLikeStructure', expectation: 5 })).addTest(new _index.Test({ arg: 'string', method: 'isLikeStructure', expectation: '5' })).addTest(new _index.Test({ arg: undefined, method: 'isLikeStructure', expectation: undefined })).addTest(new _index.Test({ arg: null, method: 'isLikeStructure', expectation: null })).addTest(new _index.Test({ arg: NaN, method: 'isLikeStructure', expectation: NaN })).addTest(new _index.Test({ arg: null, method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: null, method: 'isLikeStructure', expectation: undefined })).addTest(new _index.Test({ arg: {}, method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isLikeStructure', expectation: [] })).addTest(new _index.Test({ arg: new Date(), method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: [0, 1, 2, 3, 4] })).addTest(new _index.Test({ arg: [0, 1, 2], method: 'isLikeStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 2, 1, 3], method: 'isLikeStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isLikeStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isLikeStructure', expectation: _extends({}, _test_data.test_obj_1) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isLikeStructure', expectation: _extends({}, _test_data.test_obj_2) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_2), method: 'isLikeStructure', expectation: _test_data.test_obj_2 })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isLikeStructure', expectation: _extends({}, _test_data.test_obj_3) }));
 
 /***/ },
-/* 34 */
+/* 36 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	     value: true
 	});
-	exports.default = commiter;
-	/**
-	 * General method to commit tests.
-	 * @param {function} isSuccess - result testing method.
-	 * @param {function} func - function to be tested.
-	 * @param {object} test - test`s object. This argument is guaranteed to be every time an object by the only calling in Unit,
-	 * so we are able to use destructuring safely.
-	 * @param {array} [test#args] - array of arguments that function get.
-	 * @param {*} test#expectation - expected result value.
-	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
-	 * @return {object}
-	 */
-	function commiter(isSuccess, func, _ref) {
-	  var _ref$args = _ref.args;
-	  var args = _ref$args === undefined ? [] : _ref$args;
-	  var expectation = _ref.expectation;
-	  var context = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+	var test_obj_1 = exports.test_obj_1 = {
+	     item1: 2,
+	     item2: '3',
+	     item3: [],
+	     test: 'test',
+	     any: false,
+	     obj: {
+	          test: 123,
+	          arr: [12, 3, 'test', {}, [1, 2, 7, { d: 2 }], ''],
+	          obj: {
+	               'null': null,
+	               nan: NaN,
+	               u: undefined,
+	               'true': true
+	          }
+	     }
+	};
 
-	  var result = func.apply(context, args);
+	var test_obj_2 = exports.test_obj_2 = {
+	     item_1: 2,
+	     item2: '3',
+	     item3: [],
+	     test: 'test',
+	     any: false,
+	     obj: {
+	          test: 123,
+	          arr: [12, 3, 'test', {}, [1, 2, 7, { d: 2 }], ''],
+	          obj: {
+	               'null': null,
+	               nan: NaN,
+	               u: undefined,
+	               'true': true
+	          }
+	     }
+	};
 
-	  return { result: result, success: isSuccess(result, expectation) };
-	}
+	var test_obj_3 = exports.test_obj_3 = {
+	     item2: '3',
+	     item1: 2,
+	     item3: [],
+	     test: 'test',
+	     any: false,
+	     obj: {
+	          test: 123,
+	          arr: [12, 3, 'test', {}, [1, 2, 7, { d: 2 }], ''],
+	          obj: {
+	               'null': null,
+	               nan: NaN,
+	               u: undefined,
+	               'true': true
+	          }
+	     }
+	};
 
 /***/ }
 /******/ ])
