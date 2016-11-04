@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
+		module.exports = factory(require("fs"));
 	else if(typeof define === 'function' && define.amd)
-		define([], factory);
+		define(["fs"], factory);
 	else if(typeof exports === 'object')
-		exports["unit"] = factory();
+		exports["unit"] = factory(require("fs"));
 	else
-		root["unit"] = factory();
-})(this, function() {
+		root["unit"] = factory(root["fs"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_6__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -60,67 +60,67 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _exist2 = _interopRequireDefault(_exist);
 
-	var _isEqual = __webpack_require__(36);
+	var _isEqual = __webpack_require__(38);
 
 	var _isEqual2 = _interopRequireDefault(_isEqual);
 
-	var _isEqualNonStrict = __webpack_require__(37);
+	var _isEqualNonStrict = __webpack_require__(39);
 
 	var _isEqualNonStrict2 = _interopRequireDefault(_isEqualNonStrict);
 
-	var _isFalse = __webpack_require__(38);
+	var _isFalse = __webpack_require__(40);
 
 	var _isFalse2 = _interopRequireDefault(_isFalse);
 
-	var _isInstanceOf = __webpack_require__(39);
+	var _isInstanceOf = __webpack_require__(41);
 
 	var _isInstanceOf2 = _interopRequireDefault(_isInstanceOf);
 
-	var _isLikeStructure = __webpack_require__(40);
+	var _isLikeStructure = __webpack_require__(42);
 
 	var _isLikeStructure2 = _interopRequireDefault(_isLikeStructure);
 
-	var _isNaN = __webpack_require__(42);
+	var _isNaN = __webpack_require__(44);
 
 	var _isNaN2 = _interopRequireDefault(_isNaN);
 
-	var _isNill = __webpack_require__(43);
+	var _isNill = __webpack_require__(45);
 
 	var _isNill2 = _interopRequireDefault(_isNill);
 
-	var _isNotNaN = __webpack_require__(44);
+	var _isNotNaN = __webpack_require__(46);
 
 	var _isNotNaN2 = _interopRequireDefault(_isNotNaN);
 
-	var _isNotNill = __webpack_require__(45);
+	var _isNotNill = __webpack_require__(47);
 
 	var _isNotNill2 = _interopRequireDefault(_isNotNill);
 
-	var _isNotNull = __webpack_require__(46);
+	var _isNotNull = __webpack_require__(48);
 
 	var _isNotNull2 = _interopRequireDefault(_isNotNull);
 
-	var _isNull = __webpack_require__(47);
+	var _isNull = __webpack_require__(49);
 
 	var _isNull2 = _interopRequireDefault(_isNull);
 
-	var _isSameNotOrderedStructure = __webpack_require__(48);
+	var _isSameNotOrderedStructure = __webpack_require__(50);
 
 	var _isSameNotOrderedStructure2 = _interopRequireDefault(_isSameNotOrderedStructure);
 
-	var _isSameStructure = __webpack_require__(49);
+	var _isSameStructure = __webpack_require__(51);
 
 	var _isSameStructure2 = _interopRequireDefault(_isSameStructure);
 
-	var _isTrue = __webpack_require__(50);
+	var _isTrue = __webpack_require__(52);
 
 	var _isTrue2 = _interopRequireDefault(_isTrue);
 
-	var _isTypeOf = __webpack_require__(51);
+	var _isTypeOf = __webpack_require__(53);
 
 	var _isTypeOf2 = _interopRequireDefault(_isTypeOf);
 
-	var _notExist = __webpack_require__(52);
+	var _notExist = __webpack_require__(54);
 
 	var _notExist2 = _interopRequireDefault(_notExist);
 
@@ -177,7 +177,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _Unit3 = _interopRequireDefault(_Unit2);
 
-	var _Test2 = __webpack_require__(28);
+	var _Test2 = __webpack_require__(30);
 
 	var _Test3 = _interopRequireDefault(_Test2);
 
@@ -216,127 +216,37 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.default = undefined;
 
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	var _printStr = __webpack_require__(5);
 
-	var _methods = __webpack_require__(5);
+	var _printStr2 = _interopRequireDefault(_printStr);
+
+	var _methods = __webpack_require__(7);
 
 	var methods = _interopRequireWildcard(_methods);
 
-	var _commiter = __webpack_require__(26);
+	var _commiter = __webpack_require__(28);
 
 	var _commiter2 = _interopRequireDefault(_commiter);
 
-	var _Test = __webpack_require__(28);
+	var _Test = __webpack_require__(30);
 
 	var _Test2 = _interopRequireDefault(_Test);
 
-	var _styles = __webpack_require__(30);
+	var _date = __webpack_require__(35);
 
-	var _date = __webpack_require__(33);
+	var _printResult = __webpack_require__(55);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _printResult2 = _interopRequireDefault(_printResult);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	/**
-	 * Converts single argument to string.
-	 * @param {*} arg - argument.
-	 * @return {string}
-	 */
-	function argToStr(arg) {
-		var argType = typeof arg === 'undefined' ? 'undefined' : _typeof(arg);
-
-		if (argType === 'function') return 'function: ' + (arg.name || arg.toLocaleString() || arg.toString());
-
-		if (argType === 'string') return '"' + arg + '"';
-
-		if (!arg || argType !== 'object') return '' + arg;
-
-		if (arg instanceof Array) return '[' + arg.map(function (x) {
-			return argToStr(x);
-		}).join(', ') + ']';
-
-		if ((arg.prototype || arg).toString !== Object.prototype.toString) return arg.toString();
-
-		var keys = [];
-
-		for (var key in arg) {
-			keys.push(key + ': ' + argToStr(arg[key]));
-		}return '{' + keys.join(', ') + '}';
-	}
-
-	/**
-	 * Converts args to string.
-	 * @param {array} args - array of arguments.
-	 * @return {string}
-	 */
-	function argsToStr() {
-		var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-
-		if (args.length < 2) return '' + _styles.fontColors.Magenta + (args[0] === undefined ? 'no arguments' : argToStr(args[0]));
-
-		return ['arguments:' + _styles.fontColors.Magenta, args.map(function (arg) {
-			return argToStr(arg);
-		}).join(', ')].join(' ');
-	}
-
-	/**
-	 * Parses result.
-	 * @param {object} res - result.
-	 * @return {string}
-	 */
-	function parseRes() {
-		var res = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-		var result = res.result;
-		var success = res.success;
-		var error = res.error;
-
-
-		var str = [];
-
-		if ('result' in res) str.push(_styles.fontColors.Yellow + 'Resulted value ' + _styles.fontColors.Magenta + argToStr(result) + _styles.fontColors.Yellow + '.');
-		if (error) {
-			str.push('' + _styles.fontColors.Red + (error.message || error) + '!');
-		} else {
-			str.push(success ? _styles.fontColors.Green + 'Success!' : _styles.fontColors.Red + 'Fail!');
-		}
-
-		return str.join(' ');
-	}
-
-	/**
-	 * Describes expectation.
-	 * @param {object} result - result object.
-	 * @return {string}
-	 */
-	function describeExpectation() {
-		var result = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-		var expectation = result.expectation;
-		var method = result.method;
-
-
-		if (!('expectation' in result)) return '';
-
-		var endStr = '' + _styles.fontColors.Magenta + argToStr(expectation) + _styles.fontColors.Yellow + '.';
-
-		switch (method) {
-			case 'isTypeOf':
-				return 'Expected that value is type of ' + endStr;
-			case 'isInstanceOf':
-				return 'Expected that value is instance of ' + endStr;
-			case 'isSameNotOrderedStructure':
-			case 'isSameStructure':
-				return 'Expected that value has same structure with ' + endStr;
-			case 'isLikeStructure':
-				return 'Expected that value equals or has properties from ' + endStr;
-			default:
-				return 'Expected value is ' + endStr;
-		}
-	}
 
 	/**
 	 * Class to create unit test set.
@@ -344,7 +254,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @param {string} description - test set`s description
 	 * @param {object} [context] - context object for call function, it is good idea to not use it, because funtion must be a pure.
 	 */
-
 	var Unit = function () {
 		function Unit(func) {
 			var description = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
@@ -366,7 +275,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		/**
 	  * Method to add test into series.
 	  * @param {Test} test - test`s object.
-	 	 * @return {Unit} - this.
+	 	 * @returns {Unit} - this.
 	  */
 
 
@@ -389,7 +298,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 			/**
 	   * Method to perform tests.
-	   * @return {Unit} - this.s
+	   * @returns {Unit} - this.s
 	   */
 
 		}, {
@@ -399,15 +308,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 				var testStarted = new Date();
 
-				var results = this.tests.map(function (_ref) {
-					var args = _ref.args;
-					var expectation = _ref.expectation;
-					var method = _ref.method;
+				var results = this.tests.map(function () {
+					var result = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+					var args = result.args;
+					var expectation = result.expectation;
+					var method = result.method;
 
 					var res = void 0;
 
 					try {
-						// res = methods[method](this.method, {args, expectation}, this.context);
 						res = (0, _commiter2.default)(methods[method], _this.method, { args: args, expectation: expectation }, _this.context);
 					} catch (e) {
 						res = {
@@ -415,7 +324,7 @@ return /******/ (function(modules) { // webpackBootstrap
 						};
 					}
 
-					return { args: args, expectation: expectation, method: method, res: res };
+					return _extends({}, result, { res: res });
 				});
 
 				this.result = {
@@ -430,7 +339,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 			/**
 	   * Method to return last result.
-	   * @return {object} - result.
+	   * @returns {object} - result.
 	   */
 
 		}, {
@@ -442,7 +351,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			/**
 	   * Method to draw result.
 	   * @param {boolean} [failsOnly = false] - if argument is true success tests would not be drawn.
-	   * @return {Unit} - this.s
+	   * @returns {Unit} - this.s
 	   */
 
 		}, {
@@ -459,58 +368,41 @@ return /******/ (function(modules) { // webpackBootstrap
 				var description = _getResult.description;
 
 
-				console.log(_styles.bgColors.Black);
+				(0, _printStr2.default)('@bgBlack;'); // Main background for common
 
-				console.log('' + _styles.fontColors.White + description);
+				(0, _printStr2.default)('@fWhite;' + description + '\n'); // Output description
 
 				if (!results.length) {
-					console.log('' + _styles.fontColors.White + _styles.common.Underscore + 'No tests set!'.toUpperCase());
+					(0, _printStr2.default)('@fWhite;@Underscore;NO TESTS SET!', 'final'); //No tests
 				} else {
-					(function () {
-						console.log(_styles.fontColors.Blue + 'Test started at ' + _styles.fontColors.Magenta + testStarted + _styles.fontColors.Blue + ' finished at ' + _styles.fontColors.Magenta + testFinished + _styles.fontColors.Blue + ', test took ' + _styles.fontColors.Cyan + (0, _date.msToHR)((0, _date.dateDiff)(testFinished, testStarted)) + '.');
+					// Timing
+					(0, _printStr2.default)('@fBlue;Test started at @fMagenta;' + testStarted + ' ');
+					(0, _printStr2.default)('@fBlue;finished at @fMagenta;' + testFinished + ', ');
+					(0, _printStr2.default)('test took @fCyan;' + (0, _date.msToHR)((0, _date.dateDiff)(testFinished, testStarted)) + '.\n');
 
-						var successes = 0,
-						    fails = 0,
-						    exeptions = 0;
+					//Output results and getting new statistics.
 
-						var sum = results.length;
+					var _results$reduce = results.reduce(function () {
+						var stat = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+						var result = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+						return (0, _printResult2.default)(result, stat, failsOnly);
+					}, { successes: 0, fails: 0, exeptions: 0 });
 
-						results.forEach(function () {
-							var result = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-							var i = arguments[1];
-							var args = result.args;
-							var expectation = result.expectation;
-							var method = result.method;
-							var _result$res = result.res;
-							var res = _result$res === undefined ? {} : _result$res;
+					var successes = _results$reduce.successes;
+					var fails = _results$reduce.fails;
+					var exeptions = _results$reduce.exeptions;
 
 
-							if (res.error) {
-								++exeptions;
-							} else if (res.success) {
-								++successes;
-								if (failsOnly) return;
-							} else {
-								++fails;
-							}
+					var sum = successes + fails + exeptions;
 
-							var str1 = '' + _styles.fontColors.Blue + i + '. ' + _styles.fontColors.Yellow + 'Function called with ' + argsToStr(args) + _styles.fontColors.Yellow + '.';
-							var str2 = _styles.fontColors.Yellow + 'Function checked by method ' + _styles.fontColors.Magenta + method + _styles.fontColors.Yellow + '.';
-							var str3 = describeExpectation(result);
-							var str4 = parseRes(res);
-
-							console.log((str1 + ' ' + str2 + ' ' + (str3 ? str3 : '') + ' ' + str4).replace(/\s+/g, ' '));
-						});
-
-						console.log(_styles.fontColors.Blue + 'Statistic:');
-
-						console.log(_styles.fontColors.Green + 'Successes: ' + successes + _styles.fontColors.Blue + ', ' + _styles.fontColors.Red + 'Fails: ' + fails + _styles.fontColors.Blue + ', ' + _styles.fontColors.Red + 'Exeptions: ' + exeptions + _styles.fontColors.Blue + '. From ' + _styles.fontColors.Cyan + sum + _styles.fontColors.Blue + ' test' + (sum !== 1 ? 's' : '') + '.');
-
-						console.log(_styles.fontColors.Blue + 'Result: ' + (successes === sum ? _styles.fontColors.Green + 'SUCCESS' : _styles.fontColors.Red + 'FAIL') + '!');
-					})();
+					//Output statistics.
+					(0, _printStr2.default)('@fBlue;Statistic:\n');
+					(0, _printStr2.default)('@fGreen;Successes: ' + successes + '@fBlue;, ');
+					(0, _printStr2.default)('@fRed;Fails: ' + fails + '@fBlue;, ');
+					(0, _printStr2.default)('@fRed;Exeptions: ' + exeptions + '. ');
+					(0, _printStr2.default)('From @fCyan;' + sum + ' @fBlue;test' + (sum !== 1 ? 's' : '') + '.\n');
+					(0, _printStr2.default)('@fBlue;Result: ' + (successes === sum ? '@fGreen;SUCCESS' : '@fRed;FAIL') + '!', 'final');
 				}
-
-				console.log(_styles.common.Reset);
 
 				return this;
 			}
@@ -525,13 +417,25 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
+	!function(e,t){ true?module.exports=t(__webpack_require__(6)):"function"==typeof define&&define.amd?define(["fs"],t):"object"==typeof exports?exports.print=t(require("fs")):e.print=t(e.fs)}(this,function(e){return function(e){function t(n){if(r[n])return r[n].exports;var o=r[n]={exports:{},id:n,loaded:!1};return e[n].call(o.exports,o,o.exports,t),o.loaded=!0,o.exports}var r={};return t.m=e,t.c=r,t.p="",t(0)}([function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var o=r(6),u=n(o);t.default=u.default},function(e,t){"use strict";function r(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"";switch(e){case"true":return!0;case"false":return!1;case"undefined":return;case"null":return null;case"NaN":return NaN}return e&&/^\d*\.?\d*$/.test(e)?parseFloat(e):e}function n(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"";return e.split(",").reduce(function(e,t){if(/^\w+=\w*$/.test(t)){var n=t.split("="),o=u(n,2),i=o[0],f=o[1];e[i]=r(f)}else e[t]=!0;return e},{})}Object.defineProperty(t,"__esModule",{value:!0});var o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},u=function(){function e(e,t){var r=[],n=!0,o=!1,u=void 0;try{for(var i,f=e[Symbol.iterator]();!(n=(i=f.next()).done)&&(r.push(i.value),!t||r.length!==t);n=!0);}catch(e){o=!0,u=e}finally{try{!n&&f.return&&f.return()}finally{if(o)throw u}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}();t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[];return e.reduce(function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=arguments[1];return"string"==typeof t?o({},e,n(t)):e},{})}},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[];return e.reduce(function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=arguments[1];return"object"===(void 0===t?"undefined":n(t))?r({},e,t):e},{})}},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default="Black,Red,Green,Yellow,Blue,Magenta,Cyan,White".split(",")},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.Reset=0,t.Bright=1,t.Dim=2,t.Underscore=4,t.Blink=5,t.Reverse=7,t.Hidden=8},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}function o(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var r in e)Object.prototype.hasOwnProperty.call(e,r)&&(t[r]=e[r]);return t.default=e,t}function u(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"",r={};for(var n in e)r[""+t+n]="["+e[n]+"m";return r}function i(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0,r={};return e.forEach(function(e,n){r[e]=n+t}),r}Object.defineProperty(t,"__esModule",{value:!0});var f=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},l=r(4),a=o(l),c=r(3),s=n(c),d=f({},u(a),u(i(s.default,30),"f"),u(i(s.default,40),"bg"));t.default=d},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var o=r(7),u=n(o);t.default=u.default},function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}function o(){for(var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length,r=Array(t>1?t-1:0),n=1;n<t;n++)r[n-1]=arguments[n];var o=(0,a.default)(r),i=(0,s.default)(r),l=i.noStyles,c=void 0!==l&&l,d=i.noVars,v=void 0!==d&&d,p=i.final,y=void 0!==p&&p,b=i.encoding,h=void 0===b?"utf8":b;return e=""+e,c||(e=e.replace(/\\?@\w+,?\w*;/g,function(e){return"\\"===e.substr(0,1)?e.substr(1):e.substring(1,e.length-1).split(",").map(function(e){return f.default[e]||""}).join("")})),v||(e=e.replace(/\\?\$\w+;/g,function(e){return"\\"===e.substr(0,1)?e.substr(1):o[e.substring(1,e.length-1)]||e})),y&&(e=""+e+f.default.Reset+"\n"),(0,u.writeSync)(1,e,h)}Object.defineProperty(t,"__esModule",{value:!0});var u=r(8),i=r(5),f=n(i),l=r(2),a=n(l),c=r(1),s=n(c);t.default=o},function(e,t){e.exports=__webpack_require__(6)}])});
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	module.exports = require("fs");
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
-	var _isEqual = __webpack_require__(6);
+	var _isEqual = __webpack_require__(8);
 
 	Object.defineProperty(exports, 'isEqual', {
 	  enumerable: true,
@@ -540,7 +444,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isEqualNonStrict = __webpack_require__(7);
+	var _isEqualNonStrict = __webpack_require__(9);
 
 	Object.defineProperty(exports, 'isEqualNonStrict', {
 	  enumerable: true,
@@ -549,7 +453,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _exist = __webpack_require__(8);
+	var _exist = __webpack_require__(10);
 
 	Object.defineProperty(exports, 'exist', {
 	  enumerable: true,
@@ -558,7 +462,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _notExist = __webpack_require__(9);
+	var _notExist = __webpack_require__(11);
 
 	Object.defineProperty(exports, 'notExist', {
 	  enumerable: true,
@@ -567,7 +471,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isNull = __webpack_require__(10);
+	var _isNull = __webpack_require__(12);
 
 	Object.defineProperty(exports, 'isNull', {
 	  enumerable: true,
@@ -576,7 +480,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isNotNull = __webpack_require__(11);
+	var _isNotNull = __webpack_require__(13);
 
 	Object.defineProperty(exports, 'isNotNull', {
 	  enumerable: true,
@@ -585,7 +489,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isNill = __webpack_require__(12);
+	var _isNill = __webpack_require__(14);
 
 	Object.defineProperty(exports, 'isNill', {
 	  enumerable: true,
@@ -594,7 +498,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isNotNill = __webpack_require__(13);
+	var _isNotNill = __webpack_require__(15);
 
 	Object.defineProperty(exports, 'isNotNill', {
 	  enumerable: true,
@@ -603,7 +507,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isNaN = __webpack_require__(14);
+	var _isNaN = __webpack_require__(16);
 
 	Object.defineProperty(exports, 'isNaN', {
 	  enumerable: true,
@@ -612,7 +516,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isNotNaN = __webpack_require__(15);
+	var _isNotNaN = __webpack_require__(17);
 
 	Object.defineProperty(exports, 'isNotNaN', {
 	  enumerable: true,
@@ -621,7 +525,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isTrue = __webpack_require__(16);
+	var _isTrue = __webpack_require__(18);
 
 	Object.defineProperty(exports, 'isTrue', {
 	  enumerable: true,
@@ -630,7 +534,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isFalse = __webpack_require__(17);
+	var _isFalse = __webpack_require__(19);
 
 	Object.defineProperty(exports, 'isFalse', {
 	  enumerable: true,
@@ -639,7 +543,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isTypeOf = __webpack_require__(18);
+	var _isTypeOf = __webpack_require__(20);
 
 	Object.defineProperty(exports, 'isTypeOf', {
 	  enumerable: true,
@@ -648,7 +552,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isInstanceOf = __webpack_require__(19);
+	var _isInstanceOf = __webpack_require__(21);
 
 	Object.defineProperty(exports, 'isInstanceOf', {
 	  enumerable: true,
@@ -657,7 +561,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isSameStructure = __webpack_require__(20);
+	var _isSameStructure = __webpack_require__(22);
 
 	Object.defineProperty(exports, 'isSameStructure', {
 	  enumerable: true,
@@ -666,7 +570,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isSameNotOrderedStructure = __webpack_require__(23);
+	var _isSameNotOrderedStructure = __webpack_require__(25);
 
 	Object.defineProperty(exports, 'isSameNotOrderedStructure', {
 	  enumerable: true,
@@ -675,7 +579,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	});
 
-	var _isLikeStructure = __webpack_require__(24);
+	var _isLikeStructure = __webpack_require__(26);
 
 	Object.defineProperty(exports, 'isLikeStructure', {
 	  enumerable: true,
@@ -687,7 +591,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ },
-/* 6 */
+/* 8 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -707,7 +611,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 7 */
+/* 9 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -728,7 +632,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 8 */
+/* 10 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -747,7 +651,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 9 */
+/* 11 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -766,7 +670,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 10 */
+/* 12 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -785,7 +689,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 11 */
+/* 13 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -804,7 +708,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 12 */
+/* 14 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -823,7 +727,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 13 */
+/* 15 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -842,7 +746,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 14 */
+/* 16 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -861,7 +765,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 15 */
+/* 17 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -880,7 +784,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 16 */
+/* 18 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -899,7 +803,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 17 */
+/* 19 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -918,7 +822,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 18 */
+/* 20 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -940,7 +844,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 19 */
+/* 21 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -960,7 +864,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 20 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -969,7 +873,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _isSame = __webpack_require__(21);
+	var _isSame = __webpack_require__(23);
 
 	var _isSame2 = _interopRequireDefault(_isSame);
 
@@ -986,7 +890,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 21 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -999,7 +903,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports.default = isSame;
 
-	var _keys = __webpack_require__(22);
+	var _keys = __webpack_require__(24);
 
 	var _keys2 = _interopRequireDefault(_keys);
 
@@ -1123,7 +1027,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 22 */
+/* 24 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1148,7 +1052,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 23 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1157,7 +1061,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _isSame = __webpack_require__(21);
+	var _isSame = __webpack_require__(23);
 
 	var _isSame2 = _interopRequireDefault(_isSame);
 
@@ -1174,7 +1078,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 24 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1183,7 +1087,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _isLike = __webpack_require__(25);
+	var _isLike = __webpack_require__(27);
 
 	var _isLike2 = _interopRequireDefault(_isLike);
 
@@ -1197,7 +1101,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 25 */
+/* 27 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1304,7 +1208,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1314,7 +1218,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.default = undefined;
 
-	var _commiter = __webpack_require__(27);
+	var _commiter = __webpack_require__(29);
 
 	var _commiter2 = _interopRequireDefault(_commiter);
 
@@ -1323,7 +1227,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = _commiter2.default;
 
 /***/ },
-/* 27 */
+/* 29 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1355,7 +1259,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 28 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1365,7 +1269,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.default = undefined;
 
-	var _Test = __webpack_require__(29);
+	var _Test = __webpack_require__(31);
 
 	var _Test2 = _interopRequireDefault(_Test);
 
@@ -1374,7 +1278,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = _Test2.default;
 
 /***/ },
-/* 29 */
+/* 31 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1408,9 +1312,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 		if (args && !(args instanceof Array)) throw new Error("args must be an Array or not defined");
 
-		this.args = args || [arg];
+		this.args = args || 'arg' in test ? [arg] : [];
 
-		this.expectation = expectation;
+		if ('expectation' in test) this.expectation = expectation;
 
 		this.method = method;
 	};
@@ -1418,85 +1322,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Test;
 
 /***/ },
-/* 30 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.bgColors = exports.fontColors = exports.common = undefined;
-
-	var _common2 = __webpack_require__(31);
-
-	var _common = _interopRequireWildcard(_common2);
-
-	var _colors = __webpack_require__(32);
-
-	var _colors2 = _interopRequireDefault(_colors);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	function toFormat() {
-		var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-		var res = {};
-
-		for (var key in obj) {
-			res[key] = "\x1B[" + obj[key] + "m";
-		}return res;
-	}
-
-	function setColors() {
-		var colors = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-		var shift = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-
-		var colorList = {};
-
-		colors.forEach(function (color, i) {
-			colorList[color] = i + shift;
-		});
-
-		return colorList;
-	}
-
-	var common = exports.common = toFormat(_common);
-	var fontColors = exports.fontColors = toFormat(setColors(_colors2.default, 30));
-	var bgColors = exports.bgColors = toFormat(setColors(_colors2.default, 40));
-
-/***/ },
-/* 31 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var Reset = exports.Reset = 0;
-	var Bright = exports.Bright = 1;
-	var Dim = exports.Dim = 2;
-	var Underscore = exports.Underscore = 4;
-	var Blink = exports.Blink = 5;
-	var Reverse = exports.Reverse = 7;
-	var Hidden = exports.Hidden = 8;
-
-/***/ },
-/* 32 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = 'Black,Red,Green,Yellow,Blue,Magenta,Cyan,White'.split(',');
-
-/***/ },
-/* 33 */
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1507,11 +1336,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.dateDiff = undefined;
 	exports.msToHR = msToHR;
 
-	var _dd = __webpack_require__(34);
+	var _dd = __webpack_require__(36);
 
 	var _dd2 = _interopRequireDefault(_dd);
 
-	var _n = __webpack_require__(35);
+	var _n = __webpack_require__(37);
 
 	var _n2 = _interopRequireDefault(_n);
 
@@ -1559,7 +1388,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 34 */
+/* 36 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1579,7 +1408,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 35 */
+/* 37 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1608,7 +1437,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 36 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1626,7 +1455,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = testUnit.addTest(new _index.Test({ arg: 4, expectation: 4, method: 'isEqual' })).addTest(new _index.Test({ arg: 4, expectation: '4', method: 'isEqual' })).addTest(new _index.Test({ arg: '4', expectation: 4, method: 'isEqual' })).addTest(new _index.Test({ arg: '4', expectation: '4', method: 'isEqual' })).addTest(new _index.Test({ arg: 4, expectation: 8, method: 'isEqual' }));
 
 /***/ },
-/* 37 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1644,7 +1473,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = testUnit.addTest(new _index.Test({ arg: 4, expectation: 4, method: 'isEqualNonStrict' })).addTest(new _index.Test({ arg: 4, expectation: '4', method: 'isEqualNonStrict' })).addTest(new _index.Test({ arg: '4', expectation: 4, method: 'isEqualNonStrict' })).addTest(new _index.Test({ arg: '4', expectation: '4', method: 'isEqualNonStrict' })).addTest(new _index.Test({ arg: 4, expectation: 8, method: 'isEqualNonStrict' }));
 
 /***/ },
-/* 38 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1662,7 +1491,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = testUnit.addTest(new _index.Test({ arg: null, method: 'isFalse' })).addTest(new _index.Test({ arg: undefined, method: 'isFalse' })).addTest(new _index.Test({ arg: NaN, method: 'isFalse' })).addTest(new _index.Test({ arg: 0, method: 'isFalse' })).addTest(new _index.Test({ arg: '', method: 'isFalse' })).addTest(new _index.Test({ arg: true, method: 'isFalse' })).addTest(new _index.Test({ arg: false, method: 'isFalse' })).addTest(new _index.Test({ arg: '0', method: 'isFalse' })).addTest(new _index.Test({ arg: 'false', method: 'isFalse' })).addTest(new _index.Test({ arg: 'true', method: 'isFalse' }));
 
 /***/ },
-/* 39 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1680,7 +1509,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = testUnit.addTest(new _index.Test({ arg: {}, expectation: Object, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: {}, expectation: Array, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: [], expectation: Array, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: [], expectation: Object, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: new Date(), expectation: Object, method: 'isInstanceOf' })).addTest(new _index.Test({ arg: new Date(), expectation: Date, method: 'isInstanceOf' }));
 
 /***/ },
-/* 40 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1691,7 +1520,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	var _test_data = __webpack_require__(41);
+	var _test_data = __webpack_require__(43);
 
 	var _index = __webpack_require__(2);
 
@@ -1702,7 +1531,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = testUnit.addTest(new _index.Test({ arg: 5, method: 'isLikeStructure', expectation: 5 })).addTest(new _index.Test({ arg: 5, method: 'isLikeStructure', expectation: '5' })).addTest(new _index.Test({ arg: '5', method: 'isLikeStructure', expectation: 5 })).addTest(new _index.Test({ arg: '5', method: 'isLikeStructure', expectation: '5' })).addTest(new _index.Test({ arg: 6, method: 'isLikeStructure', expectation: 5 })).addTest(new _index.Test({ arg: 'string', method: 'isLikeStructure', expectation: '5' })).addTest(new _index.Test({ arg: undefined, method: 'isLikeStructure', expectation: undefined })).addTest(new _index.Test({ arg: null, method: 'isLikeStructure', expectation: null })).addTest(new _index.Test({ arg: NaN, method: 'isLikeStructure', expectation: NaN })).addTest(new _index.Test({ arg: null, method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: null, method: 'isLikeStructure', expectation: undefined })).addTest(new _index.Test({ arg: {}, method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isLikeStructure', expectation: [] })).addTest(new _index.Test({ arg: new Date(), method: 'isLikeStructure', expectation: {} })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: [0, 1, 2, 3, 4] })).addTest(new _index.Test({ arg: [0, 1, 2], method: 'isLikeStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 2, 1, 3], method: 'isLikeStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isLikeStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isLikeStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isLikeStructure', expectation: _extends({}, _test_data.test_obj_1) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isLikeStructure', expectation: _extends({}, _test_data.test_obj_2) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_2), method: 'isLikeStructure', expectation: _test_data.test_obj_2 })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isLikeStructure', expectation: _extends({}, _test_data.test_obj_3) }));
 
 /***/ },
-/* 41 */
+/* 43 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1765,7 +1594,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 42 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1783,7 +1612,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNaN' })).addTest(new _index.Test({ arg: null, method: 'isNaN' })).addTest(new _index.Test({ arg: undefined, method: 'isNaN' })).addTest(new _index.Test({ arg: false, method: 'isNaN' })).addTest(new _index.Test({ arg: 0, method: 'isNaN' }));
 
 /***/ },
-/* 43 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1801,7 +1630,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNill' })).addTest(new _index.Test({ arg: null, method: 'isNill' })).addTest(new _index.Test({ arg: undefined, method: 'isNill' })).addTest(new _index.Test({ arg: false, method: 'isNill' })).addTest(new _index.Test({ arg: 0, method: 'isNill' }));
 
 /***/ },
-/* 44 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1819,7 +1648,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNotNaN' })).addTest(new _index.Test({ arg: null, method: 'isNotNaN' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNaN' })).addTest(new _index.Test({ arg: false, method: 'isNotNaN' })).addTest(new _index.Test({ arg: 0, method: 'isNotNaN' }));
 
 /***/ },
-/* 45 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1837,7 +1666,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNotNill' })).addTest(new _index.Test({ arg: null, method: 'isNotNill' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNill' })).addTest(new _index.Test({ arg: false, method: 'isNotNill' })).addTest(new _index.Test({ arg: 0, method: 'isNotNill' }));
 
 /***/ },
-/* 46 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1855,7 +1684,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNotNull' })).addTest(new _index.Test({ arg: null, method: 'isNotNull' })).addTest(new _index.Test({ arg: undefined, method: 'isNotNull' })).addTest(new _index.Test({ arg: false, method: 'isNotNull' })).addTest(new _index.Test({ arg: 0, method: 'isNotNull' }));
 
 /***/ },
-/* 47 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1873,7 +1702,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'isNull' })).addTest(new _index.Test({ arg: null, method: 'isNull' })).addTest(new _index.Test({ arg: undefined, method: 'isNull' })).addTest(new _index.Test({ arg: false, method: 'isNull' })).addTest(new _index.Test({ arg: 0, method: 'isNull' }));
 
 /***/ },
-/* 48 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1884,7 +1713,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	var _test_data = __webpack_require__(41);
+	var _test_data = __webpack_require__(43);
 
 	var _index = __webpack_require__(2);
 
@@ -1895,7 +1724,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = testUnit.addTest(new _index.Test({ arg: 5, method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: 5, method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: '5', method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: '5', method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: 6, method: 'isSameNotOrderedStructure', expectation: 5 })).addTest(new _index.Test({ arg: 'string', method: 'isSameNotOrderedStructure', expectation: '5' })).addTest(new _index.Test({ arg: undefined, method: 'isSameNotOrderedStructure', expectation: undefined })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: null })).addTest(new _index.Test({ arg: NaN, method: 'isSameNotOrderedStructure', expectation: NaN })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: null, method: 'isSameNotOrderedStructure', expectation: undefined })).addTest(new _index.Test({ arg: {}, method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameNotOrderedStructure', expectation: [] })).addTest(new _index.Test({ arg: new Date(), method: 'isSameNotOrderedStructure', expectation: {} })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3, 4] })).addTest(new _index.Test({ arg: [0, 1, 2], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 2, 1, 3], method: 'isSameNotOrderedStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameNotOrderedStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isSameNotOrderedStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, _test_data.test_obj_1) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, _test_data.test_obj_2) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_2), method: 'isSameNotOrderedStructure', expectation: _test_data.test_obj_2 })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameNotOrderedStructure', expectation: _extends({}, _test_data.test_obj_3) }));
 
 /***/ },
-/* 49 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1906,7 +1735,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-	var _test_data = __webpack_require__(41);
+	var _test_data = __webpack_require__(43);
 
 	var _index = __webpack_require__(2);
 
@@ -1917,7 +1746,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = testUnit.addTest(new _index.Test({ arg: 5, method: 'isSameStructure', expectation: 5 })).addTest(new _index.Test({ arg: 5, method: 'isSameStructure', expectation: '5' })).addTest(new _index.Test({ arg: '5', method: 'isSameStructure', expectation: 5 })).addTest(new _index.Test({ arg: '5', method: 'isSameStructure', expectation: '5' })).addTest(new _index.Test({ arg: 6, method: 'isSameStructure', expectation: 5 })).addTest(new _index.Test({ arg: 'string', method: 'isSameStructure', expectation: '5' })).addTest(new _index.Test({ arg: undefined, method: 'isSameStructure', expectation: undefined })).addTest(new _index.Test({ arg: null, method: 'isSameStructure', expectation: null })).addTest(new _index.Test({ arg: NaN, method: 'isSameStructure', expectation: NaN })).addTest(new _index.Test({ arg: null, method: 'isSameStructure', expectation: {} })).addTest(new _index.Test({ arg: null, method: 'isSameStructure', expectation: undefined })).addTest(new _index.Test({ arg: {}, method: 'isSameStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameStructure', expectation: {} })).addTest(new _index.Test({ arg: [], method: 'isSameStructure', expectation: [] })).addTest(new _index.Test({ arg: new Date(), method: 'isSameStructure', expectation: {} })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameStructure', expectation: [0, 1, 2, 3, 4] })).addTest(new _index.Test({ arg: [0, 1, 2], method: 'isSameStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 2, 1, 3], method: 'isSameStructure', expectation: [0, 1, 2, 3] })).addTest(new _index.Test({ arg: [0, 1, 2, 3], method: 'isSameStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: { '0': 0, '1': 1, '2': 2, '3': 3 }, method: 'isSameStructure', expectation: { '0': 0, '1': 1, '2': 2, '3': 3 } })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameStructure', expectation: _extends({}, _test_data.test_obj_1) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameStructure', expectation: _extends({}, _test_data.test_obj_2) })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_2), method: 'isSameStructure', expectation: _test_data.test_obj_2 })).addTest(new _index.Test({ arg: _extends({}, _test_data.test_obj_1), method: 'isSameStructure', expectation: _extends({}, _test_data.test_obj_3) }));
 
 /***/ },
-/* 50 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1935,7 +1764,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = testUnit.addTest(new _index.Test({ arg: null, method: 'isTrue' })).addTest(new _index.Test({ arg: undefined, method: 'isTrue' })).addTest(new _index.Test({ arg: NaN, method: 'isTrue' })).addTest(new _index.Test({ arg: 0, method: 'isTrue' })).addTest(new _index.Test({ arg: '', method: 'isTrue' })).addTest(new _index.Test({ arg: true, method: 'isTrue' })).addTest(new _index.Test({ arg: false, method: 'isTrue' })).addTest(new _index.Test({ arg: '0', method: 'isTrue' })).addTest(new _index.Test({ arg: 'false', method: 'isTrue' })).addTest(new _index.Test({ arg: 'true', method: 'isTrue' }));
 
 /***/ },
-/* 51 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1953,7 +1782,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = testUnit.addTest(new _index.Test({ arg: null, expectation: 'null', method: 'isTypeOf' })).addTest(new _index.Test({ arg: null, expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: undefined, expectation: 'undefined', method: 'isTypeOf' })).addTest(new _index.Test({ arg: undefined, expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: { a: 2 }, expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: [1, 2], expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: { a: 2 }, expectation: 'array', method: 'isTypeOf' })).addTest(new _index.Test({ arg: [1, 2], expectation: 'array', method: 'isTypeOf' })).addTest(new _index.Test({ arg: { a: 2 }, expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: new Date(), expectation: 'object', method: 'isTypeOf' })).addTest(new _index.Test({ arg: new Date(), expectation: 'date', method: 'isTypeOf' })).addTest(new _index.Test({ arg: new Date(), expectation: 'Date', method: 'isTypeOf' }));
 
 /***/ },
-/* 52 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1969,6 +1798,171 @@ return /******/ (function(modules) { // webpackBootstrap
 	}, 'Check "notExist"');
 
 	exports.default = testUnit.addTest(new _index.Test({ arg: NaN, method: 'notExist' })).addTest(new _index.Test({ arg: null, method: 'notExist' })).addTest(new _index.Test({ arg: undefined, method: 'notExist' })).addTest(new _index.Test({ arg: false, method: 'notExist' })).addTest(new _index.Test({ arg: 0, method: 'notExist' }));
+
+/***/ },
+/* 55 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+	exports.default = printResult;
+
+	var _printStr = __webpack_require__(5);
+
+	var _printStr2 = _interopRequireDefault(_printStr);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Converts single argument to string.
+	 * @param {*} arg - argument.
+	 * @returns {string}
+	 */
+	function argToStr(arg) {
+		var argType = typeof arg === 'undefined' ? 'undefined' : _typeof(arg);
+
+		if (argType === 'function') return 'function: ' + (arg.name || arg.toLocaleString() || arg.toString());
+
+		if (argType === 'string') return '"' + arg + '"';
+
+		if (!arg || argType !== 'object') return '' + arg;
+
+		if (arg instanceof Array) return '[' + arg.map(function (x) {
+			return argToStr(x);
+		}).join(', ') + ']';
+
+		if ((arg.prototype || arg).toString !== Object.prototype.toString) return arg.toString();
+
+		var keys = [];
+
+		for (var key in arg) {
+			keys.push(key + ': ' + argToStr(arg[key]));
+		}return '{' + keys.join(', ') + '}';
+	}
+
+	/**
+	 * Converts args to string.
+	 * @param {array} args - array of arguments.
+	 * @returns {string}
+	 */
+	function parseArgs() {
+		var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+
+		switch (args.length) {
+			case 0:
+				return '@fMagenta;no arguments';
+			case 1:
+				return '@fMagenta;: ' + argToStr(args[0]);
+		}
+
+		return 'arguments: @fMagenta;' + args.map(function (arg) {
+			return argToStr(arg);
+		}).join(', ');
+	}
+
+	/**
+	 * Describes expectation.
+	 * @param {*} expectation - expected value.
+	 * @param {string} method - method to check.
+	 * @returns {string}
+	 */
+	function describeExpectation(expectation, method) {
+		var endStr = '@fMagenta;' + argToStr(expectation) + '@fYellow;. ';
+
+		switch (method) {
+			case 'isTypeOf':
+				return 'Expected that value is type of ' + endStr;
+			case 'isInstanceOf':
+				return 'Expected that value is instance of ' + endStr;
+			case 'isSameNotOrderedStructure':
+			case 'isSameStructure':
+				return 'Expected that value has same structure with ' + endStr;
+			case 'isLikeStructure':
+				return 'Expected that value equals or has properties from ' + endStr;
+			default:
+				return 'Expected value is ' + endStr;
+		}
+	}
+
+	/**
+	 * Parses result.
+	 * @param {object} res - result.
+	 * @returns {string}
+	 */
+	function parseRes() {
+		var res = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+		var result = res.result;
+		var success = res.success;
+		var error = res.error;
+
+
+		var str = [];
+
+		if ('result' in res) str.push('@fYellow;Resulted value @fMagenta;' + argToStr(result) + '@fYellow;.');
+		if (error) {
+			str.push('@fRed;' + (error.message || error) + '!');
+		} else {
+			str.push(success ? '@fGreen;Success!' : '@fRed;Fail!');
+		}
+
+		return str.join(' ');
+	}
+
+	/**
+	 * Output test result data.
+	 * @param {object} result - result data to output, existing and structure guaranteed by only calling at Utin.drawResult.
+	 * @param {object} stat - statistics data, existing and structure guaranteed by only calling at Utin.drawResult.
+	 * @param {boolean} [failsOnly = false] - if argument is true success tests would not be drawn.
+	 * @returns {object} - new statistics.
+	 */
+	function printResult() {
+		var result = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+		var _ref = arguments[1];
+		var _ref$successes = _ref.successes;
+		var successes = _ref$successes === undefined ? 0 : _ref$successes;
+		var _ref$fails = _ref.fails;
+		var fails = _ref$fails === undefined ? 0 : _ref$fails;
+		var _ref$exeptions = _ref.exeptions;
+		var exeptions = _ref$exeptions === undefined ? 0 : _ref$exeptions;
+		var failsOnly = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+		var _result$args = result.args;
+		var args = _result$args === undefined ? [] : _result$args;
+		var expectation = result.expectation;
+		var method = result.method;
+		var _result$res = result.res;
+		var res = _result$res === undefined ? {} : _result$res;
+
+
+		var index = successes + fails + exeptions; // result's index
+
+		// Getting new statistics
+		if (res.error) {
+			++exeptions;
+		} else if (res.success) {
+			++successes;
+			if (failsOnly) // if failsOnly is true all successes have to be not drawn
+				return { successes: successes, fails: fails, exeptions: exeptions };
+		} else {
+			++fails;
+		}
+
+		(0, _printStr2.default)('@fBlue;' + index + '. @fYellow;Function called with ' + parseArgs(args) + ' ');
+		(0, _printStr2.default)('@fYellow;Function checked by method @fMagenta;' + method + '@fYellow;. ');
+
+		if ('expectation' in result) {
+			(0, _printStr2.default)(describeExpectation(expectation, method));
+		}
+
+		(0, _printStr2.default)(parseRes(res) + '\n');
+
+		return { successes: successes, fails: fails, exeptions: exeptions };
+	}
 
 /***/ }
 /******/ ])

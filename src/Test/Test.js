@@ -16,9 +16,10 @@ export default class Test {
 		if (args && !(args instanceof Array))
 			throw new Error("args must be an Array or not defined");
 
-		this.args = args || [arg];
+		this.args = args || 'arg' in test ? [arg] : [];
 
-		this.expectation = expectation;
+		if ('expectation' in test)
+			this.expectation = expectation;
 
 		this.method = method;
 	}

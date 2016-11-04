@@ -17,7 +17,7 @@ const plugins = [
 
 const productPlugins = [
 	new webpack.optimize.UglifyJsPlugin({
-		compress: { warnings: false, drop_console: false, unsafe: true }
+		compress: { warnings: false, drop_console: true, unsafe: true }
 	}),
 	// new webpack.optimize.OccurenceOrderPlugin(),
 	// new webpack.ProvidePlugin({
