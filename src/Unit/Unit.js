@@ -37,7 +37,7 @@ export default class Unit {
 
 		const {method} = test;
 
-		if (!methods[method])
+		if (typeof method !== 'function' && !methods[method])
 			throw new Error(`Unexisting test method ${method}`);
 
 		if (!this.tests)
@@ -59,22 +59,29 @@ export default class Unit {
 			const {args, expectation, method} = result;
 			let res;
 
+			const methodType = typeof method;
+			const methodFunc = methodType === 'function' ? method : methods[method]; //Real checking method.
+			//Method's name
+			const methodName = methodType === 'function' ? (method.name || method.toLocaleString() || method.toString()) : method;
+
+			// Try to commit test
 			try {
-				res = commiter(methods[method], this.method, {args, expectation}, this.context)
+				res = commiter(methodFunc, this.method, {args, expectation}, this.context)
 			} catch (e) {
 				res = {
 					error: e
 				}
 			}
 
-			return {...result, res};
+			return {...result, res, method: methodName};
 		});
 
 		this.result = {
 			testStarted,
 			results,
 			testFinished: new Date(),
-			description: this.description
+			description: this.description,
+			success: results.reduce((p, r = {}) => p && r.res.success, true) // object ress property of element is guaranteed by commiter.
 		}
 
 		return this;
@@ -94,7 +101,7 @@ export default class Unit {
 	 * @returns {Unit} - this.s
 	 */
 	drawResult (failsOnly = false) {
-		const {testStarted, results = [], testFinished, description} = this.getResult();
+		const {testStarted, results = [], testFinished, description, success} = this.getResult();
 
 		print('@bgBlack;'); // Main background for common
 
@@ -119,7 +126,7 @@ export default class Unit {
 			print(`@fRed;Fails: ${fails}@fBlue;, `);
 			print(`@fRed;Exeptions: ${exeptions}. `);
 			print(`From @fCyan;${sum} @fBlue;test${sum !== 1 ? 's' : ''}.\n`);
-			print(`@fBlue;Result: ${successes === sum ? '@fGreen;SUCCESS' : '@fRed;FAIL'}!`, 'final');
+			print(`@fBlue;Result: ${success ? '@fGreen;SUCCESS' : '@fRed;FAIL'}!`, 'final');
 		}
 
 		return this;

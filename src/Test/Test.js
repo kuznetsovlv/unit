@@ -4,7 +4,7 @@
  * @param {*} [test#arg] - argument that function get.
  * @param {array} [test#args] - array of arguments that function get.
  * @param {*} test#expectation - expected result value.
- * @param {string} test#method - method name.
+ * @param {string | function} test#method - method name or checking method. Method has to return a bollean type.
  */
 export default class Test {
 	constructor (test = {}) {
