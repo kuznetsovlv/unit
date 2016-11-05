@@ -88,7 +88,7 @@ unit.addTest(new Test({
 
 ### Class `Test`.
 Class `Test` is a simple class which describes single test algorithm. `Test` was added to simplify validating description of test algorithm. `Test` does not have any own methods exept the constructor. Constructor requires the only object argument which describes test algorithm, here the list of it's fields:
-* `method: string | function` - Name of the verification method algorithm or method's function will use to check function. ___This field is needed___. _Note:_ in case of `method` is function, it has to return `boolean`: `true` or `false` and function should be named. 
+* `method: string | function` - Name of the verification method algorithm or method's function will use to check function. ___This field is needed___. _Note:_ in case of `method` is function, it has to accept two arguments: first - value from tested function, second - expectedvalue and return `boolean`: `true` or `false`. The function should be named. 
 * `arg: *` - Argument for testing function.
 * `args: Array` - Array of arguments for testing function. _Note:_ if field `args` exists `arg` will be ignored.
 * `expectation: *` - The value we are expecting as a result of testing function.
