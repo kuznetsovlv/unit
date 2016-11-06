@@ -1,4 +1,5 @@
-import print	from 'print-str';
+import print		from 'print-str';
+import getCombiner	from './combineStyles';
 
 /**
  * Converts single argument to string.
@@ -34,25 +35,28 @@ function argToStr (arg) {
 /**
  * Converts args to string.
  * @param {array} args - array of arguments.
+ * @param {string} style - style to display args.
  * @returns {string}
  */
-function parseArgs (args = []) {
+function parseArgs (args = [], style) {
 	switch (args.length) {
-		case 0: return '@fMagenta;no arguments';
-		case 1: return `@fMagenta;: ${argToStr(args[0])}`;
+		case 0: return '${style}no arguments';
+		case 1: return `${style}: ${argToStr(args[0])}`;
 	}
 
-	return `arguments: @fMagenta;${args.map(arg => argToStr(arg)).join(', ')}`;
+	return `arguments: ${style}${args.map(arg => argToStr(arg)).join(', ')}`;
 }
 
 /**
  * Describes expectation.
  * @param {*} expectation - expected value.
  * @param {string} method - method to check.
+ * @param {string} expectation - expectation's style
+ * @param {string} base - base style
  * @returns {string}
  */
-function describeExpectation (expectation, method) {
-	const endStr = `@fMagenta;${argToStr(expectation)}@fYellow;. `;
+function describeExpectation (expectation, method, expectationStyle, baseStyle) {
+	const endStr = `${expectationStyle}${argToStr(expectation)}${baseStyle}. `;
 
 	switch (method) {
 		case 'isTypeOf': return `Expected that value is type of ${endStr}`;
@@ -67,19 +71,22 @@ function describeExpectation (expectation, method) {
 /**
  * Parses result.
  * @param {object} res - result.
+ * @param {object} styles - display stiles
  * @returns {string}
  */
- function parseRes (res = {}) {
+ function parseRes (res = {}, styles = {}) {
  	const {result, success, error} = res;
+
+ 	const {baseStyle, result: resultStyle, error: errStyle, success: successStyle, fail: failStyle} = styles;
 
  	const str = [];
 
  	if ('result' in res)
- 		str.push(`@fYellow;Resulted value @fMagenta;${argToStr(result)}@fYellow;.`);
+ 		str.push(`${baseStyle}Resulted value ${resultStyle}${argToStr(result)}${baseStyle}.`);
  	if (error) {
- 		str.push(`@fRed;${error.message || error}!`)
+ 		str.push(`${errStyle}${error.message || error}!`)
  	} else {
- 		str.push(success ? `@fGreen;Success!` : `@fRed;Fail!`)
+ 		str.push(success ? `${successStyle}Success!` : `${failStyle}Fail!`)
  	}
 
  	return str.join(' ');
@@ -101,6 +108,12 @@ export default function printResult (
 	
 	const {args = [], expectation, method, res = {}} = result;
 
+	const {main, resultBase, testIndex, methodName, args: argStyle, expectation: expect, success: scs, fail, exeption: err, resultValue} = styles;
+
+	const combineStyles = getCombiner('Reset', main, resultBase);
+
+	const baseStyle = combineStyles();
+
 	const index = successes + fails + exeptions; // result's index
 
 	// Getting new statistics
@@ -114,14 +127,14 @@ export default function printResult (
 		++fails;
 	}
 
-	print(`@fBlue;${index}. @fYellow;Function called with ${parseArgs(args)} `);
-	print(`@fYellow;Function checked by method @fMagenta;${method}@fYellow;. `);
+	print(`${combineStyles(testIndex)}${index}. ${baseStyle}Function called with ${parseArgs(args, combineStyles(argStyle))}${baseStyle}. `);
+	print(`${baseStyle}Function checked by method ${combineStyles(methodName)}${method}${baseStyle}. `);
 
 	if ('expectation' in result) {
-		print(describeExpectation(expectation, method));
+		print(describeExpectation(expectation, method, combineStyles(expect), baseStyle));
 	}
 
-	print(`${parseRes(res)}\n`);
+	print(`${parseRes(res, {baseStyle, success: combineStyles(scs), fail: combineStyles(fail), error: combineStyles(err), result: combineStyles(resultValue)})}\n`);
 
 	return {successes, fails, exeptions};
 }

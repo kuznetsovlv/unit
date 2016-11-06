@@ -1,5 +1,4 @@
 /**
- * Combines styles in arguments.
- * @returns {string} - tag of stiles for print-str combined from arguments.
+ * Creates style combiner.
  */
-export default (...styles) => `@${styles.join(',')};`;
+export default (...initials) => (...styles) =>`@${initials.concat(styles).join(',')};`;

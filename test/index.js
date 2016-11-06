@@ -253,6 +253,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _combineStyles2 = _interopRequireDefault(_combineStyles);
 
+	var _defaultStyles = __webpack_require__(55);
+
+	var defaultStyles = _interopRequireWildcard(_defaultStyles);
+
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -389,46 +393,41 @@ return /******/ (function(modules) { // webpackBootstrap
 				    testFinished = _getResult.testFinished,
 				    description = _getResult.description,
 				    success = _getResult.success;
+
 				//Style definition
 
 
-				var _styles$main = styles.main,
-				    main = _styles$main === undefined ? 'bgBlack,fBlue' : _styles$main,
-				    _styles$description = styles.description,
-				    descr = _styles$description === undefined ? 'fWhite' : _styles$description,
-				    _styles$empty = styles.empty,
-				    empty = _styles$empty === undefined ? 'fWhite' : _styles$empty,
-				    _styles$date = styles.date,
-				    date = _styles$date === undefined ? 'fMagenta' : _styles$date,
-				    _styles$duration = styles.duration,
-				    duration = _styles$duration === undefined ? 'fCyan' : _styles$duration,
-				    _styles$success = styles.success,
-				    scs = _styles$success === undefined ? 'fGreen' : _styles$success,
-				    _styles$fail = styles.fail,
-				    fail = _styles$fail === undefined ? 'fRed' : _styles$fail,
-				    _styles$exeption = styles.exeption,
-				    exept = _styles$exeption === undefined ? 'fRed' : _styles$exeption,
-				    _styles$sum = styles.sum,
-				    sumStyle = _styles$sum === undefined ? 'fCyan' : _styles$sum;
+				var resStyle = _extends({}, defaultStyles, styles);
+				var main = resStyle.main,
+				    descr = resStyle.description,
+				    empty = resStyle.empty,
+				    date = resStyle.date,
+				    duration = resStyle.duration,
+				    scs = resStyle.success,
+				    fail = resStyle.fail,
+				    exept = resStyle.exeption,
+				    sumStyle = resStyle.sum;
 
 				// print('@bgBlack;'); // Main background for common
 
-				(0, _printStr2.default)('' + (0, _combineStyles2.default)('Reset', main, descr) + description + '\n'); // Output description
+				var combineStyles = (0, _combineStyles2.default)('Reset', main);
+
+				(0, _printStr2.default)('' + combineStyles(descr) + description + '\n'); // Output description
 
 				if (!results.length) {
-					(0, _printStr2.default)((0, _combineStyles2.default)('Reset', main, empty) + '@Underscore;NO TESTS SET!', 'final'); //No tests
+					(0, _printStr2.default)(combineStyles(empty) + '@Underscore;NO TESTS SET!', 'final'); //No tests
 				} else {
 					// Timing
-					(0, _printStr2.default)((0, _combineStyles2.default)('Reset', main) + 'Test started at ' + (0, _combineStyles2.default)('Reset', main, date) + testStarted + ' ');
-					(0, _printStr2.default)((0, _combineStyles2.default)('Reset', main) + 'finished at ' + (0, _combineStyles2.default)('Reset', main, date) + testFinished + ', ');
-					(0, _printStr2.default)('test took ' + (0, _combineStyles2.default)('Reset', main, duration) + (0, _date.msToHR)((0, _date.dateDiff)(testFinished, testStarted)) + '.\n');
+					(0, _printStr2.default)(combineStyles() + 'Test started at ' + combineStyles(date) + testStarted + ' ');
+					(0, _printStr2.default)(combineStyles() + 'finished at ' + combineStyles(date) + testFinished + ', ');
+					(0, _printStr2.default)('test took ' + combineStyles(duration) + (0, _date.msToHR)((0, _date.dateDiff)(testFinished, testStarted)) + '.\n');
 
 					//Output results and getting new statistics.
 
 					var _results$reduce = results.reduce(function () {
 						var stat = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 						var result = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-						return (0, _printResult2.default)(result, stat, failsOnly, styles);
+						return (0, _printResult2.default)(result, stat, failsOnly, resStyle);
 					}, { successes: 0, fails: 0, exeptions: 0 }),
 					    successes = _results$reduce.successes,
 					    fails = _results$reduce.fails,
@@ -437,12 +436,12 @@ return /******/ (function(modules) { // webpackBootstrap
 					var sum = successes + fails + exeptions;
 
 					//Output statistics.
-					(0, _printStr2.default)((0, _combineStyles2.default)('Reset', main) + 'Statistic:\n');
-					(0, _printStr2.default)((0, _combineStyles2.default)('Reset', main, scs) + 'Successes: ' + successes + (0, _combineStyles2.default)('Reset', main) + ', ');
-					(0, _printStr2.default)((0, _combineStyles2.default)('Reset', main, fail) + 'Fails: ' + fails + (0, _combineStyles2.default)('Reset', main) + ', ');
-					(0, _printStr2.default)((0, _combineStyles2.default)('Reset', main, exept) + 'Exeptions: ' + exeptions + (0, _combineStyles2.default)('Reset', main) + '. ');
-					(0, _printStr2.default)((0, _combineStyles2.default)('Reset', main) + 'From ' + (0, _combineStyles2.default)('Reset', main, sumStyle) + sum + ' ' + (0, _combineStyles2.default)('Reset', main) + 'test' + (sum !== 1 ? 's' : '') + '.\n');
-					(0, _printStr2.default)((0, _combineStyles2.default)('Reset', main) + 'Result: ' + (success ? (0, _combineStyles2.default)('Reset', main, scs) + 'SUCCESS' : (0, _combineStyles2.default)('Reset', main, fail) + 'FAIL') + '!', 'final');
+					(0, _printStr2.default)(combineStyles() + 'Statistic:\n');
+					(0, _printStr2.default)(combineStyles(scs) + 'Successes: ' + successes + combineStyles() + ', ');
+					(0, _printStr2.default)(combineStyles(fail) + 'Fails: ' + fails + combineStyles() + ', ');
+					(0, _printStr2.default)(combineStyles(exept) + 'Exeptions: ' + exeptions + combineStyles() + '. ');
+					(0, _printStr2.default)(combineStyles() + 'From ' + combineStyles(sumStyle) + sum + ' ' + combineStyles() + 'test' + (sum !== 1 ? 's' : '') + '.\n');
+					(0, _printStr2.default)(combineStyles() + 'Result: ' + (success ? combineStyles(scs) + 'SUCCESS' : combineStyles(fail) + 'FAIL') + '!', 'final');
 				}
 
 				return this;
@@ -1492,6 +1491,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _printStr2 = _interopRequireDefault(_printStr);
 
+	var _combineStyles = __webpack_require__(36);
+
+	var _combineStyles2 = _interopRequireDefault(_combineStyles);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
@@ -1524,19 +1527,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Converts args to string.
 	 * @param {array} args - array of arguments.
+	 * @param {string} style - style to display args.
 	 * @returns {string}
 	 */
 	function parseArgs() {
 		var args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+		var style = arguments[1];
 
 		switch (args.length) {
 			case 0:
-				return '@fMagenta;no arguments';
+				return '${style}no arguments';
 			case 1:
-				return '@fMagenta;: ' + argToStr(args[0]);
+				return style + ': ' + argToStr(args[0]);
 		}
 
-		return 'arguments: @fMagenta;' + args.map(function (arg) {
+		return 'arguments: ' + style + args.map(function (arg) {
 			return argToStr(arg);
 		}).join(', ');
 	}
@@ -1545,10 +1550,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * Describes expectation.
 	 * @param {*} expectation - expected value.
 	 * @param {string} method - method to check.
+	 * @param {string} expectation - expectation's style
+	 * @param {string} base - base style
 	 * @returns {string}
 	 */
-	function describeExpectation(expectation, method) {
-		var endStr = '@fMagenta;' + argToStr(expectation) + '@fYellow;. ';
+	function describeExpectation(expectation, method, expectationStyle, baseStyle) {
+		var endStr = '' + expectationStyle + argToStr(expectation) + baseStyle + '. ';
 
 		switch (method) {
 			case 'isTypeOf':
@@ -1568,22 +1575,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Parses result.
 	 * @param {object} res - result.
+	 * @param {object} styles - display stiles
 	 * @returns {string}
 	 */
 	function parseRes() {
 		var res = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+		var styles = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 		var result = res.result,
 		    success = res.success,
 		    error = res.error;
+		var baseStyle = styles.baseStyle,
+		    resultStyle = styles.result,
+		    errStyle = styles.error,
+		    successStyle = styles.success,
+		    failStyle = styles.fail;
 
 
 		var str = [];
 
-		if ('result' in res) str.push('@fYellow;Resulted value @fMagenta;' + argToStr(result) + '@fYellow;.');
+		if ('result' in res) str.push(baseStyle + 'Resulted value ' + resultStyle + argToStr(result) + baseStyle + '.');
 		if (error) {
-			str.push('@fRed;' + (error.message || error) + '!');
+			str.push('' + errStyle + (error.message || error) + '!');
 		} else {
-			str.push(success ? '@fGreen;Success!' : '@fRed;Fail!');
+			str.push(success ? successStyle + 'Success!' : failStyle + 'Fail!');
 		}
 
 		return str.join(' ');
@@ -1614,7 +1628,21 @@ return /******/ (function(modules) { // webpackBootstrap
 		    method = result.method,
 		    _result$res = result.res,
 		    res = _result$res === undefined ? {} : _result$res;
+		var main = styles.main,
+		    resultBase = styles.resultBase,
+		    testIndex = styles.testIndex,
+		    methodName = styles.methodName,
+		    argStyle = styles.args,
+		    expect = styles.expectation,
+		    scs = styles.success,
+		    fail = styles.fail,
+		    err = styles.exeption,
+		    resultValue = styles.resultValue;
 
+
+		var combineStyles = (0, _combineStyles2.default)('Reset', main, resultBase);
+
+		var baseStyle = combineStyles();
 
 		var index = successes + fails + exeptions; // result's index
 
@@ -1629,14 +1657,14 @@ return /******/ (function(modules) { // webpackBootstrap
 			++fails;
 		}
 
-		(0, _printStr2.default)('@fBlue;' + index + '. @fYellow;Function called with ' + parseArgs(args) + ' ');
-		(0, _printStr2.default)('@fYellow;Function checked by method @fMagenta;' + method + '@fYellow;. ');
+		(0, _printStr2.default)('' + combineStyles(testIndex) + index + '. ' + baseStyle + 'Function called with ' + parseArgs(args, combineStyles(argStyle)) + baseStyle + '. ');
+		(0, _printStr2.default)(baseStyle + 'Function checked by method ' + combineStyles(methodName) + method + baseStyle + '. ');
 
 		if ('expectation' in result) {
-			(0, _printStr2.default)(describeExpectation(expectation, method));
+			(0, _printStr2.default)(describeExpectation(expectation, method, combineStyles(expect), baseStyle));
 		}
 
-		(0, _printStr2.default)(parseRes(res) + '\n');
+		(0, _printStr2.default)(parseRes(res, { baseStyle: baseStyle, success: combineStyles(scs), fail: combineStyles(fail), error: combineStyles(err), result: combineStyles(resultValue) }) + '\n');
 
 		return { successes: successes, fails: fails, exeptions: exeptions };
 	}
@@ -1652,15 +1680,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 	/**
-	 * Combines styles in arguments.
-	 * @returns {string} - tag of stiles for print-str combined from arguments.
+	 * Creates style combiner.
 	 */
 	exports.default = function () {
-	  for (var _len = arguments.length, styles = Array(_len), _key = 0; _key < _len; _key++) {
-	    styles[_key] = arguments[_key];
+	  for (var _len = arguments.length, initials = Array(_len), _key = 0; _key < _len; _key++) {
+	    initials[_key] = arguments[_key];
 	  }
 
-	  return '@' + styles.join(',') + ';';
+	  return function () {
+	    for (var _len2 = arguments.length, styles = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+	      styles[_key2] = arguments[_key2];
+	    }
+
+	    return '@' + initials.concat(styles).join(',') + ';';
+	  };
 	};
 
 /***/ },
@@ -2053,6 +2086,45 @@ return /******/ (function(modules) { // webpackBootstrap
 	          } })).addTest(new _index.Test({ args: [1, 2, 3, 4], method: function method() {
 	                    throw new Error('Test expectation.');
 	          } }));
+
+/***/ },
+/* 55 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var main = exports.main = 'bgBlack,fBlue'; // Main style
+
+	var description = exports.description = 'fWhite'; // Description style
+
+	var empty = exports.empty = 'fWhite'; // Style on non test message
+
+	var date = exports.date = 'fMagenta'; // Date's style
+
+	var duration = exports.duration = 'fCyan'; // Duration's style
+
+	var success = exports.success = 'fGreen'; // Success style
+
+	var fail = exports.fail = 'fRed'; // Fail style
+
+	var exeption = exports.exeption = 'fRed'; // Exeption style
+
+	var sum = exports.sum = 'fCyan'; // Test sum style
+
+	var testIndex = exports.testIndex = 'fBlue'; // Style of test's index
+
+	var resultBase = exports.resultBase = 'fYellow'; // Result's base style
+
+	var methodName = exports.methodName = 'fMagenta'; // Method name display style
+
+	var args = exports.args = 'fMagenta'; // Argument's style
+
+	var expectation = exports.expectation = 'fMagenta'; // Expectations's style
+
+	var resultValue = exports.resultValue = 'fMagenta'; // Result value style
 
 /***/ }
 /******/ ])

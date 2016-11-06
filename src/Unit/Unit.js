@@ -4,7 +4,8 @@ import commiter							from './commiter';
 import Test								from '../Test';
 import {dateDiff, msToHR}				from '../lib/date';
 import printResult						from '../lib/printResult';
-import combineStyles					from '../lib/combineStyles';
+import getCombiner						from '../lib/combineStyles';
+import * as defaultStyles				from '../lib/defaultStyles';
 
 /**
  * Class to create unit test set.
@@ -104,43 +105,37 @@ export default class Unit {
 	 */
 	drawResult (failsOnly = false, styles = {}) {
 		const {testStarted, results = [], testFinished, description, success} = this.getResult();
+
 		//Style definition
-		const {
-			main = 'bgBlack,fBlue', //main style
-			description: descr = 'fWhite', //Description's style
-			empty = 'fWhite', //Style of the "No test" mesage
-			date = 'fMagenta', //Date style
-			duration = 'fCyan', //Duration style
-			success: scs = 'fGreen', //Success style
-			fail = 'fRed', //Fail style
-			exeption: exept = 'fRed', //Exeption style
-			sum: sumStyle = 'fCyan', //Sum style
-		} = styles;
+		const resStyle = {...defaultStyles, ...styles};
+		const {main, description: descr, empty, date, duration, success: scs, fail, exeption: exept, sum: sumStyle} = resStyle;
 
 		// print('@bgBlack;'); // Main background for common
 
-		print(`${combineStyles('Reset', main, descr)}${description}\n`); // Output description
+		const combineStyles = getCombiner('Reset', main);
+
+		print(`${combineStyles(descr)}${description}\n`); // Output description
 
 		if (!results.length) {
-			print(`${combineStyles('Reset', main, empty)}@Underscore;NO TESTS SET!`, 'final'); //No tests
+			print(`${combineStyles(empty)}@Underscore;NO TESTS SET!`, 'final'); //No tests
 		} else {
 			// Timing
-			print(`${combineStyles('Reset', main)}Test started at ${combineStyles('Reset', main, date)}${testStarted} `);
-			print(`${combineStyles('Reset', main)}finished at ${combineStyles('Reset', main, date)}${testFinished}, `);
-			print(`test took ${combineStyles('Reset', main, duration)}${msToHR(dateDiff(testFinished, testStarted))}.\n`);
+			print(`${combineStyles()}Test started at ${combineStyles(date)}${testStarted} `);
+			print(`${combineStyles()}finished at ${combineStyles(date)}${testFinished}, `);
+			print(`test took ${combineStyles(duration)}${msToHR(dateDiff(testFinished, testStarted))}.\n`);
 
 			//Output results and getting new statistics.
-			const {successes, fails, exeptions} = results.reduce((stat = {}, result = {}) => printResult(result, stat, failsOnly, styles), {successes: 0, fails: 0, exeptions: 0});
+			const {successes, fails, exeptions} = results.reduce((stat = {}, result = {}) => printResult(result, stat, failsOnly, resStyle), {successes: 0, fails: 0, exeptions: 0});
 
 			const  sum = successes + fails + exeptions; 
 
 			//Output statistics.
-			print(`${combineStyles('Reset', main)}Statistic:\n`);
-			print(`${combineStyles('Reset', main, scs)}Successes: ${successes}${combineStyles('Reset', main)}, `);
-			print(`${combineStyles('Reset', main, fail)}Fails: ${fails}${combineStyles('Reset', main)}, `);
-			print(`${combineStyles('Reset', main, exept)}Exeptions: ${exeptions}${combineStyles('Reset', main)}. `);
-			print(`${combineStyles('Reset', main)}From ${combineStyles('Reset', main, sumStyle)}${sum} ${combineStyles('Reset', main)}test${sum !== 1 ? 's' : ''}.\n`);
-			print(`${combineStyles('Reset', main)}Result: ${success ? combineStyles('Reset', main, scs) + 'SUCCESS' : combineStyles('Reset', main, fail) + 'FAIL'}!`, 'final');
+			print(`${combineStyles()}Statistic:\n`);
+			print(`${combineStyles(scs)}Successes: ${successes}${combineStyles()}, `);
+			print(`${combineStyles(fail)}Fails: ${fails}${combineStyles()}, `);
+			print(`${combineStyles(exept)}Exeptions: ${exeptions}${combineStyles()}. `);
+			print(`${combineStyles()}From ${combineStyles(sumStyle)}${sum} ${combineStyles()}test${sum !== 1 ? 's' : ''}.\n`);
+			print(`${combineStyles()}Result: ${success ? combineStyles(scs) + 'SUCCESS' : combineStyles(fail) + 'FAIL'}!`, 'final');
 		}
 
 		return this;
