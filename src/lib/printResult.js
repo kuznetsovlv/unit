@@ -90,12 +90,14 @@ function describeExpectation (expectation, method) {
  * @param {object} result - result data to output, existing and structure guaranteed by only calling at Utin.drawResult.
  * @param {object} stat - statistics data, existing and structure guaranteed by only calling at Utin.drawResult.
  * @param {boolean} [failsOnly = false] - if argument is true success tests would not be drawn.
+ * @param {object} [styles = {}] - list of display styles.
  * @returns {object} - new statistics.
  */
 export default function printResult (
 	result = {},
 	{successes = 0, fails = 0, exeptions = 0},
-	failsOnly = false) {
+	failsOnly = false,
+	styles = {}) {
 	
 	const {args = [], expectation, method, res = {}} = result;
 
