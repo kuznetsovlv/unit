@@ -116,7 +116,9 @@ export default class Unit {
 
 		print(`${combineStyles(descr)}${description}\n`); // Output description
 
-		if (!results.length) {
+		const {length: sum} = results;
+
+		if (!sum) {
 			print(`${combineStyles(empty)}@Underscore;NO TESTS SET!`, 'final'); //No tests
 		} else {
 			// Timing
@@ -127,7 +129,7 @@ export default class Unit {
 			//Output results and getting new statistics.
 			const {successes, fails, exeptions} = results.reduce((stat = {}, result = {}) => printResult(result, stat, failsOnly, resStyle), {successes: 0, fails: 0, exeptions: 0});
 
-			const  sum = successes + fails + exeptions; 
+			// const  sum = successes + fails + exeptions; 
 
 			//Output statistics.
 			print(`${combineStyles()}Statistic:\n`);
