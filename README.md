@@ -60,7 +60,7 @@ The library exports two class `Unit` and `Test`.
 Class `Unit` creates an object which perform a set of unit tests for a function. It's constructor gets three arguments:
 * `func: function` - Function you want to test
 * `description: string` - Text which describes this test set.
-* `context: object` - Object of testing function`s context. This argument is unrequirable and I srongly recomed to ___not use it___ because unit tests are good for pure functions that depend on ___their arguments only___ and ___do not depend__ on their environment.
+* `context: object` - Object of testing function`s context. This argument is optional and I srongly recomed to ___not use it___ because unit tests are good for pure functions that depend on ___their arguments only___ and ___do not depend__ on their environment.
 ```javascript
 const unit = new Unit(x => x, 'Simple test of the simple function');
 ```
@@ -70,7 +70,24 @@ Class `Unit` has some methods:
 * `addTest` gets one argument the object of class `Test` which describes single test. `addTest` adds test description into test sequence.
 * `commitTests` commits current test sequence.
 * `getResult` returns object with result of the last commit of the test sequence. If test sequence has not commited it calls `addTest` method first.
-* `drawresult` gets unrequirable `boolean` argumet `failsOnly` and displays the result of the last commit of the test sequence. The result `drawResult` gets by calling `getResult` first. By default `failsOnly = false`, if it is `true` `drawResult` would show only fallen tests.
+* `drawresult` gets two optional arguments.
+     * First `boolean` argumet `failsOnly` and displays the result of the last commit of the test sequence. The result `drawResult` gets by calling `getResult` first. By default `failsOnly = false`, if it is `true` `drawResult` would show only fallen tests.
+     * Second`object` argument `styles` has options which redefine default styles. Nextoptions are available:
+          * `main` - main style.
+          * `description` - test description's style.
+          * `empty` - style of non test message.
+          * `date` - style of dates of start and finish test.
+          * `duration` - style of test's duration.
+          * `success` - style of success message.
+          * `fail` - style of fail message.
+          * `exeption` - style of exeption's message.
+          * `sum` - style of value of test's quantity.
+          * `testIndex` - style of current test's index.
+          * `resultBase` - base style of current test's result.
+          * `methodName` - style of testing method's name.
+          * `args` - style of argument's list.
+          * `expectation` - style of expetcation value.
+          * `resultValue` - style of function's result n current test.
 
 _Note:_ all methods exept `getResult` returns current context of `Unit`, so you can use these methods in chains.  
 _Note:_ if you are adding new test into a sequence after the sequence has been commited to get or display the test's result you need call `commitTests` method before `getResult` and  `drawResult` methods.

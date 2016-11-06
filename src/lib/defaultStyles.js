@@ -2,7 +2,7 @@ export const main = 'bgBlack,fBlue'; // Main style
 
 export const description = 'fWhite'; // Description style
 
-export const empty = 'fWhite'; // Style on non test message
+export const empty = 'fWhite'; // Style of non test message
 
 export const date = 'fMagenta'; // Date's style
 
